@@ -126,12 +126,58 @@ ilimitada e nenhuma peça de servidor para manter.
 O site só muda quando o build é refeito. Para incorporar dados novos:
 
 ```bash
-npm run ingest        # baixa e transforma os dados oficiais
+npm run ingest          # baixa e transforma os dados oficiais
 npm run build:site      # regenera a pasta publicada
-git add data            # só os dados são versionados (dist/ é artefato)
+git add data            # os dados SÃO versionados (dist/ é artefato de build)
 git commit -m "Atualiza dados"
 git push                # o deploy automático cuida do resto
 ```
 
 Os dados vivem em `data/` e são versionados junto com o código; é isso que permite a
 qualquer pessoa reproduzir o site a partir do repositório.
+
+---
+
+## Duas armadilhas que já quebraram o deploy
+
+Se o build falhar na hospedagem, quase certamente foi uma destas duas.
+
+### 1. `sh: 1: tsc: not found`
+
+O `apps/web` precisa do TypeScript para compilar, e ele é uma dependência daquele
+workspace. Em CI, `npm ci` só instala o que o **`package-lock.json` da raiz** declara.
+
+Este projeto é um monorepo npm workspaces: o campo `workspaces` no `package.json` da
+raiz é o que faz o `npm ci` instalar as dependências de `apps/web` e `apps/api`.
+
+Se você adicionar uma dependência, rode `npm install` **na raiz** (nunca dentro de
+`apps/web`) e faça commit do `package-lock.json` junto. Lockfiles dentro das pastas dos
+apps (`apps/web/package-lock.json`) quebram esse mecanismo e não existem mais aqui.
+
+Para reproduzir o que a hospedagem vai fazer, antes de dar push:
+
+```bash
+rm -rf node_modules apps/*/node_modules
+npm ci
+npm run build:site
+```
+
+### 2. `⚠ centroides.json não encontrado` / mapa vazio
+
+O build publica os dados de `data/`. Se eles não estiverem no repositório, o site sobe
+sem dataset — o mapa abre vazio e o painel não mostra nada.
+
+O dataset **é** versionado de propósito (~84 MB, sem os ZIPs brutos do TSE). Cada
+subpasta de `data/` já teve um `.gitignore` com `*` que impedia qualquer arquivo de ser
+rastreado; isso foi removido. Hoje o único arquivo ignorado é `data/elections/raw/`
+(os ZIPs de origem, ~112 MB, baixáveis com `npm run scrape:tse`).
+
+Para conferir que tudo entrou:
+
+```bash
+git check-ignore -v data/maps/centroides.json   # não deve imprimir nada
+git add -An data | wc -l                        # deve passar de 100
+```
+
+Se o deploy reclamar de dados faltando, é sinal de que o commit não incluiu `data/`.
+

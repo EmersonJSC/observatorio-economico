@@ -1,2 +1,3 @@
-*
-!.gitignore
+# Somente os ZIPs brutos do TSE ficam de fora (grandes e baixáveis).
+# Os JSONs processados SÃO versionados: são o conteúdo do site estático.
+raw/

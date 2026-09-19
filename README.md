@@ -10,9 +10,12 @@ servidor nem banco de dados em produção. Veja [como publicar de graça](DEPLOY
 - `apps/web`: interface React e experiência de exploração.
 - `apps/api`: API Express usada no desenvolvimento local; não é necessária em produção.
 - `scripts`: tarefas que baixam, transformam e publicam os dados de fontes oficiais.
-- `data`: datasets gerados pelos scripts; são versionados junto com o código.
+- `data`: datasets gerados pelos scripts; **são versionados** e viram o conteúdo do site.
 - `docs/architecture`: organização e decisões de arquitetura.
 - `docs/data-sources`: origem, periodicidade e limitações de cada fonte pública.
+
+É um monorepo npm workspaces (`apps/*`). Instale sempre pela raiz: `npm install`.
+Adicionar dependência dentro de `apps/web` cria um lockfile separado que o CI ignora.
 
 Leia primeiro: [visão da arquitetura](docs/architecture/overview.md) ou a [documentação completa do projeto](DOCUMENTACAO.md).
 

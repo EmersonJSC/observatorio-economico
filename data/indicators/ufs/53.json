@@ -1,0 +1,22 @@
+{
+  "uf": "53",
+  "anoPopulacao": 2024,
+  "anoPib": 2021,
+  "municipios": [
+    {
+      "codarea": "5300108",
+      "nome": "Brasília",
+      "populacao": {
+        "total": 2982818,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 286943782,
+        "valorPerCapitaReais": 92732.27,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    }
+  ]
+}

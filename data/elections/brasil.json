@@ -1,0 +1,32 @@
+{
+  "updatedAt": "2026-09-19T03:08:39.105Z",
+  "anoEleicao": 2022,
+  "presidente": {
+    "cargo": "Presidente",
+    "codigoCargoTse": 1,
+    "nomeUrna": "LULA",
+    "nomeCompleto": "LUIZ INÁCIO LULA DA SILVA",
+    "partido": "PT",
+    "numeroCandidato": 13,
+    "anoEleicao": 2022,
+    "mandatoPeriodo": "2023–2026",
+    "situacaoEleicao": "ELEITO",
+    "sqCandidato": "280001607829"
+  },
+  "vicePresidente": {
+    "cargo": "Vice-Presidente",
+    "codigoCargoTse": 2,
+    "nomeUrna": "GERALDO ALCKMIN",
+    "nomeCompleto": "GERALDO JOSÉ RODRIGUES ALCKMIN FILHO",
+    "partido": "PSB",
+    "numeroCandidato": 13,
+    "anoEleicao": 2022,
+    "mandatoPeriodo": "2023–2026",
+    "situacaoEleicao": "ELEITO",
+    "sqCandidato": "280001607830"
+  },
+  "congresso": {
+    "senadores": 27,
+    "deputadosFederais": 513
+  }
+}

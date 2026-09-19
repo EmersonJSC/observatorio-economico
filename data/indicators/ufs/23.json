@@ -1,0 +1,2767 @@
+{
+  "uf": "23",
+  "anoPopulacao": 2024,
+  "anoPib": 2021,
+  "municipios": [
+    {
+      "codarea": "2300101",
+      "nome": "Abaiara",
+      "populacao": {
+        "total": 10282,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 117971,
+        "valorPerCapitaReais": 9859.67,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300150",
+      "nome": "Acarape",
+      "populacao": {
+        "total": 14306,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 179994,
+        "valorPerCapitaReais": 11888.64,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300200",
+      "nome": "Acaraú",
+      "populacao": {
+        "total": 68758,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1020201,
+        "valorPerCapitaReais": 16052,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300309",
+      "nome": "Acopiara",
+      "populacao": {
+        "total": 46215,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 564520,
+        "valorPerCapitaReais": 10322.75,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300408",
+      "nome": "Aiuaba",
+      "populacao": {
+        "total": 14220,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 151596,
+        "valorPerCapitaReais": 8621.25,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300507",
+      "nome": "Alcântaras",
+      "populacao": {
+        "total": 11754,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 98202,
+        "valorPerCapitaReais": 8289.89,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300606",
+      "nome": "Altaneira",
+      "populacao": {
+        "total": 6970,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 74654,
+        "valorPerCapitaReais": 9680.24,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300705",
+      "nome": "Alto Santo",
+      "populacao": {
+        "total": 14418,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 232268,
+        "valorPerCapitaReais": 14447.22,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300754",
+      "nome": "Amontada",
+      "populacao": {
+        "total": 44342,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 665472,
+        "valorPerCapitaReais": 15057.63,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300804",
+      "nome": "Antonina do Norte",
+      "populacao": {
+        "total": 7484,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 78953,
+        "valorPerCapitaReais": 10666.44,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2300903",
+      "nome": "Apuiarés",
+      "populacao": {
+        "total": 13219,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 120978,
+        "valorPerCapitaReais": 8206.35,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301000",
+      "nome": "Aquiraz",
+      "populacao": {
+        "total": 84737,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 3854401,
+        "valorPerCapitaReais": 47246.31,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301109",
+      "nome": "Aracati",
+      "populacao": {
+        "total": 78752,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1706227,
+        "valorPerCapitaReais": 22631.41,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301208",
+      "nome": "Aracoiaba",
+      "populacao": {
+        "total": 26696,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 266422,
+        "valorPerCapitaReais": 10015.86,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301257",
+      "nome": "Ararendá",
+      "populacao": {
+        "total": 11485,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 106784,
+        "valorPerCapitaReais": 9722.66,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301307",
+      "nome": "Araripe",
+      "populacao": {
+        "total": 20223,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 207982,
+        "valorPerCapitaReais": 9581.33,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301406",
+      "nome": "Aratuba",
+      "populacao": {
+        "total": 11459,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 151645,
+        "valorPerCapitaReais": 12896.08,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301505",
+      "nome": "Arneiroz",
+      "populacao": {
+        "total": 7619,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 70224,
+        "valorPerCapitaReais": 8948.01,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301604",
+      "nome": "Assaré",
+      "populacao": {
+        "total": 22212,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 237259,
+        "valorPerCapitaReais": 10080.26,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301703",
+      "nome": "Aurora",
+      "populacao": {
+        "total": 24267,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 216792,
+        "valorPerCapitaReais": 8824.52,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301802",
+      "nome": "Baixio",
+      "populacao": {
+        "total": 5832,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 67541,
+        "valorPerCapitaReais": 10690.25,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301851",
+      "nome": "Banabuiú",
+      "populacao": {
+        "total": 17654,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 260031,
+        "valorPerCapitaReais": 14199.26,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301901",
+      "nome": "Barbalha",
+      "populacao": {
+        "total": 80217,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1345205,
+        "valorPerCapitaReais": 21815.79,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2301950",
+      "nome": "Barreira",
+      "populacao": {
+        "total": 23351,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 240016,
+        "valorPerCapitaReais": 10566.41,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302008",
+      "nome": "Barro",
+      "populacao": {
+        "total": 19669,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 242027,
+        "valorPerCapitaReais": 10599.41,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302057",
+      "nome": "Barroquinha",
+      "populacao": {
+        "total": 14977,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 133335,
+        "valorPerCapitaReais": 8848.3,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302107",
+      "nome": "Baturité",
+      "populacao": {
+        "total": 36978,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 448272,
+        "valorPerCapitaReais": 12408.23,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302206",
+      "nome": "Beberibe",
+      "populacao": {
+        "total": 55666,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1059006,
+        "valorPerCapitaReais": 19497.49,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302305",
+      "nome": "Bela Cruz",
+      "populacao": {
+        "total": 34441,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 322244,
+        "valorPerCapitaReais": 9809.26,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302404",
+      "nome": "Boa Viagem",
+      "populacao": {
+        "total": 52169,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 539218,
+        "valorPerCapitaReais": 9861.34,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302503",
+      "nome": "Brejo Santo",
+      "populacao": {
+        "total": 53778,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 817034,
+        "valorPerCapitaReais": 16277.2,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302602",
+      "nome": "Camocim",
+      "populacao": {
+        "total": 65031,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 839500,
+        "valorPerCapitaReais": 13087.13,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302701",
+      "nome": "Campos Sales",
+      "populacao": {
+        "total": 26082,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 292357,
+        "valorPerCapitaReais": 10626.14,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302800",
+      "nome": "Canindé",
+      "populacao": {
+        "total": 77207,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 911356,
+        "valorPerCapitaReais": 11761.86,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2302909",
+      "nome": "Capistrano",
+      "populacao": {
+        "total": 17760,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 176809,
+        "valorPerCapitaReais": 9916.38,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303006",
+      "nome": "Caridade",
+      "populacao": {
+        "total": 16419,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 186169,
+        "valorPerCapitaReais": 8090.44,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303105",
+      "nome": "Cariré",
+      "populacao": {
+        "total": 18075,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 193105,
+        "valorPerCapitaReais": 10455.06,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303204",
+      "nome": "Caririaçu",
+      "populacao": {
+        "total": 27482,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 253127,
+        "valorPerCapitaReais": 9372.3,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303303",
+      "nome": "Cariús",
+      "populacao": {
+        "total": 17333,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 180984,
+        "valorPerCapitaReais": 9678.29,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303402",
+      "nome": "Carnaubal",
+      "populacao": {
+        "total": 17758,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 166772,
+        "valorPerCapitaReais": 9388.73,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303501",
+      "nome": "Cascavel",
+      "populacao": {
+        "total": 76365,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1074377,
+        "valorPerCapitaReais": 14777.01,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303600",
+      "nome": "Catarina",
+      "populacao": {
+        "total": 9577,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 154108,
+        "valorPerCapitaReais": 7324.18,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303659",
+      "nome": "Catunda",
+      "populacao": {
+        "total": 10817,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 112081,
+        "valorPerCapitaReais": 10766.67,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303709",
+      "nome": "Caucaia",
+      "populacao": {
+        "total": 375730,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 10422701,
+        "valorPerCapitaReais": 28252.08,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303808",
+      "nome": "Cedro",
+      "populacao": {
+        "total": 22678,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 247325,
+        "valorPerCapitaReais": 9656.61,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303907",
+      "nome": "Chaval",
+      "populacao": {
+        "total": 12805,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 110318,
+        "valorPerCapitaReais": 8413.51,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303931",
+      "nome": "Choró",
+      "populacao": {
+        "total": 12380,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 178989,
+        "valorPerCapitaReais": 13153.22,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2303956",
+      "nome": "Chorozinho",
+      "populacao": {
+        "total": 20763,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 260273,
+        "valorPerCapitaReais": 12830.18,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304004",
+      "nome": "Coreaú",
+      "populacao": {
+        "total": 21438,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 225090,
+        "valorPerCapitaReais": 9643.96,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304103",
+      "nome": "Crateús",
+      "populacao": {
+        "total": 79809,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 952649,
+        "valorPerCapitaReais": 12661.3,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304202",
+      "nome": "Crato",
+      "populacao": {
+        "total": 138232,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1871587,
+        "valorPerCapitaReais": 13976.14,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304236",
+      "nome": "Croatá",
+      "populacao": {
+        "total": 18007,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 224437,
+        "valorPerCapitaReais": 12331.03,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304251",
+      "nome": "Cruz",
+      "populacao": {
+        "total": 31847,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 372681,
+        "valorPerCapitaReais": 14835.44,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304269",
+      "nome": "Deputado Irapuan Pinheiro",
+      "populacao": {
+        "total": 9172,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 100883,
+        "valorPerCapitaReais": 10402.45,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304277",
+      "nome": "Ereré",
+      "populacao": {
+        "total": 6393,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 80690,
+        "valorPerCapitaReais": 11123.52,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304285",
+      "nome": "Eusébio",
+      "populacao": {
+        "total": 80304,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 3577497,
+        "valorPerCapitaReais": 65004.03,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304301",
+      "nome": "Farias Brito",
+      "populacao": {
+        "total": 18557,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 202248,
+        "valorPerCapitaReais": 10462.91,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304350",
+      "nome": "Forquilha",
+      "populacao": {
+        "total": 25127,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 304957,
+        "valorPerCapitaReais": 12356.44,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304400",
+      "nome": "Fortaleza",
+      "populacao": {
+        "total": 2574412,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 73437739,
+        "valorPerCapitaReais": 27165.05,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304459",
+      "nome": "Fortim",
+      "populacao": {
+        "total": 18052,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 312460,
+        "valorPerCapitaReais": 18625.42,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304509",
+      "nome": "Frecheirinha",
+      "populacao": {
+        "total": 16362,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 275921,
+        "valorPerCapitaReais": 19437.9,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304608",
+      "nome": "General Sampaio",
+      "populacao": {
+        "total": 6924,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 86963,
+        "valorPerCapitaReais": 11196.47,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304657",
+      "nome": "Graça",
+      "populacao": {
+        "total": 14174,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 129711,
+        "valorPerCapitaReais": 8998.34,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304707",
+      "nome": "Granja",
+      "populacao": {
+        "total": 55633,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 469407,
+        "valorPerCapitaReais": 8508.37,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304806",
+      "nome": "Granjeiro",
+      "populacao": {
+        "total": 4960,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 51337,
+        "valorPerCapitaReais": 10730.98,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304905",
+      "nome": "Groaíras",
+      "populacao": {
+        "total": 11313,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 110755,
+        "valorPerCapitaReais": 9872.09,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2304954",
+      "nome": "Guaiúba",
+      "populacao": {
+        "total": 25085,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 231993,
+        "valorPerCapitaReais": 8751.81,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305001",
+      "nome": "Guaraciaba do Norte",
+      "populacao": {
+        "total": 44294,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 669209,
+        "valorPerCapitaReais": 16353.68,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305100",
+      "nome": "Guaramiranga",
+      "populacao": {
+        "total": 5819,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 80396,
+        "valorPerCapitaReais": 15847.82,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305209",
+      "nome": "Hidrolândia",
+      "populacao": {
+        "total": 18225,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 185025,
+        "valorPerCapitaReais": 9193.33,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305233",
+      "nome": "Horizonte",
+      "populacao": {
+        "total": 79934,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 2116782,
+        "valorPerCapitaReais": 30375.13,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305266",
+      "nome": "Ibaretama",
+      "populacao": {
+        "total": 12191,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 132265,
+        "valorPerCapitaReais": 9881.58,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305308",
+      "nome": "Ibiapina",
+      "populacao": {
+        "total": 24649,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 348540,
+        "valorPerCapitaReais": 13850.19,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305332",
+      "nome": "Ibicuitinga",
+      "populacao": {
+        "total": 11979,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 124951,
+        "valorPerCapitaReais": 9815.48,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305357",
+      "nome": "Icapuí",
+      "populacao": {
+        "total": 22367,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 411021,
+        "valorPerCapitaReais": 20364.71,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305407",
+      "nome": "Icó",
+      "populacao": {
+        "total": 64802,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 737489,
+        "valorPerCapitaReais": 10797.31,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305506",
+      "nome": "Iguatu",
+      "populacao": {
+        "total": 102251,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1904815,
+        "valorPerCapitaReais": 18380.39,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305605",
+      "nome": "Independência",
+      "populacao": {
+        "total": 24530,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 306809,
+        "valorPerCapitaReais": 11712.06,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305654",
+      "nome": "Ipaporanga",
+      "populacao": {
+        "total": 11937,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 114127,
+        "valorPerCapitaReais": 9841.08,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305704",
+      "nome": "Ipaumirim",
+      "populacao": {
+        "total": 12441,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 143451,
+        "valorPerCapitaReais": 11469.66,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305803",
+      "nome": "Ipu",
+      "populacao": {
+        "total": 42968,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 519845,
+        "valorPerCapitaReais": 12333.8,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2305902",
+      "nome": "Ipueiras",
+      "populacao": {
+        "total": 38285,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 328115,
+        "valorPerCapitaReais": 8620.09,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306009",
+      "nome": "Iracema",
+      "populacao": {
+        "total": 14411,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 195282,
+        "valorPerCapitaReais": 13607.55,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306108",
+      "nome": "Irauçuba",
+      "populacao": {
+        "total": 24751,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 220294,
+        "valorPerCapitaReais": 9009.98,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306207",
+      "nome": "Itaiçaba",
+      "populacao": {
+        "total": 7779,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 82855,
+        "valorPerCapitaReais": 10482.67,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306256",
+      "nome": "Itaitinga",
+      "populacao": {
+        "total": 70679,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1258826,
+        "valorPerCapitaReais": 32560.62,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306306",
+      "nome": "Itapajé",
+      "populacao": {
+        "total": 49086,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 594581,
+        "valorPerCapitaReais": 11124.48,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306405",
+      "nome": "Itapipoca",
+      "populacao": {
+        "total": 137892,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1784007,
+        "valorPerCapitaReais": 13547.33,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306504",
+      "nome": "Itapiúna",
+      "populacao": {
+        "total": 18228,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 170314,
+        "valorPerCapitaReais": 8246.45,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306553",
+      "nome": "Itarema",
+      "populacao": {
+        "total": 45465,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 766786,
+        "valorPerCapitaReais": 18001.78,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306603",
+      "nome": "Itatira",
+      "populacao": {
+        "total": 21087,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 174029,
+        "valorPerCapitaReais": 7903.94,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306702",
+      "nome": "Jaguaretama",
+      "populacao": {
+        "total": 17625,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 226644,
+        "valorPerCapitaReais": 12498.98,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306801",
+      "nome": "Jaguaribara",
+      "populacao": {
+        "total": 10656,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 154002,
+        "valorPerCapitaReais": 13298.96,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2306900",
+      "nome": "Jaguaribe",
+      "populacao": {
+        "total": 35124,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 561175,
+        "valorPerCapitaReais": 16222.68,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307007",
+      "nome": "Jaguaruana",
+      "populacao": {
+        "total": 33070,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 566961,
+        "valorPerCapitaReais": 16694.96,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307106",
+      "nome": "Jardim",
+      "populacao": {
+        "total": 28707,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 294154,
+        "valorPerCapitaReais": 10819.66,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307205",
+      "nome": "Jati",
+      "populacao": {
+        "total": 8100,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 129729,
+        "valorPerCapitaReais": 15917.67,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307254",
+      "nome": "Jijoca de Jericoacoara",
+      "populacao": {
+        "total": 27662,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 551638,
+        "valorPerCapitaReais": 27106.19,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307304",
+      "nome": "Juazeiro do Norte",
+      "populacao": {
+        "total": 303004,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 5114786,
+        "valorPerCapitaReais": 18381.06,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307403",
+      "nome": "Jucás",
+      "populacao": {
+        "total": 24591,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 319373,
+        "valorPerCapitaReais": 12801.03,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307502",
+      "nome": "Lavras da Mangabeira",
+      "populacao": {
+        "total": 32123,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 343304,
+        "valorPerCapitaReais": 10906.85,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307601",
+      "nome": "Limoeiro do Norte",
+      "populacao": {
+        "total": 62285,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1423366,
+        "valorPerCapitaReais": 23631.39,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307635",
+      "nome": "Madalena",
+      "populacao": {
+        "total": 17264,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 174831,
+        "valorPerCapitaReais": 8728.02,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307650",
+      "nome": "Maracanaú",
+      "populacao": {
+        "total": 249684,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 12336717,
+        "valorPerCapitaReais": 53408.94,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307700",
+      "nome": "Maranguape",
+      "populacao": {
+        "total": 108937,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1649528,
+        "valorPerCapitaReais": 12527.08,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307809",
+      "nome": "Marco",
+      "populacao": {
+        "total": 27064,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 390969,
+        "valorPerCapitaReais": 14052.51,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2307908",
+      "nome": "Martinópole",
+      "populacao": {
+        "total": 11232,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 96327,
+        "valorPerCapitaReais": 8444.55,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308005",
+      "nome": "Massapê",
+      "populacao": {
+        "total": 39633,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 378718,
+        "valorPerCapitaReais": 9626.55,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308104",
+      "nome": "Mauriti",
+      "populacao": {
+        "total": 47406,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 517496,
+        "valorPerCapitaReais": 10698.7,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308203",
+      "nome": "Meruoca",
+      "populacao": {
+        "total": 15749,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 129293,
+        "valorPerCapitaReais": 8445.55,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308302",
+      "nome": "Milagres",
+      "populacao": {
+        "total": 26860,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 287223,
+        "valorPerCapitaReais": 10477.62,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308351",
+      "nome": "Milhã",
+      "populacao": {
+        "total": 14635,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 195290,
+        "valorPerCapitaReais": 14874.7,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308377",
+      "nome": "Miraíma",
+      "populacao": {
+        "total": 14736,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 112599,
+        "valorPerCapitaReais": 8062.94,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308401",
+      "nome": "Missão Velha",
+      "populacao": {
+        "total": 38767,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 515937,
+        "valorPerCapitaReais": 14506.47,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308500",
+      "nome": "Mombaça",
+      "populacao": {
+        "total": 38649,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 446847,
+        "valorPerCapitaReais": 10174.81,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308609",
+      "nome": "Monsenhor Tabosa",
+      "populacao": {
+        "total": 17664,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 160699,
+        "valorPerCapitaReais": 9308.33,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308708",
+      "nome": "Morada Nova",
+      "populacao": {
+        "total": 65323,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1276864,
+        "valorPerCapitaReais": 20731.68,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308807",
+      "nome": "Moraújo",
+      "populacao": {
+        "total": 8516,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 75575,
+        "valorPerCapitaReais": 8555.98,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2308906",
+      "nome": "Morrinhos",
+      "populacao": {
+        "total": 23608,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 193204,
+        "valorPerCapitaReais": 8462.72,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309003",
+      "nome": "Mucambo",
+      "populacao": {
+        "total": 14009,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 131292,
+        "valorPerCapitaReais": 9016.69,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309102",
+      "nome": "Mulungu",
+      "populacao": {
+        "total": 10993,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 123801,
+        "valorPerCapitaReais": 11197.63,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309201",
+      "nome": "Nova Olinda",
+      "populacao": {
+        "total": 15960,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 163381,
+        "valorPerCapitaReais": 10341.88,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309300",
+      "nome": "Nova Russas",
+      "populacao": {
+        "total": 32014,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 336930,
+        "valorPerCapitaReais": 10371.23,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309409",
+      "nome": "Novo Oriente",
+      "populacao": {
+        "total": 29043,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 283185,
+        "valorPerCapitaReais": 9854.37,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309458",
+      "nome": "Ocara",
+      "populacao": {
+        "total": 25218,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 284836,
+        "valorPerCapitaReais": 10972.96,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309508",
+      "nome": "Orós",
+      "populacao": {
+        "total": 20019,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 218899,
+        "valorPerCapitaReais": 10256.72,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309607",
+      "nome": "Pacajus",
+      "populacao": {
+        "total": 74825,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1360535,
+        "valorPerCapitaReais": 18349.65,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309706",
+      "nome": "Pacatuba",
+      "populacao": {
+        "total": 85873,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1235176,
+        "valorPerCapitaReais": 14421.71,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309805",
+      "nome": "Pacoti",
+      "populacao": {
+        "total": 11442,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 148366,
+        "valorPerCapitaReais": 12049.54,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2309904",
+      "nome": "Pacujá",
+      "populacao": {
+        "total": 6345,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 59940,
+        "valorPerCapitaReais": 9130.24,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310001",
+      "nome": "Palhano",
+      "populacao": {
+        "total": 9671,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 98773,
+        "valorPerCapitaReais": 10443.33,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310100",
+      "nome": "Palmácia",
+      "populacao": {
+        "total": 10339,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 115124,
+        "valorPerCapitaReais": 8494.36,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310209",
+      "nome": "Paracuru",
+      "populacao": {
+        "total": 41447,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 555931,
+        "valorPerCapitaReais": 15648.57,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310258",
+      "nome": "Paraipaba",
+      "populacao": {
+        "total": 33896,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 535129,
+        "valorPerCapitaReais": 16102.82,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310308",
+      "nome": "Parambu",
+      "populacao": {
+        "total": 32816,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 288689,
+        "valorPerCapitaReais": 9196.55,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310407",
+      "nome": "Paramoti",
+      "populacao": {
+        "total": 10528,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 110908,
+        "valorPerCapitaReais": 9034.54,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310506",
+      "nome": "Pedra Branca",
+      "populacao": {
+        "total": 42257,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 389914,
+        "valorPerCapitaReais": 8992.69,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310605",
+      "nome": "Penaforte",
+      "populacao": {
+        "total": 9308,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 122162,
+        "valorPerCapitaReais": 13268.38,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310704",
+      "nome": "Pentecoste",
+      "populacao": {
+        "total": 39715,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 484760,
+        "valorPerCapitaReais": 12741.75,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310803",
+      "nome": "Pereiro",
+      "populacao": {
+        "total": 15869,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 560571,
+        "valorPerCapitaReais": 34273.11,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310852",
+      "nome": "Pindoretama",
+      "populacao": {
+        "total": 24607,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 274852,
+        "valorPerCapitaReais": 13110.67,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310902",
+      "nome": "Piquet Carneiro",
+      "populacao": {
+        "total": 17202,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 162092,
+        "valorPerCapitaReais": 9418.48,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2310951",
+      "nome": "Pires Ferreira",
+      "populacao": {
+        "total": 10952,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 84230,
+        "valorPerCapitaReais": 7621.25,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311009",
+      "nome": "Poranga",
+      "populacao": {
+        "total": 12423,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 109402,
+        "valorPerCapitaReais": 8852.73,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311108",
+      "nome": "Porteiras",
+      "populacao": {
+        "total": 17745,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 186375,
+        "valorPerCapitaReais": 12491.62,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311207",
+      "nome": "Potengi",
+      "populacao": {
+        "total": 8926,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 110570,
+        "valorPerCapitaReais": 9903.27,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311231",
+      "nome": "Potiretama",
+      "populacao": {
+        "total": 6129,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 96816,
+        "valorPerCapitaReais": 14998.61,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311264",
+      "nome": "Quiterianópolis",
+      "populacao": {
+        "total": 20506,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 184720,
+        "valorPerCapitaReais": 8694.34,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311306",
+      "nome": "Quixadá",
+      "populacao": {
+        "total": 88483,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1109869,
+        "valorPerCapitaReais": 12484.61,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311355",
+      "nome": "Quixelô",
+      "populacao": {
+        "total": 16992,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 198820,
+        "valorPerCapitaReais": 12336.81,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311405",
+      "nome": "Quixeramobim",
+      "populacao": {
+        "total": 85797,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1402461,
+        "valorPerCapitaReais": 17008.8,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311504",
+      "nome": "Quixeré",
+      "populacao": {
+        "total": 21607,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 637015,
+        "valorPerCapitaReais": 28397.6,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311603",
+      "nome": "Redenção",
+      "populacao": {
+        "total": 28359,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 409867,
+        "valorPerCapitaReais": 14018.3,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311702",
+      "nome": "Reriutaba",
+      "populacao": {
+        "total": 19059,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 190710,
+        "valorPerCapitaReais": 10433.28,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311801",
+      "nome": "Russas",
+      "populacao": {
+        "total": 74582,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1158523,
+        "valorPerCapitaReais": 14563.46,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311900",
+      "nome": "Saboeiro",
+      "populacao": {
+        "total": 14036,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 169856,
+        "valorPerCapitaReais": 10779.72,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2311959",
+      "nome": "Salitre",
+      "populacao": {
+        "total": 17220,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 159284,
+        "valorPerCapitaReais": 9529.97,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312007",
+      "nome": "Santana do Acaraú",
+      "populacao": {
+        "total": 32043,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 280072,
+        "valorPerCapitaReais": 8525.52,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312106",
+      "nome": "Santana do Cariri",
+      "populacao": {
+        "total": 17388,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 159277,
+        "valorPerCapitaReais": 8985.5,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312205",
+      "nome": "Santa Quitéria",
+      "populacao": {
+        "total": 41647,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 633710,
+        "valorPerCapitaReais": 14495.07,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312304",
+      "nome": "São Benedito",
+      "populacao": {
+        "total": 49829,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 627180,
+        "valorPerCapitaReais": 12970.59,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312403",
+      "nome": "São Gonçalo do Amarante",
+      "populacao": {
+        "total": 57499,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 8624987,
+        "valorPerCapitaReais": 174927.74,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312502",
+      "nome": "São João do Jaguaribe",
+      "populacao": {
+        "total": 5792,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 107898,
+        "valorPerCapitaReais": 14277.89,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312601",
+      "nome": "São Luís do Curu",
+      "populacao": {
+        "total": 10962,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 133109,
+        "valorPerCapitaReais": 10171.86,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312700",
+      "nome": "Senador Pompeu",
+      "populacao": {
+        "total": 25143,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 352272,
+        "valorPerCapitaReais": 13859.15,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312809",
+      "nome": "Senador Sá",
+      "populacao": {
+        "total": 7519,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 62766,
+        "valorPerCapitaReais": 8090.49,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2312908",
+      "nome": "Sobral",
+      "populacao": {
+        "total": 215286,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 5395130,
+        "valorPerCapitaReais": 25396.38,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313005",
+      "nome": "Solonópole",
+      "populacao": {
+        "total": 18736,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 303284,
+        "valorPerCapitaReais": 16492.69,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313104",
+      "nome": "Tabuleiro do Norte",
+      "populacao": {
+        "total": 32044,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 450593,
+        "valorPerCapitaReais": 14046.35,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313203",
+      "nome": "Tamboril",
+      "populacao": {
+        "total": 25331,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 282247,
+        "valorPerCapitaReais": 10773.2,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313252",
+      "nome": "Tarrafas",
+      "populacao": {
+        "total": 7626,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 85682,
+        "valorPerCapitaReais": 10015.43,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313302",
+      "nome": "Tauá",
+      "populacao": {
+        "total": 64255,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 711836,
+        "valorPerCapitaReais": 12012.29,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313351",
+      "nome": "Tejuçuoca",
+      "populacao": {
+        "total": 17626,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 136988,
+        "valorPerCapitaReais": 7006.7,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313401",
+      "nome": "Tianguá",
+      "populacao": {
+        "total": 86137,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1732690,
+        "valorPerCapitaReais": 22470.08,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313500",
+      "nome": "Trairi",
+      "populacao": {
+        "total": 61516,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 1115144,
+        "valorPerCapitaReais": 19683.76,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313559",
+      "nome": "Tururu",
+      "populacao": {
+        "total": 15457,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 138079,
+        "valorPerCapitaReais": 8324.03,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313609",
+      "nome": "Ubajara",
+      "populacao": {
+        "total": 34312,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 642046,
+        "valorPerCapitaReais": 18190.85,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313708",
+      "nome": "Umari",
+      "populacao": {
+        "total": 6993,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 69441,
+        "valorPerCapitaReais": 8971.71,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313757",
+      "nome": "Umirim",
+      "populacao": {
+        "total": 17804,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 172797,
+        "valorPerCapitaReais": 8650.23,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313807",
+      "nome": "Uruburetama",
+      "populacao": {
+        "total": 21279,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 299474,
+        "valorPerCapitaReais": 13475.86,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313906",
+      "nome": "Uruoca",
+      "populacao": {
+        "total": 14243,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 298207,
+        "valorPerCapitaReais": 21318.77,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2313955",
+      "nome": "Varjota",
+      "populacao": {
+        "total": 18660,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 375819,
+        "valorPerCapitaReais": 20292.6,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2314003",
+      "nome": "Várzea Alegre",
+      "populacao": {
+        "total": 40771,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 468101,
+        "valorPerCapitaReais": 11395.42,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    },
+    {
+      "codarea": "2314102",
+      "nome": "Viçosa do Ceará",
+      "populacao": {
+        "total": 62609,
+        "anoReferencia": 2024,
+        "fonte": "IBGE — Tabela SIDRA 6579"
+      },
+      "pib": {
+        "valorTotalMilReais": 603321,
+        "valorPerCapitaReais": 9744.19,
+        "anoReferencia": 2021,
+        "fonte": "IBGE — Tabela SIDRA 5938"
+      }
+    }
+  ]
+}

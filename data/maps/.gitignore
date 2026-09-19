@@ -1,7 +1,0 @@
-# O dataset territorial é gerado pelo script:
-#   npx tsx scripts/update-territorial-data.ts
-#
-# Ele não é versionado por ser grande (~50 MB) e reproduzível a partir do IBGE.
-# Em produção, distribua via CDN/armazenamento próprio.
-*
-!.gitignore

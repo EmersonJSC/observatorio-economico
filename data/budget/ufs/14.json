@@ -1,0 +1,201 @@
+{
+  "uf": "14",
+  "exercicio": 2023,
+  "municipios": [
+    {
+      "codarea": "1400027",
+      "nome": "Amajari",
+      "exercicio": 2023,
+      "receitaTotal": 54216985.06,
+      "despesaTotal": 42445904.67,
+      "gastosPorArea": {
+        "saude": 10455035.24,
+        "educacao": 17438204.89
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.128Z"
+    },
+    {
+      "codarea": "1400050",
+      "nome": "Alto Alegre",
+      "exercicio": 2023,
+      "receitaTotal": 111846968.01,
+      "despesaTotal": 72695661.15,
+      "gastosPorArea": {
+        "saude": 22545656.08,
+        "educacao": 21190875.4
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.121Z"
+    },
+    {
+      "codarea": "1400100",
+      "nome": "Boa Vista",
+      "exercicio": 2023,
+      "receitaTotal": 2451931489.81,
+      "despesaTotal": 1915942022.81,
+      "gastosPorArea": {
+        "saude": 395091171.93,
+        "educacao": 525197652.64
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.484Z"
+    },
+    {
+      "codarea": "1400159",
+      "nome": "Bonfim",
+      "exercicio": 2023,
+      "receitaTotal": 139925364.46,
+      "despesaTotal": 116279031.46,
+      "gastosPorArea": {
+        "saude": 17008141.48,
+        "educacao": 35162978.47
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.459Z"
+    },
+    {
+      "codarea": "1400175",
+      "nome": "Cantá",
+      "exercicio": 2023,
+      "receitaTotal": 97704969.61,
+      "despesaTotal": 100161160.37,
+      "gastosPorArea": {
+        "saude": 22335136.22,
+        "educacao": 33960236.61
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.823Z"
+    },
+    {
+      "codarea": "1400209",
+      "nome": "Caracaraí",
+      "exercicio": 2023,
+      "receitaTotal": 112744880.29,
+      "despesaTotal": 79634108.47,
+      "gastosPorArea": {
+        "saude": 16133437.08,
+        "educacao": 38281574.95
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:01.811Z"
+    },
+    {
+      "codarea": "1400233",
+      "nome": "Caroebe",
+      "exercicio": 2023,
+      "receitaTotal": 72091968.64,
+      "despesaTotal": 65109632.32,
+      "gastosPorArea": {
+        "saude": 8722176.22,
+        "educacao": 17598309.63
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.163Z"
+    },
+    {
+      "codarea": "1400282",
+      "nome": "Iracema",
+      "exercicio": 2023,
+      "receitaTotal": 122796132.17,
+      "despesaTotal": 102950337.82,
+      "gastosPorArea": {
+        "saude": 18992067.43,
+        "educacao": 16297906.98
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.150Z"
+    },
+    {
+      "codarea": "1400308",
+      "nome": "Mucajaí",
+      "exercicio": 2023,
+      "receitaTotal": 126833752.73,
+      "despesaTotal": 112630579.46,
+      "gastosPorArea": {
+        "saude": 16270118.34,
+        "educacao": 35778478.34
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.503Z"
+    },
+    {
+      "codarea": "1400407",
+      "nome": "Normandia",
+      "exercicio": 2023,
+      "receitaTotal": 84789393.27,
+      "despesaTotal": 84387395.68,
+      "gastosPorArea": {
+        "saude": 15257842.9,
+        "educacao": 40762411.75
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.494Z"
+    },
+    {
+      "codarea": "1400456",
+      "nome": "Pacaraima",
+      "exercicio": 2023,
+      "receitaTotal": 99967417.01,
+      "despesaTotal": 94693644.37,
+      "gastosPorArea": {
+        "saude": 13669315.49,
+        "educacao": 49013495.84
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.859Z"
+    },
+    {
+      "codarea": "1400472",
+      "nome": "Rorainópolis",
+      "exercicio": 2023,
+      "receitaTotal": 137553958.05,
+      "despesaTotal": 137369218.3,
+      "gastosPorArea": {
+        "saude": 32195611.03,
+        "educacao": 62311491.83
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:02.831Z"
+    },
+    {
+      "codarea": "1400506",
+      "nome": "São João da Baliza",
+      "exercicio": 2023,
+      "receitaTotal": 74838929.86,
+      "despesaTotal": 58690533.61,
+      "gastosPorArea": {
+        "saude": 7750527.2,
+        "educacao": 18999924.76
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:03.201Z"
+    },
+    {
+      "codarea": "1400605",
+      "nome": "São Luiz do Anauá",
+      "exercicio": 2023,
+      "receitaTotal": 118249430.5,
+      "despesaTotal": 91298164.19,
+      "gastosPorArea": {
+        "saude": 8110239.53,
+        "educacao": 14845807.96
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:03.185Z"
+    },
+    {
+      "codarea": "1400704",
+      "nome": "Uiramutã",
+      "exercicio": 2023,
+      "receitaTotal": 70323587.25,
+      "despesaTotal": 54641668.43,
+      "gastosPorArea": {
+        "saude": 10410823.42,
+        "educacao": 22026732.12
+      },
+      "fonte": "Secretaria do Tesouro Nacional — Siconfi (DCA)",
+      "atualizadoEm": "2026-09-19T00:50:03.539Z"
+    }
+  ]
+}

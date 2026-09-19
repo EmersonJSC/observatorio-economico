@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "build": "npm run build:api && npm run build:web",
+    "build": "npm run build:api && npm run build:site",
     "build:api": "npm --prefix apps/api run build",
     "build:web": "npm --prefix apps/web run build",
     "build:site": "npx tsx scripts/build-site.ts",

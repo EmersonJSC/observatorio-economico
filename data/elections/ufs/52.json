@@ -37110,6 +37110,122 @@
         "situacaoEleicao": "ELEITO",
         "sqCandidato": "90002315136"
       }
+    },
+    {
+      "codareaIbge": "5200852",
+      "codigoTse": "96610",
+      "nomeMunicipio": "AMERICANO DO BRASIL",
+      "uf": "GO",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "MAURILIO ANIBAL",
+          "nomeCompleto": "MAURILIO DA SILVA SANTOS",
+          "partido": "MDB",
+          "numeroCandidato": 15123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002242509"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BOZÓ",
+          "nomeCompleto": "LUISMAR DE SOUZA",
+          "partido": "MDB",
+          "numeroCandidato": 15555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "90002242505"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "LARICY OLIVEIRA",
+          "nomeCompleto": "LARICY DAYANE FERNANDES OLIVEIRA",
+          "partido": "PODE",
+          "numeroCandidato": 20000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002276586"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "NILTINHO CAETANO",
+          "nomeCompleto": "NILTON AUGUSTO DOS REIS",
+          "partido": "PODE",
+          "numeroCandidato": 20222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002276591"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "MARÍZA LEMES",
+          "nomeCompleto": "MARÍZIA APARECIDA NEPOMUCENO LEMES DOS SANTOS BORGES",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002282092"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JOÃO PEDRO VIRLINO",
+          "nomeCompleto": "JOÃO PEDRO SILVA E SOUZA",
+          "partido": "PSDB",
+          "numeroCandidato": 45222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002154709"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "DELEIÃO",
+          "nomeCompleto": "VANDERLEY SEBASTIÃO VIEIRA DE ALMEIDA",
+          "partido": "PSDB",
+          "numeroCandidato": 45789,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "90002154707"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "CESAR MARCOS",
+          "nomeCompleto": "CESAR MARCOS CARDOSO",
+          "partido": "SOLIDARIEDADE",
+          "numeroCandidato": 77123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "90002300181"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "TCHÊ",
+          "nomeCompleto": "JOÃO CHAGAS DE RAMOS FILHO",
+          "partido": "SOLIDARIEDADE",
+          "numeroCandidato": 77777,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "90002300180"
+        }
+      ]
     }
   ]
 }

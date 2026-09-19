@@ -1,0 +1,142 @@
+{
+  "versao": 1,
+  "geradoEm": "2026-09-19T09:47:23.141Z",
+  "chaveTerritorial": "codarea IBGE (7 dígitos para municípios; 2 para UFs)",
+  "catalogoIndicadores": {
+    "populacao_2024": {
+      "id": "populacao_2024",
+      "nome": "População Residente Estimada",
+      "descricao": "População estimada pelo IBGE com base nas projeções demográficas e censo.",
+      "tipo": "fonte",
+      "unidade": "pessoas",
+      "periodo": 2024,
+      "fonte": "IBGE · SIDRA Tabela 6579 (Variável 9324)",
+      "cobertura": "5.570 municípios (Boa Esperança do Norte não constava na estimativa 2024)"
+    },
+    "pib_2021_reais": {
+      "id": "pib_2021_reais",
+      "nome": "Produto Interno Bruto a preços correntes",
+      "descricao": "Soma de todos os bens e serviços finais produzidos pelo município no ano.",
+      "tipo": "fonte",
+      "unidade": "R$",
+      "unidadeOriginalFonte": "mil R$",
+      "conversao": "valorEmMilReais * 1000",
+      "periodo": 2021,
+      "fonte": "IBGE · SIDRA Tabela 5938 (Variável 37)",
+      "cobertura": "5.570 municípios (último ano consolidado para municípios pelo IBGE)"
+    },
+    "pib_per_capita_2021": {
+      "id": "pib_per_capita_2021",
+      "nome": "PIB por habitante",
+      "descricao": "Riqueza econômica gerada no município por habitante residente.",
+      "tipo": "derivado",
+      "unidade": "R$/habitante",
+      "periodo": 2021,
+      "formula": "(pib_2021_reais / populacao_2021)",
+      "componentes": [
+        "pib_2021_reais (Tabela 5938)",
+        "populacao_2021 (Tabela 6579 / Var 9324)"
+      ],
+      "fontes": [
+        "IBGE SIDRA 5938",
+        "IBGE SIDRA 6579"
+      ],
+      "observacoesMetodologicas": "Calculado exclusivamente com a população de 2021 para garantir estrita paridade temporal."
+    },
+    "receita_2023_reais": {
+      "id": "receita_2023_reais",
+      "nome": "Receita Orçamentária Realizada",
+      "descricao": "Arrecadação total do município no exercício fiscal, incluindo receitas correntes e de capital.",
+      "tipo": "fonte",
+      "unidade": "R$",
+      "periodo": 2023,
+      "fonte": "Secretaria do Tesouro Nacional · Siconfi (DCA)",
+      "cobertura": "5.558 municípios (10 inadimplentes, DF e Fernando de Noronha sem DCA municipal, Boa Esperança do Norte instalada em 2024)"
+    },
+    "despesa_2023_reais": {
+      "id": "despesa_2023_reais",
+      "nome": "Despesa Orçamentária Liquidada",
+      "descricao": "Total de recursos executados e liquidados pelo poder público municipal no exercício.",
+      "tipo": "fonte",
+      "unidade": "R$",
+      "periodo": 2023,
+      "fonte": "Secretaria do Tesouro Nacional · Siconfi (DCA)",
+      "cobertura": "5.558 municípios"
+    },
+    "saude_2023_reais": {
+      "id": "saude_2023_reais",
+      "nome": "Gastos em Saúde (Função 10)",
+      "descricao": "Despesas públicas liquidadas na função orçamentária Saúde.",
+      "tipo": "fonte",
+      "unidade": "R$",
+      "periodo": 2023,
+      "fonte": "Secretaria do Tesouro Nacional · Siconfi (DCA)"
+    },
+    "educacao_2023_reais": {
+      "id": "educacao_2023_reais",
+      "nome": "Gastos em Educação (Função 12)",
+      "descricao": "Despesas públicas liquidadas na função orçamentária Educação.",
+      "tipo": "fonte",
+      "unidade": "R$",
+      "periodo": 2023,
+      "fonte": "Secretaria do Tesouro Nacional · Siconfi (DCA)"
+    },
+    "densidade_2024": {
+      "id": "densidade_2024",
+      "nome": "Densidade Demográfica",
+      "descricao": "Relação entre a população residente estimada e a área territorial do município.",
+      "tipo": "derivado",
+      "unidade": "hab/km²",
+      "periodo": 2024,
+      "formula": "populacao_2024 / areaKm2",
+      "componentes": [
+        "populacao_2024",
+        "areaKm2 (calculada a partir da malha cartográfica oficial do IBGE)"
+      ]
+    },
+    "receita_per_capita_2023": {
+      "id": "receita_per_capita_2023",
+      "nome": "Receita por habitante",
+      "tipo": "derivado",
+      "unidade": "R$/habitante",
+      "periodo": 2023,
+      "status": "bloqueado",
+      "limitacoes": "Indisponível: receita do exercício 2023 e população de referência 2023 não estão disponíveis."
+    },
+    "despesa_per_capita_2023": {
+      "id": "despesa_per_capita_2023",
+      "nome": "Despesa por habitante",
+      "tipo": "derivado",
+      "unidade": "R$/habitante",
+      "periodo": 2023,
+      "status": "bloqueado",
+      "limitacoes": "Indisponível: despesa do exercício 2023 e população de referência 2023 não estão disponíveis."
+    }
+  },
+  "relatorio": {
+    "municipiosProcessados": 5571,
+    "codigosIbgeDuplicados": [],
+    "cobertura": {
+      "populacao": 5570,
+      "pib": 5570,
+      "orcamento": 5558,
+      "eleicoes": 5568
+    },
+    "derivados": {
+      "pib_per_capita_2021": 5570,
+      "densidade_2024": 5570,
+      "receita_per_capita_2023": 0,
+      "despesa_per_capita_2023": 0,
+      "saude_per_capita_2023": 0,
+      "educacao_per_capita_2023": 0
+    },
+    "ausentesEmOrcamento": 13,
+    "ausentesEmEleicoes": 3,
+    "bloqueiosTemporais": [
+      "receita_per_capita_2023: Bloqueado. Receita do exercício 2023 e população de referência 2023 não disponíveis.",
+      "despesa_per_capita_2023: Bloqueado. Despesa do exercício 2023 e população de referência 2023 não disponíveis.",
+      "saude_per_capita_2023: Bloqueado. Saúde do exercício 2023 e população de referência 2023 não disponíveis.",
+      "educacao_per_capita_2023: Bloqueado. Educação do exercício 2023 e população de referência 2023 não disponíveis."
+    ]
+  }
+}

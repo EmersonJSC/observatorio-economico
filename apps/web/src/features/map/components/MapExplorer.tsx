@@ -17,8 +17,13 @@ import type { LinhaRanking, NivelRanking } from '../../ranking/rankingApi'
 import { corPartido, corPartidoRgb } from '../../elections/coresPartidos'
 import { buscarComposicao } from '../../elections/electionsApi'
 import type { Composicao, ComposicaoTerritorio } from '../../elections/electionsApi'
-import { buscarPontosPib } from '../../indicators/indicatorsApi'
-import type { PontoPib } from '../../indicators/indicatorsApi'
+import { getPontosExplorer } from '../../explorer/explorerApi'
+import type { PontoExplorer } from '../../explorer/explorerApi'
+import {
+  CATEGORIAS, LENTES, corSequencial, dominioPercentil, lentePorId,
+  normalizar, valorDoEstado, valorDoPonto,
+} from '../lentes'
+import type { CategoriaLente, Lente } from '../lentes'
 import './map-explorer.css'
 
 const CAMERA: MapViewState = { longitude: -55, latitude: -15, zoom: 4, pitch: 0, bearing: 0 }
@@ -33,39 +38,17 @@ const COLOR = {
 }
 type Rgba = [number, number, number, number]
 
-/** Escala de cor sequencial para o PIB (do menor para o maior). */
-const ESCALA_PIB: [number, number, number][] = [
-  [26, 52, 78], [32, 74, 102], [34, 98, 120], [40, 124, 134],
-  [56, 150, 138], [90, 174, 128], [136, 194, 110], [190, 208, 90],
-  [234, 212, 72], [255, 204, 58],
-]
-/** Raio inicial de cada hexágono, em metros. */
-const RAIO_PADRAO = 500
-/** Raios oferecidos no painel — o ideal depende do zoom em que se está olhando. */
-const RAIOS_HEXAGONO = [500, 2000, 10000, 25000]
 /**
- * Quanto do raio o hexágono DESENHADO ocupa. Em 1 ele encosta no vizinho; abaixo
- * disso sobra vão, mas o hexágono fica proporcionalmente menor na tela — em 0,1
- * ele desenha 10x menor que a área que realmente agrega.
+ * Constantes de renderização do HexagonLayer. O raio inicial é 25000 m porque,
+ * com ~5.570 pontos, raios pequenos fazem o mapa sumir: cada hexágono passa a
+ * conter um único município e o desenho encolhe abaixo de um pixel.
  */
-const COBERTURAS_HEXAGONO = [0.1, 0.4, 0.7, 1]
-const COBERTURA_PADRAO = 0.1
-
-/** Temas disponíveis na camada de informação. */
-type TemaId = 'pib'
-
-/**
- * Cada tema é um "submenu" da camada de informação. Hoje só existe o PIB.
- * Para acrescentar outro (educação, saúde, saneamento…): inclua a entrada aqui
- * e aponte a fonte de dados correspondente em `buscarPontosDoTema`.
- */
-const TEMAS: Array<{ id: TemaId; rotulo: string; ajuda: string }> = [
-  {
-    id: 'pib',
-    rotulo: 'PIB',
-    ajuda: 'Soma o PIB dos municípios que caem dentro de cada hexágono.',
-  },
-]
+const RAIO_PADRAO = 25000
+/** Raios oferecidos no painel. */
+const RAIOS_HEXAGONO = [25000, 100000, 250000]
+/** Quanto do raio o hexágono DESENHADO ocupa (1 = encosta no vizinho). */
+const COBERTURA_PADRAO = 1
+const COBERTURAS_HEXAGONO = [0.7, 0.85, 1]
 
 type Camada = 'nenhuma' | 'forca' | 'informacao'
 interface Hover { x:number; y:number; data:DadosTerritoriais; capital:boolean }
@@ -94,14 +77,9 @@ function centroDaFeature(feature: unknown): [number, number] | null {
 }
 
 /**
- * Valor de um hexágono: soma do PIB dos municípios daquela área (em Mil Reais).
- * A distribuição é muito desigual, então o HexagonLayer corta os extremos por
- * percentil — sem isso, poucas colunas gigantes esconderiam todo o resto.
+ * Converte uma cor RGB em RGBA sem depender de transparência herdada da camada.
  */
-const somaPib = (pontos: PontoPib[]) => pontos.reduce((s, p) => s + (p.pib ?? 0), 0)
-
-/** Faixa de cor do azul (menor) ao amarelo (maior). */
-const CORES_PIB: [number, number, number][] = ESCALA_PIB
+const comAlpha = (cor: [number, number, number], alpha = 225): Rgba => [...cor, alpha]
 
 export default function MapExplorer() {
   const [states, setStates] = useState<FeatureTerritorial[]>([])
@@ -114,24 +92,24 @@ export default function MapExplorer() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [politicopediaAberta, setPoliticopediaAberta] = useState(false)
   const [rankingAberto, setRankingAberto] = useState(false)
-  // Camadas analíticas: nenhuma | força política (cadeiras) | informação (dados por área)
+  // Camadas analíticas: nenhuma | política | uma lente de dados públicos.
   const [camada, setCamada] = useState<Camada>('nenhuma')
+  const [lenteId, setLenteId] = useState('pib')
+  const [categoriaLente, setCategoriaLente] = useState<CategoriaLente>('economia')
   const [partidoSelecionado, setPartidoSelecionado] = useState<string | null>(null)
   const [composicao, setComposicao] = useState<Composicao | null>(null)
-  const [pontosInformacao, setPontosInformacao] = useState<PontoPib[]>([])
+  const [pontosInformacao, setPontosInformacao] = useState<PontoExplorer[]>([])
   const [carregandoInformacao, setCarregandoInformacao] = useState(false)
-
-  // Controles da camada de informação: submenu de tema + escala
-  const [tema, setTema] = useState<TemaId>('pib')
   const [raioHexagono, setRaioHexagono] = useState(RAIO_PADRAO)
   const [coberturaHexagono, setCoberturaHexagono] = useState(COBERTURA_PADRAO)
-  const [percentilInferior, setPercentilInferior] = useState(10)
-  const [percentilSuperior, setPercentilSuperior] = useState(92)
-
-  const temaAtual = TEMAS.find((t) => t.id === tema) ?? TEMAS[0]
+  const [percentilInferior, setPercentilInferior] = useState(0)
+  const [percentilSuperior, setPercentilSuperior] = useState(95)
 
   const modoForca = camada === 'forca'
   const modoInformacao = camada === 'informacao'
+  const lente: Lente = lentePorId(lenteId) ?? LENTES[0]
+  const lentesDaCategoria = LENTES.filter((item) => item.categoria === categoriaLente)
+  const categoriasInformacao = CATEGORIAS.filter((item) => item.id !== 'politica')
 
   // Malhas territoriais lidas direto dos arquivos estáticos
   useEffect(() => {
@@ -156,12 +134,12 @@ export default function MapExplorer() {
     return () => { ativo = false }
   }, [modoForca, state])
 
-  // Pontos de PIB (todos os municípios) — carregados uma única vez
+  // Pontos com todos os indicadores — carregados uma única vez para as lentes.
   useEffect(() => {
     if (!modoInformacao || pontosInformacao.length > 0) return
     let ativo = true
     setCarregandoInformacao(true)
-    buscarPontosPib()
+    getPontosExplorer()
       .then((pontos) => { if (ativo) setPontosInformacao(pontos) })
       .finally(() => { if (ativo) setCarregandoInformacao(false) })
     return () => { ativo = false }
@@ -258,30 +236,87 @@ export default function MapExplorer() {
   const searchable = [...states.map(f => extrairDadosTerritoriais(f, 'estado')), ...cities.map(f => extrairDadosTerritoriais(f, 'municipio'))]
   const results = search.trim() ? searchable.filter(item => item.nome.toLocaleLowerCase('pt-BR').includes(search.toLocaleLowerCase('pt-BR'))).slice(0, 7) : []
 
-  const layers = useMemo<Layer[]>(() => {
-    // Camada de informação: hexágonos agregando o dado do tema escolhido
-    if (modoInformacao) {
-      const hexagonos = new HexagonLayer<PontoPib>({
-        id: 'informacao-hexagonos',
-        data: pontosInformacao,
-        getPosition: (d: PontoPib) => [d.lng, d.lat],
-        radius: raioHexagono,
-        coverage: coberturaHexagono,
-        extruded: true,
-        elevationScale: 4500,
-        lowerPercentile: percentilInferior,
-        upperPercentile: percentilSuperior,
-        colorRange: CORES_PIB,
-        opacity: 0.82,
-        getColorValue: somaPib,
-        getElevationValue: somaPib,
-        pickable: false,
-      })
+  const siglaEstadoSelecionado = state
+    ? String(states.find((feature) => extrairCodigo(feature) === state.codigo)?.properties?.sigla ?? '')
+    : ''
+  const pontosNoEscopo = useMemo(
+    () => siglaEstadoSelecionado ? pontosInformacao.filter((ponto) => ponto.uf === siglaEstadoSelecionado) : pontosInformacao,
+    [pontosInformacao, siglaEstadoSelecionado],
+  )
+  const pontosComValor = useMemo(() => {
+    if (!lente.campo) return []
+    return pontosNoEscopo.filter((ponto) => valorDoPonto(ponto, lente.campo!) !== null)
+  }, [pontosNoEscopo, lente])
+  const dominioDaLente = useMemo(() => {
+    if (!lente.campo) return null
+    return dominioPercentil(
+      pontosComValor.map((ponto) => valorDoPonto(ponto, lente.campo!)).filter((valor): valor is number => valor !== null),
+      percentilInferior,
+      percentilSuperior,
+    )
+  }, [pontosComValor, lente, percentilInferior, percentilSuperior])
+  const pontosPorCodigo = useMemo(() => new Map(pontosInformacao.map((ponto) => [ponto.codarea, ponto])), [pontosInformacao])
 
-      const lista: Layer[] = [hexagonos]
+  const layers = useMemo<Layer[]>(() => {
+    // Lentes numéricas: totais viram hexágonos; taxas viram cor nos territórios.
+    if (modoInformacao) {
+      const lista: Layer[] = []
+      const campo = lente.campo
+
+      if (campo && lente.tipo === 'agregacao') {
+        lista.push(new HexagonLayer<PontoExplorer>({
+          id: `informacao-hexagonos-${lente.id}`,
+          data: pontosComValor,
+          getPosition: (ponto) => [ponto.lng, ponto.lat],
+          radius: raioHexagono,
+          coverage: coberturaHexagono,
+          extruded: true,
+          elevationScale: 4500,
+          lowerPercentile: percentilInferior,
+          upperPercentile: percentilSuperior,
+          colorRange: [
+            [26, 52, 78], [32, 74, 102], [34, 98, 120], [40, 124, 134], [56, 150, 138],
+            [90, 174, 128], [136, 194, 110], [190, 208, 90], [234, 212, 72], [255, 204, 58],
+          ],
+          opacity: 0.82,
+          getColorValue: (grupo) => grupo.reduce((soma, ponto) => soma + (valorDoPonto(ponto, campo) ?? 0), 0),
+          getElevationValue: (grupo) => grupo.reduce((soma, ponto) => soma + (valorDoPonto(ponto, campo) ?? 0), 0),
+          pickable: false,
+        }))
+      }
+
+      if (campo && lente.tipo === 'coropletico') {
+        const corDoValor = (valor: number | null): Rgba => {
+          return valor === null ? COLOR.semDados : comAlpha(corSequencial(normalizar(valor, dominioDaLente)))
+        }
+
+        if (state) {
+          lista.push(new GeoJsonLayer({
+            id: `informacao-municipios-${lente.id}`, data: cities as never, pickable: true, filled: true, stroked: true,
+            lineWidthMinPixels: 0.7, getLineColor: [206, 232, 244, 125],
+            getFillColor: (feature) => {
+              const ponto = pontosPorCodigo.get(extrairCodigo(feature))
+              return corDoValor(ponto ? valorDoPonto(ponto, campo) : null)
+            },
+            onClick: selectCity, onHover: (info) => onHover(info, 'municipio'),
+            updateTriggers: { getFillColor: [pontosPorCodigo, dominioDaLente, lente.id] },
+          }))
+        } else {
+          lista.push(new GeoJsonLayer({
+            id: `informacao-estados-${lente.id}`, data: states as never, pickable: true, filled: true, stroked: true,
+            lineWidthMinPixels: 1.2, getLineColor: [206, 232, 244, 145],
+            getFillColor: (feature) => {
+              const sigla = String((feature as FeatureTerritorial).properties?.sigla ?? '')
+              return corDoValor(valorDoEstado(pontosInformacao.filter((ponto) => ponto.uf === sigla), campo))
+            },
+            onClick: selectState, onHover: (info) => onHover(info, 'estado'),
+            updateTriggers: { getFillColor: [pontosInformacao, dominioDaLente, lente.id] },
+          }))
+        }
+      }
 
       // Limites dos municípios da UF selecionada — dá a referência geográfica
-      if (state) {
+      if (state && lente.tipo === 'agregacao') {
         lista.push(new GeoJsonLayer({
           id: 'contorno-municipios', data: cities as never, pickable: false, filled: false, stroked: true,
           lineWidthMinPixels: 0.6, getLineColor: [226, 243, 255, 140],
@@ -289,7 +324,7 @@ export default function MapExplorer() {
       }
 
       // Estados: preenchimento transparente (permite clicar) com contorno visível
-      lista.push(new GeoJsonLayer({
+      if (lente.tipo === 'agregacao') lista.push(new GeoJsonLayer({
         id: 'contorno-estados', data: states as never, pickable: true, filled: true, stroked: true,
         getFillColor: [0, 0, 0, 0],
         lineWidthMinPixels: 1.8,
@@ -331,7 +366,7 @@ export default function MapExplorer() {
       updateTriggers:{ getFillColor:[territory,hover,modoForca,partidoSelecionado,mapaComposicao] },
     }) : null
     return cityLayer ? [stateLayer,cityLayer] : [stateLayer]
-  }, [states,cities,state,territory,hover,selectState,selectCity,onHover,modoForca,modoInformacao,pontosInformacao,partidoSelecionado,mapaComposicao,corForca,raioHexagono,coberturaHexagono,percentilInferior,percentilSuperior])
+  }, [states,cities,state,territory,hover,selectState,selectCity,onHover,modoForca,modoInformacao,pontosInformacao,pontosComValor,pontosPorCodigo,dominioDaLente,lente,partidoSelecionado,mapaComposicao,corForca,raioHexagono,coberturaHexagono,percentilInferior,percentilSuperior])
 
   const breadcrumb = territory?.nivel === 'municipio' ? ['Brasil', state?.nome ?? '', territory.nome] : state ? ['Brasil', state.nome] : ['Brasil']
   const escopoForca = state ? `câmaras municipais · ${state.nome}` : 'Câmara dos Deputados'
@@ -365,66 +400,73 @@ export default function MapExplorer() {
 
     {modoInformacao && <div className="camada-painel">
       <div className="camada-cabecalho">
-        <span>INFORMAÇÃO POR ÁREA<InfoExplicacao chave="hexagonosPib" pequeno /></span>
-        <small>cada hexágono soma o dado dos municípios da sua área</small>
+        <span>INFORMAÇÃO<InfoExplicacao chave={lente.explicacao ?? 'hexagonosPib'} pequeno /></span>
+        <small>{state ? `${state.nome} · recorte estadual` : 'Brasil inteiro'}</small>
       </div>
 
-      {/* Submenu de temas. Hoje só o PIB — educação e outros entram aqui. */}
-      <div className="tema-lista" role="group" aria-label="O que mostrar no mapa">
-        {TEMAS.map((t) => (
-          <button key={t.id} className={tema === t.id ? 'ativo' : ''} onClick={() => setTema(t.id)}>{t.rotulo}</button>
+      <div className="tema-lista" role="group" aria-label="Categoria da informação">
+        {categoriasInformacao.map((categoria) => (
+          <button key={categoria.id} className={categoriaLente === categoria.id ? 'ativo' : ''} onClick={() => {
+            setCategoriaLente(categoria.id)
+            const primeiraLente = LENTES.find((item) => item.categoria === categoria.id)
+            if (primeiraLente) setLenteId(primeiraLente.id)
+          }}>{categoria.rotulo}</button>
         ))}
       </div>
-      <p className="camada-ajuda">{temaAtual.ajuda}</p>
+      <div className="tema-lista" role="group" aria-label="Indicador no mapa">
+        {lentesDaCategoria.map((item) => (
+          <button key={item.id} className={lente.id === item.id ? 'ativo' : ''} onClick={() => setLenteId(item.id)}>{item.rotulo}</button>
+        ))}
+      </div>
+      <p className="camada-ajuda">{lente.ajuda} Fonte: {lente.fonte}.</p>
 
       {carregandoInformacao
         ? <p className="camada-vazio">Carregando os municípios…</p>
-        : pontosInformacao.length === 0
-          ? <p className="camada-vazio">Sem dados. Rode: npx tsx scripts/update-centroides.ts</p>
+        : pontosComValor.length === 0
+          ? <p className="camada-vazio">Não há dados disponíveis para este indicador e recorte.</p>
           : <>
-              <div className="escala-pib">{ESCALA_PIB.map((c, i) => <span key={i} style={{ background: `rgb(${c[0]},${c[1]},${c[2]})` }} />)}</div>
+              <div className="escala-pib">{Array.from({ length: 10 }, (_, i) => {
+                const cor = corSequencial(i / 9)
+                return <span key={i} style={{ background: `rgb(${cor[0]},${cor[1]},${cor[2]})` }} />
+              })}</div>
               <div className="escala-rotulos"><small>menor</small><small>maior</small></div>
 
-              <label className="camada-controle">
-                <span>Raio do hexágono</span>
-                <select value={raioHexagono} onChange={(e) => setRaioHexagono(Number(e.target.value))}>
-                  {RAIOS_HEXAGONO.map((r) => (
-                    <option key={r} value={r}>{r >= 1000 ? `${r / 1000} km` : `${r} m`}</option>
-                  ))}
-                </select>
-              </label>
+              {lente.tipo === 'agregacao' && <>
+                <label className="camada-controle">
+                  <span>Raio da área</span>
+                  <select value={raioHexagono} onChange={(e) => setRaioHexagono(Number(e.target.value))}>
+                    {RAIOS_HEXAGONO.map((r) => <option key={r} value={r}>{r / 1000} km</option>)}
+                  </select>
+                </label>
+                <label className="camada-controle">
+                  <span>Tamanho desenhado <b>{(coberturaHexagono * 100).toFixed(0)}%</b></span>
+                  <select value={coberturaHexagono} onChange={(e) => setCoberturaHexagono(Number(e.target.value))}>
+                    {COBERTURAS_HEXAGONO.map((c) => <option key={c} value={c}>{(c * 100).toFixed(0)}% do raio</option>)}
+                  </select>
+                </label>
+              </>}
 
               <label className="camada-controle">
-                <span>Tamanho desenhado <b>{(coberturaHexagono * 100).toFixed(0)}%</b></span>
-                <select value={coberturaHexagono} onChange={(e) => setCoberturaHexagono(Number(e.target.value))}>
-                  {COBERTURAS_HEXAGONO.map((c) => (
-                    <option key={c} value={c}>{(c * 100).toFixed(0)}% do raio</option>
-                  ))}
-                </select>
-              </label>
-
-              {/* O corte existe porque o PIB é muito desigual: sem ele, poucas
-                  colunas gigantes achatam todas as outras. */}
-              <label className="camada-controle">
-                <span>Corte superior <b>{percentilSuperior}%</b></span>
+                <span>Limite superior da escala <b>{percentilSuperior}%</b></span>
                 <input type="range" min={50} max={100} value={percentilSuperior}
                   onChange={(e) => setPercentilSuperior(Math.max(Number(e.target.value), percentilInferior + 1))} />
               </label>
 
               <label className="camada-controle">
-                <span>Corte inferior <b>{percentilInferior}%</b></span>
+                <span>Limite inferior da escala <b>{percentilInferior}%</b></span>
                 <input type="range" min={0} max={50} value={percentilInferior}
                   onChange={(e) => setPercentilInferior(Math.min(Number(e.target.value), percentilSuperior - 1))} />
               </label>
 
               <p className="camada-nota">
-                O corte descarta os extremos da escala. Cortar demais achata as diferenças;
-                cortar de menos deixa meia dúzia de colunas esconder o resto.
+                {lente.tipo === 'agregacao'
+                  ? 'Totais são somados por área. A altura e a cor mostram a escala do conjunto de municípios.'
+                  : 'Taxas e valores por habitante são pintados em cada território, sem somá-los.'}
               </p>
 
               <p className="camada-vazio">
-                {pontosInformacao.length.toLocaleString('pt-BR')} municípios · hexágono de{' '}
-                {raioHexagono >= 1000 ? `${raioHexagono / 1000} km` : `${raioHexagono} m`}
+                {pontosComValor.length.toLocaleString('pt-BR')} municípios com dados
+                {lente.tipo === 'agregacao' ? ` · áreas de ${raioHexagono / 1000} km` : ''}
               </p>
             </>}
     </div>}

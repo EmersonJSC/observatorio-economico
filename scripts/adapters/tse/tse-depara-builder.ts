@@ -73,6 +73,26 @@ function normalizarNome(nome: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// Dicionário de Exceções Conhecidas (TSE ↔ IBGE)
+// ---------------------------------------------------------------------------
+
+/**
+ * Dicionário auditável de exceções conhecidas onde a grafia oficial do TSE
+ * diverge historicamente do IBGE, ou onde o TSE utiliza nome alternativo/antigo.
+ * Chave: `${siglaUF}:${codigoTsePad5}`
+ */
+export const EXCECOES_CONHECIDAS: Record<string, { codareaIbge: string; nomeIbge: string; motivo: string }> = {
+  'RN:17035': { codareaIbge: '2405306', nomeIbge: 'Januário Cicco', motivo: 'TSE utiliza denominação alternativa oficial Boa Saúde' },
+  'RR:03158': { codareaIbge: '1400605', nomeIbge: 'São Luiz do Anauá', motivo: 'TSE suprime o sufixo territorial do Anauá' },
+  'MG:53031': { codareaIbge: '3165206', nomeIbge: 'São Tomé das Letras', motivo: 'TSE preserva grafia arcaica com TH (São Thomé)' },
+  'MG:44571': { codareaIbge: '3122900', nomeIbge: 'Dona Euzébia', motivo: 'Divergência ortográfica S vs Z (Dona Eusébia no TSE)' },
+  'RO:00256': { codareaIbge: '1100098', nomeIbge: "Espigão D'Oeste", motivo: 'TSE utiliza preposição DO em vez de apóstrofo' },
+  'RO:00337': { codareaIbge: '1100346', nomeIbge: "Alvorada D'Oeste", motivo: 'TSE utiliza preposição DO em vez de apóstrofo' },
+  'SP:71013': { codareaIbge: '3550001', nomeIbge: 'São Luiz do Paraitinga', motivo: 'Divergência ortográfica S vs Z (São Luís no TSE)' },
+  'GO:93998': { codareaIbge: '5210208', nomeIbge: 'Iporá', motivo: 'Código cadastral do TSE para Iporá' },
+}
+
+// ---------------------------------------------------------------------------
 // Builder
 // ---------------------------------------------------------------------------
 
@@ -137,8 +157,26 @@ export class TseDeParaBuilder {
         ibgePorNome.set(normalizarNome(mun.nome), { codarea, nome: mun.nome })
       }
 
+
       let matchesUf = 0
       for (const munTse of municipiosTseUf) {
+        const codigoPad = munTse.codigoUeTse.padStart(5, '0')
+        const chaveExcecao = `${uf}:${codigoPad}`
+
+        // Verificação 0: Exceção auditada conhecida
+        if (EXCECOES_CONHECIDAS[chaveExcecao]) {
+          const exc = EXCECOES_CONHECIDAS[chaveExcecao]
+          mapeados.push({
+            codigoTse: codigoPad,
+            codareaIbge: exc.codareaIbge,
+            nome: munTse.nomeMunicipioTse,
+            nomeIbge: exc.nomeIbge,
+            uf,
+          })
+          matchesUf++
+          continue
+        }
+
         const nomeNorm = normalizarNome(munTse.nomeMunicipioTse)
 
         // Tentativa 1: match exato
@@ -161,7 +199,7 @@ export class TseDeParaBuilder {
 
         if (ibge) {
           mapeados.push({
-            codigoTse: munTse.codigoUeTse,
+            codigoTse: codigoPad,
             codareaIbge: ibge.codarea,
             nome: munTse.nomeMunicipioTse,
             nomeIbge: ibge.nome,
@@ -170,7 +208,7 @@ export class TseDeParaBuilder {
           matchesUf++
         } else {
           semMatch.push({
-            codigoTse: munTse.codigoUeTse,
+            codigoTse: codigoPad,
             nomeTse: munTse.nomeMunicipioTse,
             uf,
           })

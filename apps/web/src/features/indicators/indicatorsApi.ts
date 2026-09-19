@@ -34,15 +34,25 @@ interface ArquivoUf {
   municipios: IndicadorLocalidade[]
 }
 
-/** Município com PIB e coordenadas — base da camada de hexágonos. */
-export interface PontoPib {
+/** Município com coordenadas e todas as métricas — base da camada de informação. */
+export interface PontoMapa {
   codarea: string
   nome: string
+  /** Sigla da UF (ex.: "SP"). */
+  uf: string
   lng: number
   lat: number
   pib: number | null
   pibPerCapita: number | null
   populacao: number | null
+  receitaTotal: number | null
+  despesaTotal: number | null
+  saude: number | null
+  educacao: number | null
+  /** Área em km². */
+  area: number | null
+  /** Sigla do partido do prefeito eleito em 2024. */
+  prefeitoPartido: string | null
 }
 
 /**
@@ -66,8 +76,8 @@ export async function buscarIndicadores(
   return dados.estados.find((e) => e.codarea === codigo) ?? null
 }
 
-/** Todos os municípios com PIB e centroide (arquivo derivado, gerado no build). */
-export async function buscarPontosPib(): Promise<PontoPib[]> {
-  const dados = await lerDados<{ pontos: PontoPib[] }>('indicators/pontos.json')
+/** Todos os municípios com métricas e centroide (arquivo derivado, gerado no build). */
+export async function buscarPontosMapa(): Promise<PontoMapa[]> {
+  const dados = await lerDados<{ pontos: PontoMapa[] }>('indicators/pontos.json')
   return dados?.pontos ?? []
 }

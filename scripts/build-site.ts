@@ -28,7 +28,7 @@ const DESTINO_DADOS = join(DIST_DIR, 'dados')
 const TSX = join(ROOT, 'node_modules', '.bin', 'tsx')
 
 /** Pastas de `data/` publicadas no site. `elections/raw` (ZIPs) fica de fora. */
-const PASTAS = ['maps', 'indicators', 'budget', 'elections']
+const PASTAS = ['maps', 'indicators', 'budget', 'elections', 'explorer']
 
 /** Soma recursiva do tamanho em bytes. */
 async function tamanhoBytes(caminho: string): Promise<number> {

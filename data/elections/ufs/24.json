@@ -2520,6 +2520,147 @@
       }
     },
     {
+      "codareaIbge": "2405306",
+      "codigoTse": "17035",
+      "nomeMunicipio": "BOA SAÚDE",
+      "uf": "RN",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "VALDINHO BRANDÃO",
+          "nomeCompleto": "EVALDO DE OLIVEIRA GOMES BRANDÃO",
+          "partido": "PP",
+          "numeroCandidato": 11111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002103160"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SILVANA",
+          "nomeCompleto": "SILVANA CARLOS DA SILVA",
+          "partido": "PP",
+          "numeroCandidato": 11222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "200002103162"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "LENILDA SALVADOR",
+          "nomeCompleto": "LENILDA SALVADOR DA SILVA",
+          "partido": "PP",
+          "numeroCandidato": 11444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002103163"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PAULINHO DE AZULÃO",
+          "nomeCompleto": "SEVERINO PAULINO DA SILVA FILHO",
+          "partido": "PP",
+          "numeroCandidato": 11777,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002103161"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FABIO GUINO",
+          "nomeCompleto": "FABIO SERGIO DA SILVA",
+          "partido": "MDB",
+          "numeroCandidato": 15111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002036064"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ERIDANY MESQUITA",
+          "nomeCompleto": "MARIA ERIDANY AUGUSTO DE MESQUITA",
+          "partido": "MDB",
+          "numeroCandidato": 15444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002036061"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "MANOEL DE SATURNO",
+          "nomeCompleto": "MANOEL BERNADINO DA SILVA",
+          "partido": "PSB",
+          "numeroCandidato": 40888,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "200002103236"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "DR NETO DE VAVÁ",
+          "nomeCompleto": "JOSÉ ÂNGELO NETO",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002103142"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ZÉ LÚCIO",
+          "nomeCompleto": "JOSÉ LÚCIO BEZERRA DA CRUZ",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002103138"
+        }
+      ],
+      "prefeito": {
+        "cargo": "Prefeito",
+        "codigoCargoTse": 11,
+        "nomeUrna": "JOAO MARIA MESQUITA",
+        "nomeCompleto": "JOAO MARIA MESQUITA",
+        "partido": "MDB",
+        "numeroCandidato": 15,
+        "anoEleicao": 2024,
+        "mandatoPeriodo": "2025–2028",
+        "situacaoEleicao": "ELEITO",
+        "sqCandidato": "200002103134",
+        "totalVotos": 3551
+      },
+      "vicePrefeito": {
+        "cargo": "Vice-Prefeito",
+        "codigoCargoTse": 12,
+        "nomeUrna": "GUGA",
+        "nomeCompleto": "ALINSON LUIZ DE ARAUJO",
+        "partido": "PSDB",
+        "numeroCandidato": 15,
+        "anoEleicao": 2024,
+        "mandatoPeriodo": "2025–2028",
+        "situacaoEleicao": "ELEITO",
+        "sqCandidato": "200002384942"
+      }
+    },
+    {
       "codareaIbge": "2408300",
       "codigoTse": "17655",
       "nomeMunicipio": "NOVA CRUZ",
@@ -25090,6 +25231,122 @@
         "situacaoEleicao": "ELEITO",
         "sqCandidato": "200002015795"
       }
+    },
+    {
+      "codareaIbge": "2412559",
+      "codigoTse": "16063",
+      "nomeMunicipio": "SÃO MIGUEL DO GOSTOSO",
+      "uf": "RN",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "NETO DA SAÚDE",
+          "nomeCompleto": "LUIZ RIBEIRO DA SILVA NETO",
+          "partido": "PP",
+          "numeroCandidato": 11111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002207921"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ZÉ DE LUZENARIO",
+          "nomeCompleto": "JOSE MARIA BEZERRA DA SILVA",
+          "partido": "PP",
+          "numeroCandidato": 11222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002207919"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "TIAGO PEIXOTO",
+          "nomeCompleto": "TIAGO VIEIRA PEIXOTO",
+          "partido": "PODE",
+          "numeroCandidato": 20000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002209908"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "EVANDRO MENEZES",
+          "nomeCompleto": "EVANDRO DA SILVA MENEZES",
+          "partido": "PODE",
+          "numeroCandidato": 20222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "200002209907"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "IRMÃ LETINHA",
+          "nomeCompleto": "MARIA JOSALETE DA CAMARA CRUZ",
+          "partido": "PODE",
+          "numeroCandidato": 20777,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002209909"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BETO DE AGOSTINHO",
+          "nomeCompleto": "ALBERTO CHARLES BELÉM DA SILVA",
+          "partido": "PV",
+          "numeroCandidato": 43222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "200002200231"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JEAN DOS MORROS",
+          "nomeCompleto": "JEAN RIBEIRO DA SILVA",
+          "partido": "PSD",
+          "numeroCandidato": 55111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002056684"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "EDNALDO COUTINHO",
+          "nomeCompleto": "EDNALDO COUTINHO VITAL",
+          "partido": "PSD",
+          "numeroCandidato": 55555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "200002056681"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "RODOLFO DA BAIXINHA",
+          "nomeCompleto": "RODOLFO MODESTO DOS SANTOS",
+          "partido": "PSD",
+          "numeroCandidato": 55666,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "200002056679"
+        }
+      ]
     }
   ]
 }

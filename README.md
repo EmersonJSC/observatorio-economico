@@ -26,7 +26,9 @@ Além do painel:
 - **Camada "força política"** — escolha um partido na legenda e o mapa colore cada
   território conforme a fatia de cadeiras que aquele partido ocupa ali. Serve para
   responder "onde este partido é forte", não "quem manda aqui".
-- **Camada "PIB"** — colunas hexagonais 3D proporcionais ao PIB municipal.
+- **Camada "Informação"** — lentes para PIB, PIB por habitante, receita,
+  despesa, população, densidade, saúde e educação. Totais usam áreas hexagonais
+  3D; taxas e valores por habitante usam a cor de cada território.
 - **Ranking** — todos os 27 estados e 5.571 municípios ordenados por PIB, PIB per
   capita, população, receita ou despesa, agrupados em faixas de escala. Clicar em uma
   linha leva o mapa até o território.

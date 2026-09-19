@@ -19,6 +19,7 @@
     "dev:api": "npm --prefix apps/api run dev",
     "dev:web": "npm --prefix apps/web run dev",
     "preview:site": "npm --prefix apps/web run preview",
+    "validar:dados": "npx tsx scripts/validar-dados.ts",
     "test:adapters": "npx tsx scripts/test-adapters.ts",
     "ingest": "npx tsx scripts/ingest-all.ts",
     "ingest:indicators": "npx tsx scripts/update-indicators-data.ts",

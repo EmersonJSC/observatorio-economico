@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-19T02:58:34.085Z",
+  "updatedAt": "2026-09-19T09:45:51.199Z",
   "source": "Tribunal Superior Eleitoral (TSE) — CDN Dados Abertos (Playwright)",
   "anoEleicaoEstadual": 2022,
   "anoEleicaoMunicipal": 2024,
   "estados": 27,
-  "municipios": 5546,
+  "municipios": 5568,
   "ufs": [
     "11",
     "12",

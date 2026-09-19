@@ -17368,6 +17368,146 @@
         "situacaoEleicao": "ELEITO",
         "sqCandidato": "190001902203"
       }
+    },
+    {
+      "codareaIbge": "3302007",
+      "codigoTse": "58394",
+      "nomeMunicipio": "ITAGUAÍ",
+      "uf": "RJ",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FABINHO TACIANO",
+          "nomeCompleto": "FABIANO JOSÉ NUNES",
+          "partido": "PP",
+          "numeroCandidato": 11000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "190002012054"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ADILSON PIMPO",
+          "nomeCompleto": "ADILSON PEREIRA CAMPOS JÚNIOR",
+          "partido": "PP",
+          "numeroCandidato": 11123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190002012056"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "NANDO RODRIGUES",
+          "nomeCompleto": "OINEGUELANDO RODRIGUES EUGENIO DA SILVA",
+          "partido": "PDT",
+          "numeroCandidato": 12000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "190002076223"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "HAROLDO JESUS",
+          "nomeCompleto": "HAROLDO RODRIGUES JESUS NETO",
+          "partido": "PDT",
+          "numeroCandidato": 12345,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190002076219"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PATY BUMERANGUE",
+          "nomeCompleto": "PATRICIA FERNANDA KUCHENBECKER",
+          "partido": "PODE",
+          "numeroCandidato": 20000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "190002076694"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "GUILHERME FARIAS",
+          "nomeCompleto": "GUILHERME SEVERINO CAMPOS DE FARIAS KIFER RIBEIRO",
+          "partido": "PODE",
+          "numeroCandidato": 20620,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190002076704"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "RACHEL SECUNDO",
+          "nomeCompleto": "RACHEL SECUNDO DA SILVA",
+          "partido": "PODE",
+          "numeroCandidato": 20896,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "190002076696"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ALEX ALVES",
+          "nomeCompleto": "ALECSANDRO ALVES DE AZEVEDO",
+          "partido": "PSD",
+          "numeroCandidato": 55123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190002073171"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SANDRO DA HERMÍNIO",
+          "nomeCompleto": "ALEXANDRO VALENÇA DE PAULA",
+          "partido": "PSD",
+          "numeroCandidato": 55555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "190002073166"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FABINHO PRIME",
+          "nomeCompleto": "FABIO LUIS DA SILVA ROCHA",
+          "partido": "PSD",
+          "numeroCandidato": 55789,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190002073165"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "AGENOR TEIXEIRA",
+          "nomeCompleto": "AGENOR DE OLIVEIRA TEIXEIRA",
+          "partido": "SOLIDARIEDADE",
+          "numeroCandidato": 77123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "190001900904"
+        }
+      ]
     }
   ]
 }

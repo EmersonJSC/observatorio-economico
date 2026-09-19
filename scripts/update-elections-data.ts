@@ -139,24 +139,23 @@ async function processarUf(
     const cargo = cdCargoParaNome(eleito.cdCargo)
     if (cargo !== 'Prefeito' && cargo !== 'Vice-Prefeito') continue
 
-    const codareaIbge = deParaMap.get(eleito.codigoUeTse)
+    const codigoPad = eleito.codigoUeTse.padStart(5, '0')
+    const codareaIbge = deParaMap.get(codigoPad) ?? deParaMap.get(eleito.codigoUeTse)
     if (!codareaIbge) {
-      // Município TSE sem correspondência IBGE — pode acontecer para municípios novos
-      // ou com grafia muito diferente. Registrado no DE-PARA para revisão manual.
       continue
     }
 
-    if (!porMunicipio.has(eleito.codigoUeTse)) {
-      porMunicipio.set(eleito.codigoUeTse, {
+    if (!porMunicipio.has(codigoPad)) {
+      porMunicipio.set(codigoPad, {
         codareaIbge,
-        codigoTse: eleito.codigoUeTse,
+        codigoTse: codigoPad,
         nomeMunicipio: eleito.nomeMunicipioTse,
         uf: eleito.uf,
         vereadores: [],
       })
     }
 
-    const municipio = porMunicipio.get(eleito.codigoUeTse)!
+    const municipio = porMunicipio.get(codigoPad)!
 
     const mandato: MandatoRepresentante = {
       cargo,
@@ -178,8 +177,21 @@ async function processarUf(
 
   // Anexa vice-prefeitos (12) e vereadores (13) eleitos, extraídos do consulta_cand
   for (const cand of eleitosCad) {
-    const municipio = porMunicipio.get(cand.codigoUeTse)
-    if (!municipio) continue
+    const codigoPad = cand.codigoUeTse.padStart(5, '0')
+    let municipio = porMunicipio.get(codigoPad)
+
+    if (!municipio) {
+      const codareaIbge = deParaMap.get(codigoPad) ?? deParaMap.get(cand.codigoUeTse)
+      if (!codareaIbge) continue
+      municipio = {
+        codareaIbge,
+        codigoTse: codigoPad,
+        nomeMunicipio: cand.nomeMunicipioTse,
+        uf: cand.uf,
+        vereadores: [],
+      }
+      porMunicipio.set(codigoPad, municipio)
+    }
 
     if (cand.cdCargo === 12) {
       municipio.vicePrefeito = {

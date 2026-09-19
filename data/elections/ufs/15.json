@@ -25488,6 +25488,218 @@
         "situacaoEleicao": "ELEITO",
         "sqCandidato": "140002244227"
       }
+    },
+    {
+      "codareaIbge": "1508100",
+      "codigoTse": "05614",
+      "nomeMunicipio": "TUCURUÍ",
+      "uf": "PA",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ALBERT LOBATO",
+          "nomeCompleto": "ALBERT COELHO LOBATO",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10122,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140001881042"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "DODÔ",
+          "nomeCompleto": "CLEIDSON DE SOUZA OLIVEIRA",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001881036"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "TITONHO",
+          "nomeCompleto": "ANTONIO CARLOS DE SOUSA",
+          "partido": "PP",
+          "numeroCandidato": 11111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001881690"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SARGENTO BONIECK",
+          "nomeCompleto": "PAULO BONIECK SOUZA DOS SANTOS",
+          "partido": "PP",
+          "numeroCandidato": 11190,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001881692"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ROSALVO DO INDEPENDENTE",
+          "nomeCompleto": "ROSALVO AFONSO FERNANDES",
+          "partido": "PP",
+          "numeroCandidato": 11333,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140001881689"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FERNANDO ALBUQUERQUE",
+          "nomeCompleto": "FERNANDO ALBUQUERQUE DE SOUSA MORAES",
+          "partido": "MDB",
+          "numeroCandidato": 15000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140001880957"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "WEBER GALVÃO",
+          "nomeCompleto": "WEBER DA SILVA GALVÃO",
+          "partido": "MDB",
+          "numeroCandidato": 15100,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880964"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "DAIVYSON FREEWAY",
+          "nomeCompleto": "DAIVYSON FURTADO DA SILVA",
+          "partido": "MDB",
+          "numeroCandidato": 15123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880952"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "VIEIRA",
+          "nomeCompleto": "JOSE VIEIRA DE ALMEIDA",
+          "partido": "MDB",
+          "numeroCandidato": 15333,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880953"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "CRISTIANO ARRAIS",
+          "nomeCompleto": "CRISTIANO DE LIMA ARRAIS",
+          "partido": "MDB",
+          "numeroCandidato": 15500,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880948"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JAIRO HOLANDA",
+          "nomeCompleto": "JAIRO REJANIO DE HOLANDA SOUZA",
+          "partido": "MDB",
+          "numeroCandidato": 15555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880960"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ILMA DO NENÉO",
+          "nomeCompleto": "ILMA DA  SILVA CREAO",
+          "partido": "MDB",
+          "numeroCandidato": 15787,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140001880949"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PAULO DO ONZE",
+          "nomeCompleto": "PAULO MORAIS DA COSTA",
+          "partido": "MDB",
+          "numeroCandidato": 15789,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001880954"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "LIMA DANTAS",
+          "nomeCompleto": "ROSIVALDO LIMA DANTAS",
+          "partido": "PODE",
+          "numeroCandidato": 20123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001882181"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SÉRGIO GOMES",
+          "nomeCompleto": "SERGIO GOMES DE SOUZA",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44100,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140001884175"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "DR FÁBIO ULISSES",
+          "nomeCompleto": "FABIO ULISSES SOARES CAMPELO",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44789,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "140001884171"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SIDÃO",
+          "nomeCompleto": "SIDNEY JOSE VAZ RODRIGUES",
+          "partido": "SOLIDARIEDADE",
+          "numeroCandidato": 77777,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "140002241680"
+        }
+      ]
     }
   ]
 }

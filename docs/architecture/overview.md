@@ -7,17 +7,19 @@ arquivos que resolvem o mesmo problema do produto.
 ## Mapa mental
 
 ```text
-fontes oficiais → scripts de atualização → data/ → API → interface do mapa
+fontes oficiais → scripts de atualização → data/ → build estático → interface do mapa
 ```
 
-O navegador nunca chama IBGE, TSE ou Siconfi diretamente. A aplicação baixa,
-valida e guarda os datasets no servidor; o frontend consome somente `/api`.
+O navegador nunca chama IBGE, TSE ou Siconfi diretamente. Os scripts baixam,
+validam e guardam datasets em `data/`; o frontend lê esses JSONs estáticos via
+`apps/web/src/lib/fontes.ts`. A API Express é opcional e serve apenas ao
+desenvolvimento local.
 
 ## Pastas
 
 ```text
 apps/web/src/features/  funcionalidades visíveis ao usuário
-apps/api/src/modules/   domínios e rotas da API
+apps/api/src/modules/   domínios e rotas da API local
 apps/api/src/shared/    código técnico reutilizável entre módulos
 packages/contracts/     contratos que poderão ser compartilhados entre API e web
 scripts/                importação e atualização de dados externos
@@ -40,5 +42,7 @@ docs/                   decisões de produto, arquitetura e fontes
 ## Estado atual
 
 - `features/map`: mapa, busca, tooltip, painel territorial e capitais.
-- `modules/territory`: endpoints e leitura do dataset de malhas locais.
-- Próximos módulos planejados: `indicators`, `budget` e `elections`.
+- `features/map`: mapa, camadas, busca, tooltip e painel territorial.
+- `features/ranking`: ranking de territórios e navegação de volta ao mapa.
+- `features/educacao`: Politicopédia e explicações em linguagem simples.
+- `data/`: malhas, indicadores, orçamento, eleições e arquivos derivados.

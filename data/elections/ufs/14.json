@@ -897,6 +897,147 @@
       }
     },
     {
+      "codareaIbge": "1400605",
+      "codigoTse": "03158",
+      "nomeMunicipio": "SÃO LUIZ",
+      "uf": "RR",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "GERSON ALVES",
+          "nomeCompleto": "GERSON ALVES OLIVEIRA",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230001947171"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JUVANE SALAZAR",
+          "nomeCompleto": "JUVANE LIMA SALAZAR",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "230001947175"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JANY DO AÇAÍ",
+          "nomeCompleto": "JANIELLY SALAZAR PONTES",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10789,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230001947177"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FÁTIMA SILVA",
+          "nomeCompleto": "FATIMA SILVA SCHELEDER PINTO",
+          "partido": "PP",
+          "numeroCandidato": 11007,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230001916948"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "CURIÓ",
+          "nomeCompleto": "ROBERTO DA ROCHA SILVA",
+          "partido": "PP",
+          "numeroCandidato": 11123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "230001916944"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PROF ELDA XAVIER",
+          "nomeCompleto": "ELDA COELHO XAVIER DE ARAGÃO",
+          "partido": "PP",
+          "numeroCandidato": 11222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230001916947"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BENILSON",
+          "nomeCompleto": "BENILSON FREITAS MOREIRA",
+          "partido": "PP",
+          "numeroCandidato": 11444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230001916946"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "RONALDO",
+          "nomeCompleto": "RONALDO SOUZA SANTOS",
+          "partido": "PDT",
+          "numeroCandidato": 12000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230002139717"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JOÃO MECANICO",
+          "nomeCompleto": "JOÃO CARLOS ANTONIO DOS SANTOS",
+          "partido": "PL",
+          "numeroCandidato": 22123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "230002032925"
+        }
+      ],
+      "prefeito": {
+        "cargo": "Prefeito",
+        "codigoCargoTse": 11,
+        "nomeUrna": "CHICÃO",
+        "nomeCompleto": "ELIAS BESCHORNER DA SILVA",
+        "partido": "PP",
+        "numeroCandidato": 11,
+        "anoEleicao": 2024,
+        "mandatoPeriodo": "2025–2028",
+        "situacaoEleicao": "ELEITO",
+        "sqCandidato": "230001916987",
+        "totalVotos": 3064
+      },
+      "vicePrefeito": {
+        "cargo": "Vice-Prefeito",
+        "codigoCargoTse": 12,
+        "nomeUrna": "DENAILTON",
+        "nomeCompleto": "FRANCISCO SERVOLO BARBOSA",
+        "partido": "REPUBLICANOS",
+        "numeroCandidato": 11,
+        "anoEleicao": 2024,
+        "mandatoPeriodo": "2025–2028",
+        "situacaoEleicao": "ELEITO",
+        "sqCandidato": "230001916986"
+      }
+    },
+    {
       "codareaIbge": "1400407",
       "codigoTse": "03115",
       "nomeMunicipio": "NORMANDIA",

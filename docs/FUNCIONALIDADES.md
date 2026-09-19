@@ -146,7 +146,7 @@ Dados em `data/indicators/ranking.json`, gerado no build.
 |---|---|
 | **Nenhuma** | Estado em foco com contornos; ao selecionar um estado, os municípios ganham contorno |
 | **Força política** | Legenda com os partidos e o número de cadeiras. Ao escolher um partido, cada território é colorido pela fatia de cadeiras que ele ocupa ali |
-| **Informação por área** | Camada de dados com submenus (hoje só PIB). Cada hexágono soma o dado da sua área. Raio, tamanho desenhado e corte da escala são ajustáveis no painel |
+| **Informação** | Lente de dados por categoria. Totais (PIB, receita, despesa, população, saúde e educação) são somados em hexágonos 3D; métricas relativas (PIB per capita, densidade e valores por habitante) pintam os territórios. A escala pode ser ajustada por percentil; hexágonos também permitem ajustar o raio e a cobertura. |
 
 Interações transversais: busca com autocomplete, navegação hierárquica com
 breadcrumbs, retorno ao Brasil inteiro, câmera voando para o território escolhido,

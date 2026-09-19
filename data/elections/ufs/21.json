@@ -34727,6 +34727,378 @@
         "situacaoEleicao": "ELEITO",
         "sqCandidato": "100002351291"
       }
+    },
+    {
+      "codareaIbge": "2104909",
+      "codigoTse": "07951",
+      "nomeMunicipio": "GUIMARÃES",
+      "uf": "MA",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "SOLDADO JOILTON",
+          "nomeCompleto": "JOILTON RIBEIRO CARNEIRO",
+          "partido": "PDT",
+          "numeroCandidato": 12000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002059193"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JENILLE BRITO",
+          "nomeCompleto": "JENILLE MIRIAM SILVA BRITO",
+          "partido": "PDT",
+          "numeroCandidato": 12123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002059190"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ANA LUIZA",
+          "nomeCompleto": "ANA LUIZA RAMOS",
+          "partido": "PDT",
+          "numeroCandidato": 12333,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002059197"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BEATRIZ CUNHA",
+          "nomeCompleto": "BRENDHA BEATRIZ DE SOUSA CUNHA",
+          "partido": "MDB",
+          "numeroCandidato": 15123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002333079"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PIMENTA DO ARAOCA",
+          "nomeCompleto": "ERAUSTO MOREIRA DA SILVA",
+          "partido": "MDB",
+          "numeroCandidato": 15555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002333085"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BIA DO DR ELEILSON",
+          "nomeCompleto": "BEATRIZ DIAS DAS CHAGAS",
+          "partido": "PL",
+          "numeroCandidato": 22000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002333993"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JOSEPH PH",
+          "nomeCompleto": "JOSEPH WILLIANS VIEGAS PEREIRA",
+          "partido": "PL",
+          "numeroCandidato": 22222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002333991"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "NEGO DO POÇO",
+          "nomeCompleto": "ALEXANDRO MAGNO SANTOS VIANA",
+          "partido": "AVANTE",
+          "numeroCandidato": 70000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100001961236"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ANDERSON AVELAR",
+          "nomeCompleto": "ANDERSON LISBOA AVELAR",
+          "partido": "AVANTE",
+          "numeroCandidato": 70456,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100001961238"
+        }
+      ]
+    },
+    {
+      "codareaIbge": "2100709",
+      "codigoTse": "07137",
+      "nomeMunicipio": "ANAJATUBA",
+      "uf": "MA",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "RICHARDSON REIS",
+          "nomeCompleto": "RICHARDSON MARTINS DOS REIS",
+          "partido": "REPUBLICANOS",
+          "numeroCandidato": 10000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100001972169"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "LUCAS PEREIRA",
+          "nomeCompleto": "LUIS CARLOS MARTINS PEREIRA",
+          "partido": "PP",
+          "numeroCandidato": 11111,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002275158"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PITICA DE FRADES",
+          "nomeCompleto": "HELOILTON FONSECA CARVALHO",
+          "partido": "PP",
+          "numeroCandidato": 11222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002275154"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "JOÃO VICTOR",
+          "nomeCompleto": "JOÃO VICTOR MENDES DE ABREU VIANA",
+          "partido": "PP",
+          "numeroCandidato": 11888,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002275155"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "RODRIGO DUTRA",
+          "nomeCompleto": "RODRIGO ANTONIO LISBOA DUTRA",
+          "partido": "MDB",
+          "numeroCandidato": 15000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002281962"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ZÉ OLIVEIRA",
+          "nomeCompleto": "JOSÉ RIBAMAR OLIVEIRA",
+          "partido": "MDB",
+          "numeroCandidato": 15555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002281965"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FILHINHO",
+          "nomeCompleto": "JOSÉ MARIA DUTRA FILHO",
+          "partido": "MDB",
+          "numeroCandidato": 15999,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002281959"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "TIAGO LOIOLA",
+          "nomeCompleto": "TIAGO LOIOLA DA FONSECA",
+          "partido": "PSB",
+          "numeroCandidato": 40123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002019873"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FIULA",
+          "nomeCompleto": "PHYULA JULIANA AMORIM VALOIS",
+          "partido": "PSB",
+          "numeroCandidato": 40456,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002019867"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "EDUARDO CASTELO BRANCO FILHO",
+          "nomeCompleto": "JOSÉ EDUARDO CASTELO BRANCO DE OLIVEIRA FILHO",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002228417"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "LAURO SOUSA",
+          "nomeCompleto": "LAURO JORGE REGO SOUSA",
+          "partido": "UNIÃO",
+          "numeroCandidato": 44777,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002228421"
+        }
+      ]
+    },
+    {
+      "codareaIbge": "2110237",
+      "codigoTse": "08222",
+      "nomeMunicipio": "SANTANA DO MARANHÃO",
+      "uf": "MA",
+      "vereadores": [
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "CARLIN NESTOR",
+          "nomeCompleto": "ANTONIO CARLOS OLIVEIRA",
+          "partido": "PDT",
+          "numeroCandidato": 12000,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002355113"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "PAULINHO DO COMBUSTÍVEL",
+          "nomeCompleto": "JOSÉ PAULO ROCHA DOS SANTOS",
+          "partido": "PT",
+          "numeroCandidato": 13444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002360849"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "MARQUINHOS SANTIAGO",
+          "nomeCompleto": "MARCOS MELO SANTIAGO",
+          "partido": "PL",
+          "numeroCandidato": 22123,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002155568"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "ZÉ DOS SANTOS",
+          "nomeCompleto": "JOSE DOS SANTOS PEREIRA DA SILVA",
+          "partido": "PL",
+          "numeroCandidato": 22333,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002155572"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "NEGO",
+          "nomeCompleto": "HÉLITON ARAUJO COSTA",
+          "partido": "PL",
+          "numeroCandidato": 22345,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002155573"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "CHICO VEI",
+          "nomeCompleto": "FRANCISCO JOSÉ ALVES DA SILVA",
+          "partido": "PL",
+          "numeroCandidato": 22555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR MÉDIA",
+          "sqCandidato": "100002155569"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BERNARDO MUNDICO",
+          "nomeCompleto": "BERNARDO COSTA DE OLIVEIRA",
+          "partido": "PRD",
+          "numeroCandidato": 25444,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002195104"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "BRANCO DO RIACHÃO",
+          "nomeCompleto": "JAQUEILSON DE OLIVEIRA",
+          "partido": "PRD",
+          "numeroCandidato": 25555,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002195099"
+        },
+        {
+          "cargo": "Vereador",
+          "codigoCargoTse": 13,
+          "nomeUrna": "FRANCISCO FERREIRA",
+          "nomeCompleto": "FRANCISCO JOSÉ FERREIRA DA SILVA",
+          "partido": "PMB",
+          "numeroCandidato": 35222,
+          "anoEleicao": 2024,
+          "mandatoPeriodo": "2025–2028",
+          "situacaoEleicao": "ELEITO POR QP",
+          "sqCandidato": "100002135511"
+        }
+      ]
     }
   ]
 }

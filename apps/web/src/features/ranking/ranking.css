@@ -1,0 +1,332 @@
+/* Ranking — ledger de territórios, inspirado no painel de potências do Victoria 3. */
+
+.rk-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  background: rgba(3, 10, 18, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.rk-painel {
+  display: flex;
+  flex-direction: column;
+  width: min(1080px, 100%);
+  max-height: min(90vh, 860px);
+  border: 1px solid rgba(126, 212, 237, 0.28);
+  border-radius: 18px;
+  background: #081a2a;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  color: #e8f4fb;
+}
+
+.rk-cabecalho {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 26px 14px;
+  border-bottom: 1px solid rgba(185, 220, 240, 0.1);
+}
+
+.rk-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #edb14b;
+}
+
+.rk-cabecalho h2 {
+  margin: 7px 0 6px;
+  font-size: 23px;
+  letter-spacing: -0.03em;
+  color: #f2fbff;
+}
+
+.rk-cabecalho p {
+  margin: 0;
+  max-width: 660px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a9c2d2;
+}
+
+/* --- filtros --- */
+
+.rk-filtros {
+  flex: 0 0 auto;
+  padding: 14px 26px 12px;
+  border-bottom: 1px solid rgba(185, 220, 240, 0.08);
+}
+
+.rk-linha-controles {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rk-niveis {
+  display: flex;
+  gap: 5px;
+  padding: 3px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rk-niveis button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 7px 13px;
+  color: #cfe3ee;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rk-niveis button small {
+  font-size: 10px;
+  font-weight: 700;
+  color: #7f9cb0;
+}
+
+.rk-niveis button.ativo {
+  background: rgba(99, 217, 233, 0.2);
+  color: #eaffff;
+}
+
+.rk-niveis button.ativo small { color: #9fe6f2; }
+
+.rk-busca {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 1px solid rgba(168, 214, 237, 0.22);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 13px;
+  color: #f1fbff;
+  font-size: 13px;
+  outline: none;
+}
+
+.rk-busca:focus { border-color: #66d9e9; }
+
+.rk-metricas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.rk-metricas button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  color: #cfe3ee;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rk-metricas button:hover { background: rgba(99, 217, 233, 0.14); }
+
+.rk-metricas button.ativo {
+  border-color: rgba(99, 217, 233, 0.7);
+  background: rgba(99, 217, 233, 0.22);
+  color: #eaffff;
+}
+
+.rk-metrica-info { display: inline-flex; align-items: center; }
+
+/* Linha que descreve a métrica ativa, ancorando o botão "?" a ela */
+.rk-ajuda {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 9px 0 0;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #8fa8bb;
+}
+
+.rk-ajuda .rk-anos {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #7f9cb0;
+}
+
+/* --- lista --- */
+
+.rk-lista {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4px 26px 24px;
+}
+
+.rk-grupo { margin-top: 14px; }
+
+/* Cabeçalho de faixa: a linha atravessa, dando o ar de "tabela de potências" */
+.rk-grupo-titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 4px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(237, 177, 75, 0.22);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #edb14b;
+}
+
+.rk-grupo-titulo small {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #7f9cb0;
+}
+
+.rk-linha {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) minmax(70px, 1.5fr) 116px 62px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 7px 8px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.rk-linha:hover { background: rgba(99, 217, 233, 0.1); }
+
+.rk-pos {
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #7f9cb0;
+}
+
+.rk-pos.destaque { color: #edb14b; }
+
+.rk-nome {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  min-width: 0;
+}
+
+.rk-nome b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: #eaf6fd;
+}
+
+.rk-nome small {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #7f9cb0;
+}
+
+.rk-barra {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.rk-barra i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2a6f8f, #66d9e9);
+}
+
+/* As três primeiras posições ganham o tom de "potência" */
+.rk-grupo:first-of-type .rk-linha:nth-of-type(-n + 3) .rk-barra i {
+  background: linear-gradient(90deg, #a8762a, #f0c368);
+}
+
+.rk-valor {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #f2fbff;
+}
+
+.rk-participacao {
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #8fa8bb;
+}
+
+.rk-vazio {
+  padding: 30px;
+  text-align: center;
+  color: #9eb6c8;
+  font-size: 13px;
+}
+
+.rk-mais {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid rgba(99, 217, 233, 0.3);
+  border-radius: 10px;
+  background: rgba(99, 217, 233, 0.08);
+  padding: 11px;
+  color: #cfe9f3;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rk-mais:hover { background: rgba(99, 217, 233, 0.16); }
+
+.rk-rodape {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 11px;
+  color: #7f9cb0;
+}
+
+@media (max-width: 720px) {
+  .rk-overlay { padding: 10px; }
+  .rk-cabecalho { padding: 18px 16px 12px; }
+  .rk-cabecalho h2 { font-size: 19px; }
+  .rk-filtros { padding: 12px 16px 10px; }
+  .rk-linha-controles { flex-wrap: wrap; }
+  .rk-lista { padding: 4px 12px 18px; }
+  .rk-linha { grid-template-columns: 30px minmax(0, 1fr) 88px; }
+  .rk-barra, .rk-participacao { display: none; }
+  .rk-anos { margin-left: 0; }
+}

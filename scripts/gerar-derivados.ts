@@ -160,10 +160,152 @@ async function gerarComposicaoBrasil() {
   console.log(`  ✓ elections/composicao-brasil.json — ${territorios.length} estados`)
 }
 
+// ---------------------------------------------------------------------------
+// 3. Ranking nacional (UFs + municípios com todas as métricas comparáveis)
+// ---------------------------------------------------------------------------
+
+/** Uma linha do ranking, com todas as métricas que o site sabe comparar. */
+interface LinhaRanking {
+  codarea: string
+  nome: string
+  uf: string
+  populacao: number | null
+  pib: number | null
+  pibPerCapita: number | null
+  receitaTotal: number | null
+  despesaTotal: number | null
+  lng: number | null
+  lat: number | null
+}
+
+interface IndicadorUf {
+  codarea: string
+  nome: string
+  populacao: { total: number | null } | null
+  pib: { valorTotalMilReais: number | null; valorPerCapitaReais: number | null } | null
+}
+
+interface Orcamento {
+  codarea: string
+  nome?: string
+  receitaTotal?: number
+  despesaTotal?: number
+}
+
+/**
+ * O ranking é o único lugar do site que compara TODOS os territórios entre si e
+ * cruza os três blocos (indicadores, orçamento e território) em uma lista só.
+ *
+ * Sem ele o frontend teria que baixar 27 arquivos de indicadores + 27 de
+ * orçamento para montar qualquer ordenação nacional.
+ */
+async function gerarRanking() {
+  const centroides = await lerJson<{
+    ufs: Record<string, [number, number]>
+    municipios: Record<string, [number, number]>
+  }>(join(MAPS_DIR, 'centroides.json'))
+
+  // Código da UF → sigla (vem das eleições, que já carregam a sigla oficial)
+  const siglas = new Map<string, string>()
+  const dirEstados = join(ELECTIONS_DIR, 'estados')
+  if (existsSync(dirEstados)) {
+    for (const arquivo of await readdir(dirEstados)) {
+      if (!arquivo.endsWith('.json')) continue
+      const e = await lerJson<{ uf: string; sigla: string }>(join(dirEstados, arquivo))
+      if (e?.uf && e?.sigla) siglas.set(String(e.uf), e.sigla)
+    }
+  }
+
+  // Orçamento, indexado por codarea
+  const orcamento = new Map<string, Orcamento>()
+  const coletarOrcamento = (lista: Orcamento[] | undefined) => {
+    for (const o of lista ?? []) orcamento.set(String(o.codarea), o)
+  }
+  coletarOrcamento((await lerJson<{ estados?: Orcamento[] }>(join(DATA_DIR, 'budget', 'brasil.json')))?.estados)
+  const dirOrcamento = join(DATA_DIR, 'budget', 'ufs')
+  if (existsSync(dirOrcamento)) {
+    for (const arquivo of await readdir(dirOrcamento)) {
+      if (!arquivo.endsWith('.json')) continue
+      const d = await lerJson<{ municipios?: Orcamento[] }>(join(dirOrcamento, arquivo))
+      coletarOrcamento(d?.municipios)
+    }
+  }
+
+  // ---- UFs ----
+  const brasil = await lerJson<{
+    anoPopulacao?: number
+    anoPib?: number
+    estados?: IndicadorUf[]
+  }>(join(INDICATORS_DIR, 'brasil.json'))
+
+  const ufs: LinhaRanking[] = (brasil?.estados ?? []).map((e) => {
+    const codarea = String(e.codarea)
+    const centro = centroides?.ufs?.[codarea] ?? null
+    return {
+      codarea,
+      nome: e.nome,
+      uf: siglas.get(codarea) ?? codarea,
+      populacao: e.populacao?.total ?? null,
+      pib: e.pib?.valorTotalMilReais ?? null,
+      pibPerCapita: e.pib?.valorPerCapitaReais ?? null,
+      receitaTotal: orcamento.get(codarea)?.receitaTotal ?? null,
+      despesaTotal: orcamento.get(codarea)?.despesaTotal ?? null,
+      lng: centro?.[0] ?? null,
+      lat: centro?.[1] ?? null,
+    }
+  })
+
+  // ---- Municípios ----
+  const municipios: LinhaRanking[] = []
+  const dirIndicadores = join(INDICATORS_DIR, 'ufs')
+  if (existsSync(dirIndicadores)) {
+    for (const arquivo of (await readdir(dirIndicadores)).filter((f) => f.endsWith('.json')).sort()) {
+      const ufCodigo = arquivo.replace('.json', '')
+      const d = await lerJson<{ municipios?: IndicadorMunicipio[] }>(join(dirIndicadores, arquivo))
+      for (const m of d?.municipios ?? []) {
+        const codarea = String(m.codarea)
+        const centro = centroides?.municipios?.[codarea] ?? null
+        municipios.push({
+          codarea,
+          nome: m.nome,
+          uf: siglas.get(ufCodigo) ?? ufCodigo,
+          populacao: m.populacao?.total ?? null,
+          pib: m.pib?.valorTotalMilReais ?? null,
+          pibPerCapita: m.pib?.valorPerCapitaReais ?? null,
+          receitaTotal: orcamento.get(codarea)?.receitaTotal ?? null,
+          despesaTotal: orcamento.get(codarea)?.despesaTotal ?? null,
+          lng: centro?.[0] ?? null,
+          lat: centro?.[1] ?? null,
+        })
+      }
+    }
+  }
+
+  if (ufs.length === 0 && municipios.length === 0) {
+    console.warn('  ⚠ sem dados para o ranking — rode a ingestão primeiro')
+    return
+  }
+
+  const ranking = {
+    geradoEm: new Date().toISOString(),
+    anos: {
+      populacao: brasil?.anoPopulacao ?? null,
+      pib: brasil?.anoPib ?? null,
+      orcamento: (await lerJson<{ exercicio?: number }>(join(DATA_DIR, 'budget', 'brasil.json')))?.exercicio ?? null,
+    },
+    ufs,
+    municipios,
+  }
+
+  await writeFile(join(INDICATORS_DIR, 'ranking.json'), JSON.stringify(ranking), 'utf-8')
+  console.log(`  ✓ indicators/ranking.json — ${ufs.length} UFs e ${municipios.length} municípios`)
+}
+
 async function main() {
   console.log('Gerando arquivos derivados para o site estático…\n')
   await gerarPontosPib()
   await gerarComposicaoBrasil()
+  await gerarRanking()
   console.log('\n✓ Derivados gerados.')
 }
 

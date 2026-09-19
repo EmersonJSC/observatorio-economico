@@ -466,17 +466,17 @@ export const EXPLICACOES: Record<string, Explicacao> = {
     relacionados: ['pib', 'populacao'],
   },
   hexagonosPib: {
-    titulo: 'PIB em hexágonos',
+    titulo: 'Informação por área',
     categoria: 'Indicadores',
-    resumo: 'Mapa que agrupa o PIB por área para mostrar a concentração.',
+    resumo: 'Camada que agrupa um dado por área do mapa. Hoje mostra o PIB.',
     oQueE:
-      'Uma camada que agrupa os municípios em hexágonos e mostra, em cada um, a soma do [[pib]] daquela área. Quanto mais alto e claro o hexágono, mais riqueza se produz ali.',
+      'Uma camada de mapa que divide o território em hexágonos e mostra, em cada um, a soma do dado escolhido — hoje o [[pib]]. Quanto mais alto e claro o hexágono, maior o valor naquela área.',
     comoFunciona:
-      'Cada município vira um ponto no centro do seu território, com o seu PIB. O sistema junta os pontos que caem dentro do mesmo hexágono e soma o PIB deles. A altura e a cor representam esse total.',
+      'Cada município vira um ponto no centro do seu território, com o dado correspondente. O sistema junta os pontos que caem dentro do mesmo hexágono e soma os valores. A altura e a cor representam esse total. O painel deixa ajustar o tamanho do hexágono e o corte da escala.',
     qualFuncao:
-      'Mostra num só golpe de vista onde a economia se concentra — e como ela é desigual entre as regiões.',
+      'Mostra num só golpe de vista onde a atividade se concentra — e como ela é desigual entre as regiões.',
     atencao:
-      'O hexágono não respeita fronteiras: ele apenas agrupa por proximidade. O valor é a SOMA do PIB da área, não o PIB de um lugar específico.',
+      'O hexágono não respeita fronteiras: ele apenas agrupa por proximidade. O valor é a SOMA do dado na área, não o valor de um lugar específico. Hexágono muito pequeno faz o mapa sumir, porque cada um passa a conter um único município.',
     relacionados: ['pib', 'forcaPolitica', 'municipio'],
   },
   forcaPolitica: {

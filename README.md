@@ -27,11 +27,17 @@ Além do painel:
   território conforme a fatia de cadeiras que aquele partido ocupa ali. Serve para
   responder "onde este partido é forte", não "quem manda aqui".
 - **Camada "PIB"** — colunas hexagonais 3D proporcionais ao PIB municipal.
+- **Ranking** — todos os 27 estados e 5.571 municípios ordenados por PIB, PIB per
+  capita, população, receita ou despesa, agrupados em faixas de escala. Clicar em uma
+  linha leva o mapa até o território.
 - **Politicopédia** — 46 verbetes explicando cargos, poderes, eleições, orçamento e
   indicadores. Cada termo técnico da interface abre a explicação correspondente.
 
 Todo texto é escrito para público geral, respondendo *o que é*, *como funciona* e
 *qual a função*.
+
+Um mapa visual de tudo isso, com o que já existe e o que ainda falta, está em
+[docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md).
 
 ---
 

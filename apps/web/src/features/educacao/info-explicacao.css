@@ -1,0 +1,204 @@
+/* Botão de ajuda "?" e o cartão de explicação */
+
+.info-botao {
+  display: inline-grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  margin-left: 6px;
+  border: 1px solid rgba(126, 212, 237, 0.5);
+  border-radius: 50%;
+  background: rgba(126, 212, 237, 0.12);
+  color: #9eeefa;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.info-botao:hover {
+  background: rgba(126, 212, 237, 0.3);
+  transform: scale(1.1);
+}
+
+.info-botao.pequeno {
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+}
+
+/* Sobreposição + cartão centralizado (funciona bem dentro do painel estreito).
+   z-index acima da Politicopédia (210), para o verbete abrir SOBRE ela. */
+.info-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 10, 18, 0.62);
+  backdrop-filter: blur(3px);
+}
+
+.info-cartao {
+  width: min(440px, calc(100vw - 32px));
+  max-height: min(78vh, 620px);
+  overflow-y: auto;
+  border: 1px solid rgba(126, 212, 237, 0.3);
+  border-radius: 16px;
+  background: #0a1c2d;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55);
+  padding: 20px 22px 22px;
+  color: #e8f4fb;
+}
+
+.info-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.info-cabecalho h3 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: #f2fbff;
+}
+
+.info-fechar {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(182, 219, 242, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #dcebf4;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.info-conteudo {
+  margin: 0;
+}
+
+.info-conteudo dt {
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7ed4ed;
+}
+
+.info-conteudo dt:first-child {
+  margin-top: 0;
+}
+
+.info-conteudo dd {
+  margin: 5px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #d8eaf4;
+}
+
+.info-atencao {
+  margin: 16px 0 0;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border-left: 3px solid #edb14b;
+  background: rgba(237, 177, 75, 0.1);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f2e2c4;
+}
+
+/* ---------------------------------------------------------------------------
+   Termos destacados dentro dos textos (estilo enciclopédia)
+   --------------------------------------------------------------------------- */
+
+.termo {
+  border: 0;
+  border-bottom: 1px dotted rgba(126, 212, 237, 0.7);
+  background: transparent;
+  padding: 0;
+  color: #9eeefa;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.termo:hover {
+  color: #dcf8ff;
+  border-bottom-color: #dcf8ff;
+}
+
+/* ---------------------------------------------------------------------------
+   Cartão do verbete
+   --------------------------------------------------------------------------- */
+
+.info-categoria {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7ed4ed;
+}
+
+.info-resumo {
+  margin: 0 0 15px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(99, 217, 233, 0.09);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cfe8f3;
+}
+
+.info-subtitulo {
+  margin: 18px 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #7ed4ed;
+}
+
+.info-atribuicoes {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.info-atribuicoes li {
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #d8eaf4;
+}
+
+.info-relacionados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.info-relacionados button {
+  border: 1px solid rgba(126, 212, 237, 0.35);
+  border-radius: 999px;
+  background: rgba(126, 212, 237, 0.1);
+  padding: 6px 11px;
+  color: #bdefff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.info-relacionados button:hover {
+  background: rgba(126, 212, 237, 0.26);
+}

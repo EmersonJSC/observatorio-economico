@@ -1,0 +1,70 @@
+name: Publicar site (GitHub Pages)
+
+# Publica o site estático no GitHub Pages a cada push na branch principal.
+# O site é 100% estático: não existe servidor nem banco de dados.
+#
+# Antes do primeiro deploy, no GitHub:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Um deploy por vez; não cancela um deploy já em andamento.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Descobrir a base do site
+        id: base
+        env:
+          REPO: ${{ github.event.repository.name }}
+        # Em repositório de projeto o site fica em /<repo>/. Se for um
+        # repositório <usuario>.github.io, a base é a raiz.
+        run: |
+          if [[ "$REPO" == *.github.io ]]; then
+            echo "valor=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "valor=/$REPO/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build do site estático
+        env:
+          VITE_BASE: ${{ steps.base.outputs.valor }}
+        run: npm run build:site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

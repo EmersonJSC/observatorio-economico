@@ -1,0 +1,43 @@
+{
+  "name": "observatorio-economico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "npm run build:api && npm run build:web",
+    "build:api": "npm --prefix apps/api run build",
+    "build:web": "npm --prefix apps/web run build",
+    "build:site": "npx tsx scripts/build-site.ts",
+    "gerar:derivados": "npx tsx scripts/gerar-derivados.ts",
+    "dev:api": "npm --prefix apps/api run dev",
+    "dev:web": "npm --prefix apps/web run dev",
+    "preview:site": "npm --prefix apps/web run preview",
+    "test:adapters": "npx tsx scripts/test-adapters.ts",
+    "ingest": "npx tsx scripts/ingest-all.ts",
+    "ingest:indicators": "npx tsx scripts/update-indicators-data.ts",
+    "ingest:centroides": "npx tsx scripts/update-centroides.ts",
+    "ingest:budget": "npx tsx scripts/update-budget-data.ts",
+    "ingest:elections": "npx tsx scripts/update-elections-data.ts",
+    "ingest:mandatos": "npx tsx scripts/update-mandatos-gerais.ts",
+    "scrape:tse": "npx tsx scripts/scrape-tse.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "@deck.gl/core": "^9.4.0",
+    "@deck.gl/geo-layers": "^9.4.0",
+    "@deck.gl/layers": "^9.4.0",
+    "@deck.gl/react": "^9.4.0",
+    "deck.gl": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "adm-zip": "^0.6.1",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.13"
+  }
+}

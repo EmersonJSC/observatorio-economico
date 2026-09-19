@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+
+# Builds
+apps/web/dist/
+apps/api/dist/
+site/
+
+# ZIPs brutos do TSE (grandes — baixe com: npm run scrape:tse)
+data/elections/raw/
+
+# Cache local do npm (quando usado com --cache ./.npm-cache)
+.npm-cache/
+
+# Ambiente
+.env
+.env.local
+.DS_Store
+
+# Rascunhos e capturas locais de investigação
+.tmp-tse-research/
+_shot-*.png
+test-pw.ts

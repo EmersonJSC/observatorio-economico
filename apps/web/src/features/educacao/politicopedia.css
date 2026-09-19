@@ -1,0 +1,171 @@
+/* Painel da Politicopédia */
+
+.pol-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  background: rgba(3, 10, 18, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.pol-painel {
+  display: flex;
+  flex-direction: column;
+  width: min(980px, 100%);
+  max-height: min(88vh, 780px);
+  border: 1px solid rgba(126, 212, 237, 0.28);
+  border-radius: 18px;
+  background: #081a2a;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  color: #e8f4fb;
+}
+
+.pol-cabecalho {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 26px 16px;
+  border-bottom: 1px solid rgba(185, 220, 240, 0.1);
+}
+
+.pol-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #7ed4ed;
+}
+
+.pol-cabecalho h2 {
+  margin: 7px 0 6px;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+  color: #f2fbff;
+}
+
+.pol-cabecalho p {
+  margin: 0;
+  max-width: 640px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a9c2d2;
+}
+
+.pol-filtros {
+  flex: 0 0 auto;
+  padding: 16px 26px 12px;
+}
+
+.pol-busca {
+  width: 100%;
+  border: 1px solid rgba(168, 214, 237, 0.22);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 11px 14px;
+  color: #f1fbff;
+  font-size: 13px;
+  outline: none;
+}
+
+.pol-busca:focus {
+  border-color: #66d9e9;
+}
+
+.pol-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+
+.pol-categorias button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  color: #cfe3ee;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pol-categorias button:hover {
+  background: rgba(99, 217, 233, 0.14);
+}
+
+.pol-categorias button.ativo {
+  border-color: rgba(99, 217, 233, 0.7);
+  background: rgba(99, 217, 233, 0.22);
+  color: #eaffff;
+}
+
+.pol-lista {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-content: start;
+  gap: 9px;
+  padding: 6px 26px 26px;
+  overflow-y: auto;
+}
+
+.pol-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(178, 220, 243, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 13px 14px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.pol-item:hover {
+  border-color: rgba(99, 217, 233, 0.45);
+  background: rgba(99, 217, 233, 0.1);
+  transform: translateY(-1px);
+}
+
+.pol-item-categoria {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7ed4ed;
+}
+
+.pol-item b {
+  font-size: 14px;
+  letter-spacing: -0.015em;
+  color: #f2fbff;
+}
+
+.pol-item small {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #9eb6c8;
+}
+
+.pol-vazio {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: #9eb6c8;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .pol-overlay { padding: 10px; }
+  .pol-cabecalho { padding: 18px 16px 12px; }
+  .pol-cabecalho h2 { font-size: 19px; }
+  .pol-filtros { padding: 12px 16px 8px; }
+  .pol-lista { padding: 4px 16px 18px; }
+}

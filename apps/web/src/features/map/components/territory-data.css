@@ -1,0 +1,89 @@
+/* Estilos dos dados reais exibidos no painel territorial. */
+
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.data-card {
+  min-height: 78px;
+  padding: 11px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.data-card span,
+.data-card small {
+  display: block;
+  font-size: 11px;
+  color: #9eb6c8;
+}
+
+.data-card strong {
+  display: block;
+  margin: 6px 0 4px;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: #f2fbff;
+}
+
+.person-avatar {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(86, 217, 237, 0.16);
+  border: 1px solid rgba(86, 217, 237, 0.35);
+  color: #bdefff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.person-foto {
+  object-fit: cover;
+  background: #0e2335;
+}
+
+.data-empty {
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #9eb6c8;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.data-loading {
+  margin-top: 8px;
+  color: #7ed4ed;
+  font-size: 13px;
+}
+
+/* Listas de mandatos (vereadores, deputados, senadores) */
+.mandato-lista {
+  margin-top: 14px;
+}
+
+.mandato-lista h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: #cfe6f2;
+}
+
+.mandato-lista h3 small {
+  font-weight: 600;
+  color: #7f9aac;
+}
+
+.mandato-scroll {
+  display: grid;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}

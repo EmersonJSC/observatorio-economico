@@ -340,7 +340,6 @@ const TOTAL_DA_TAXA: Partial<Record<CampoNumerico, CampoNumerico>> = {
   pib_per_capita: 'pib',
   receita_per_capita: 'receita',
   despesa_per_capita: 'despesa',
-  totalCandidatos: null,
 }
 
 /**
@@ -408,4 +407,37 @@ export function indicadoresDoEstado(
       ano,
     },
   ]
+}
+
+/**
+ * Linhas de indicador para o tooltip de um municpio com lente eleitoral.
+ *
+ * Para lentes polticas, exibe informaes sobre o prefeito eleito.
+ */
+export function indicadoresEleicao(ponto: PontoExplorer): LinhaIndicador[] {
+  const linhas: LinhaIndicador[] = []
+  
+  if (ponto.nomePrefeito) {
+    linhas.push({
+      rotulo: 'Prefeito',
+      valor: ponto.nomePrefeito,
+    })
+  }
+  
+  if (ponto.partidoPrefeito) {
+    linhas.push({
+      rotulo: 'Partido',
+      valor: ponto.partidoPrefeito,
+    })
+  }
+  
+  if (ponto.vereadoresPorPartido) {
+    const totalVereadores = Object.values(ponto.vereadoresPorPartido).reduce((a, b) => a + b, 0)
+    linhas.push({
+      rotulo: 'Vereadores',
+      valor: totalVereadores.toString(),
+    })
+  }
+  
+  return linhas
 }

@@ -40,6 +40,12 @@ export interface CandidatosMunicipio {
   partidosDistintos: number
   /** Ano da eleição agregada. */
   anoEleicao: number | null
+  /** Sigla do partido do prefeito eleito. */
+  partidoPrefeito?: string | null
+  /** Nome do prefeito eleito. */
+  nomePrefeito?: string | null
+  /** Contagem de vereadores eleitos por partido. */
+  vereadoresPorPartido?: Record<string, number>
 }
 
 /** Códigos de cargo do TSE, conforme o `consulta_cand`. */
@@ -59,6 +65,10 @@ interface Acumulador {
   /** Siglas de partido vistas — o tamanho do conjunto é a contagem distinta. */
   partidos: Set<string>
   ano: number | null
+  /** Dados do prefeito eleito. */
+  prefeitoEleito?: { nome: string; partido: string } | null
+  /** Contagem de vereadores eleitos por partido. */
+  vereadoresEleitosPorPartido: Record<string, number>
 }
 
 /** Registro do TSE, no formato que a Caixa 4 produziu. */
@@ -68,6 +78,8 @@ interface CandidatoTse {
   codigoCargo?: number
   partidoSigla?: string | null
   anoEleicao?: number
+  situacaoTotalizacao?: string | null
+  nomeUrna?: string | null
 }
 
 /** Linha da tabela-ponte da Caixa 5 (só o que interessa aqui). */
@@ -152,27 +164,43 @@ export async function agregarCandidatosPorMunicipio(
         vereador: 0,
         partidos: new Set<string>(),
         ano: null,
+        prefeitoEleito: null,
+        vereadoresEleitosPorPartido: {},
       }
       acumuladores.set(codarea, acc)
     }
 
     acc.total++
 
+    // Verifica se o candidato foi eleito
+    const situacao = linha.situacaoTotalizacao?.toUpperCase()
+    const eEleito = situacao?.includes('ELEITO') ?? false
+    const sigla = linha.partidoSigla
+    const nomeUrna = linha.nomeUrna
+
     switch (linha.codigoCargo) {
       case CARGO_TSE.PREFEITO:
         acc.prefeito++
+        // Se for prefeito eleito, guarda os dados
+        if (eEleito && sigla && nomeUrna) {
+          acc.prefeitoEleito = { nome: nomeUrna, partido: sigla }
+        }
         break
       case CARGO_TSE.VICE_PREFEITO:
         acc.vicePrefeito++
         break
       case CARGO_TSE.VEREADOR:
         acc.vereador++
+        // Se for vereador eleito, conta por partido
+        if (eEleito) {
+          const partidoVereador = sigla || '—'
+          acc.vereadoresEleitosPorPartido[partidoVereador] = (acc.vereadoresEleitosPorPartido[partidoVereador] ?? 0) + 1
+        }
         break
       default:
         break
     }
 
-    const sigla = linha.partidoSigla
     if (typeof sigla === 'string' && sigla.trim() !== '') {
       acc.partidos.add(sigla.trim())
     }
@@ -194,6 +222,9 @@ export async function agregarCandidatosPorMunicipio(
       candidatosVereador: acc.vereador,
       partidosDistintos: acc.partidos.size,
       anoEleicao: acc.ano,
+      partidoPrefeito: acc.prefeitoEleito?.partido ?? null,
+      nomePrefeito: acc.prefeitoEleito?.nome ?? null,
+      vereadoresPorPartido: Object.keys(acc.vereadoresEleitosPorPartido).length > 0 ? acc.vereadoresEleitosPorPartido : undefined,
     })
   }
 

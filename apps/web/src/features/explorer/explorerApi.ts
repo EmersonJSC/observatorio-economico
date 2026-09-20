@@ -34,6 +34,9 @@ export interface MetricasMunicipio {
   educacao: number | null
   candidatos: number | null
   partidos: number | null
+  partidoPrefeito?: string | null
+  nomePrefeito?: string | null
+  vereadoresPorPartido?: Record<string, number>
 }
 
 /** Anos de referência de cada bloco de métricas. */
@@ -76,6 +79,12 @@ export interface MunicipioExplorer {
     | 'totalCandidatos',
     ValorTemporal
   >
+  /** Dados eleitorais */
+  eleicoes: {
+    partidoPrefeito?: string | null
+    nomePrefeito?: string | null
+    vereadoresPorPartido?: Record<string, number>
+  }
 }
 
 export type IndicadorExplorer =
@@ -100,6 +109,9 @@ export interface PontoExplorer extends MunicipioExplorer {
   lng: number
   lat: number
   area: number | null
+  partidoPrefeito?: string | null
+  nomePrefeito?: string | null
+  vereadoresPorPartido?: Record<string, number>
 }
 
 /** Entrada do índice publicado. */
@@ -170,6 +182,11 @@ function adaptar(m: MunicipioPublicado): MunicipioExplorer {
       educacao_per_capita: t(null, null),
       totalCandidatos: t(m.metricas.candidatos, m.anos.eleicao),
     },
+    eleicoes: {
+      partidoPrefeito: m.metricas.partidoPrefeito ?? null,
+      nomePrefeito: m.metricas.nomePrefeito ?? null,
+      vereadoresPorPartido: m.metricas.vereadoresPorPartido,
+    },
   }
 }
 
@@ -209,5 +226,8 @@ export async function getPontosExplorer(): Promise<PontoExplorer[]> {
       lng: m.territorio.longitude as number,
       lat: m.territorio.latitude as number,
       area: m.territorio.areaKm2,
+      partidoPrefeito: m.eleicoes.partidoPrefeito,
+      nomePrefeito: m.eleicoes.nomePrefeito,
+      vereadoresPorPartido: m.eleicoes.vereadoresPorPartido,
     }))
 }

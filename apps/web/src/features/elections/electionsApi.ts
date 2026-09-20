@@ -10,7 +10,7 @@
  *  - Brasil: presidente, vice e composição do Congresso (2022)
  */
 
-import { lerDados, ufDoCodarea } from '../../lib/fontes'
+import { lerDados, siglaDaUf } from '../../lib/fontes'
 
 // ---------------------------------------------------------------------------
 // Tipos
@@ -123,7 +123,9 @@ function comFoto(m: MandatoRepresentante, sgUe: string): MandatoRepresentante {
 // ---------------------------------------------------------------------------
 
 export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMunicipio | null> {
-  const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codarea)}.json`)
+  const sigla = siglaDaUf(codarea)
+  if (!sigla) return null
+  const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${sigla}.json`)
   const m = arquivo?.municipios.find((x) => x.codareaIbge === codarea)
   if (!m) return null
   return {
@@ -135,7 +137,9 @@ export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMu
 }
 
 export async function buscarMandatoEstado(codigoUf: string): Promise<MandatoEstado | null> {
-  const e = await lerDados<MandatoEstado>(`eleicoes/estados/${(codigoUf)}.json`)
+  const sigla = siglaDaUf(codigoUf)
+  if (!sigla) return null
+  const e = await lerDados<MandatoEstado>(`eleicoes/estados/${sigla}.json`)
   if (!e) return null
   return comFotosEstado(e)
 }
@@ -200,7 +204,9 @@ export async function buscarComposicao(
   }
 
   if (nivel === 'municipio') {
-    const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codigo)}.json`)
+    const sigla = siglaDaUf(codigo)
+    if (!sigla) return null
+    const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${sigla}.json`)
     const m = arquivo?.municipios.find((x) => x.codareaIbge === codigo)
     if (!m) return null
     const vereadores = m.vereadores ?? []
@@ -218,9 +224,11 @@ export async function buscarComposicao(
     }
   }
 
+  const sigla = siglaDaUf(codigo)
+  if (!sigla) return null
   const [estado, arquivoUf] = await Promise.all([
-    lerDados<MandatoEstado>(`eleicoes/estados/${(codigo)}.json`),
-    lerDados<ArquivoUfs>(`eleicoes/ufs/${(codigo)}.json`),
+    lerDados<MandatoEstado>(`eleicoes/estados/${sigla}.json`),
+    lerDados<ArquivoUfs>(`eleicoes/ufs/${sigla}.json`),
   ])
   if (!estado) return null
 

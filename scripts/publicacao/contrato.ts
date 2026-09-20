@@ -61,6 +61,9 @@ export const MAPA_METRICAS: readonly MapeamentoCampo[] = [
   { origem: 'saude_per_capita', destino: 'saudePerCapita' },
   { origem: 'totalCandidatos', destino: 'candidatos' },
   { origem: 'partidosDistintos', destino: 'partidos' },
+  { origem: 'partidoPrefeito', destino: 'partidoPrefeito' },
+  { origem: 'nomePrefeito', destino: 'nomePrefeito' },
+  { origem: 'vereadoresPorPartido', destino: 'vereadoresPorPartido' },
 ]
 
 /**

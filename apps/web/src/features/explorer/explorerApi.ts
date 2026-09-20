@@ -72,7 +72,8 @@ export interface MunicipioExplorer {
     | 'despesa_per_capita'
     | 'saude_per_capita'
     | 'educacao_per_capita'
-    | 'densidade',
+    | 'densidade'
+    | 'totalCandidatos',
     ValorTemporal
   >
 }
@@ -90,6 +91,7 @@ export type IndicadorExplorer =
   | 'saude_per_capita'
   | 'educacao_per_capita'
   | 'densidade'
+  | 'totalCandidatos'
 
 export interface PontoExplorer extends MunicipioExplorer {
   codarea: string
@@ -166,6 +168,7 @@ function adaptar(m: MunicipioPublicado): MunicipioExplorer {
       despesa_per_capita: t(null, null),
       saude_per_capita: t(null, null),
       educacao_per_capita: t(null, null),
+      totalCandidatos: t(m.metricas.candidatos, m.anos.eleicao),
     },
   }
 }

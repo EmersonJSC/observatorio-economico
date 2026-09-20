@@ -33,6 +33,7 @@ export type CampoNumerico =
   | 'educacao'
   | 'densidade'
   | 'disponibilidade'
+  | 'totalCandidatos'
 
 export interface Lente {
   id: string
@@ -162,6 +163,12 @@ export const LENTES: Lente[] = [
     ajuda: 'Soma do gasto com educação dos municípios, por área.',
     fonte: FONTE_SICONFI,
   },
+  {
+    id: 'totalCandidatos', categoria: 'politica', rotulo: 'Total de Candidatos', tipo: 'agregacao', campo: 'totalCandidatos',
+    explicacao: 'totalCandidatos',
+    ajuda: 'Soma o número total de candidatos por área.',
+    fonte: FONTE_TSE,
+  },
 ]
 
 export const lentePorId = (id: string | null): Lente | null =>
@@ -211,6 +218,7 @@ export function valorDoPonto(p: PontoExplorer, campo: CampoNumerico): number | n
   switch (campo) {
     case 'pib': case 'pib_per_capita': case 'populacao': case 'receita': case 'despesa':
     case 'receita_per_capita': case 'despesa_per_capita': case 'saude': case 'educacao':
+    case 'totalCandidatos':
       return getIndicator(p, campo).valor
     case 'densidade':
       // A densidade JÁ VEM CALCULADA pela Caixa 6 e é publicada diretamente.
@@ -238,6 +246,7 @@ export function valorDoEstado(pontos: PontoExplorer[], campo: CampoNumerico): nu
 
   switch (campo) {
     case 'pib': case 'populacao': case 'receita': case 'despesa': case 'saude': case 'educacao':
+    case 'totalCandidatos':
       return somar((p) => valorDoPonto(p, campo))
     // Não recalcula taxas estaduais com componentes de anos diferentes.
     case 'pib_per_capita': case 'receita_per_capita': case 'despesa_per_capita': return null
@@ -302,6 +311,7 @@ const APRESENTACAO: Record<CampoNumerico, { rotulo: string; formato: FormatoValo
   saude: { rotulo: 'Saúde', formato: 'moeda' },
   educacao: { rotulo: 'Educação', formato: 'moeda' },
   disponibilidade: { rotulo: 'Indicadores presentes', formato: 'inteiro' },
+  totalCandidatos: { rotulo: 'Total de Candidatos', formato: 'inteiro' },
 }
 
 type FormatoValor = 'moeda' | 'inteiro' | 'decimal'
@@ -330,6 +340,7 @@ const TOTAL_DA_TAXA: Partial<Record<CampoNumerico, CampoNumerico>> = {
   pib_per_capita: 'pib',
   receita_per_capita: 'receita',
   despesa_per_capita: 'despesa',
+  totalCandidatos: null,
 }
 
 /**

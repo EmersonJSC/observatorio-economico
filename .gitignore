@@ -9,6 +9,33 @@ site/
 # ZIPs brutos do TSE (grandes — baixe com: npm run scrape:tse)
 data/elections/raw/
 
+# RAW da Caixa 3 — os objetos são binários públicos volumosos e reprodutíveis;
+# a PROCEDÊNCIA é pequena, versionável e insubstituível.
+# `objetos/*` fica de fora; as duas negações abaixo forçam o versionamento do
+# manifesto e do log de tentativas (a ordem importa: a exclusão vem primeiro).
+data/raw/**/objetos/*
+!data/raw/**/manifest.json
+!data/raw/**/tentativas.jsonl
+
+# ORGANIZADO da Caixa 4 — mesma política do RAW: o volume (JSONL) é derivado e
+# reproduzível a partir do RAW; os metadados são pequenos e são o registro do
+# que foi organizado, com que esquema e a partir de quais hashes.
+data/organized/**/*.jsonl
+data/organized/**/*.quarentena.jsonl
+!data/organized/**/*.meta.json
+
+# RELACIONAMENTOS da Caixa 5 — as tabelas-ponte são derivadas dos JSONL da
+# Caixa 4 e reproduzíveis; os metadados registram os hashes de origem e as
+# contagens de casamento/órfãos, que são o que precisa ser auditado.
+data/related/**/*.jsonl
+!data/related/**/*.meta.json
+
+# CÁLCULOS da Caixa 6 — as métricas derivadas são reproduzíveis a partir do
+# organizado + ponte; os metadados registram o catálogo de fórmulas, os anos de
+# cada insumo e o motivo de cada valor nulo, que é o que precisa ser auditado.
+data/calculated/**/*.jsonl
+!data/calculated/**/*.meta.json
+
 # Cache local do npm (quando usado com --cache ./.npm-cache)
 .npm-cache/
 

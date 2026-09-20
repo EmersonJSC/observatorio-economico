@@ -6,7 +6,15 @@ import { fileURLToPath } from 'node:url'
 
 // Raiz do monorepo (apps/web → ../..)
 const RAIZ = join(fileURLToPath(new URL('.', import.meta.url)), '..', '..')
-const DADOS_DIR = join(RAIZ, 'data')
+/**
+ * Em desenvolvimento, `/dados/*` é servido de `data/published/`.
+ *
+ * Antes apontava para `data/` direto, porque as pastas legadas (`data/maps`,
+ * `data/indicators`, …) ficavam na raiz. Com a Caixa 7 a única origem
+ * publicável é `data/published/` — servir `data/` produziria 404 em TODAS as
+ * rotas, e o site apareceria sem mapa e sem dados.
+ */
+const DADOS_DIR = join(RAIZ, 'data', 'published')
 
 const TIPOS: Record<string, string> = {
   '.json': 'application/json; charset=utf-8',

@@ -1,0 +1,280 @@
+{
+  "fonteId": "ibge-localidades",
+  "recursoId": "municipios-por-uf",
+  "versao": 1,
+  "criadoEm": "2026-09-20T05:59:28.249Z",
+  "atualizadoEm": "2026-09-20T05:59:29.675Z",
+  "objetos": [
+    {
+      "hash": "e13fccee96be6e7fa914532ec8f7710a7812b6edb04683c44e1c51a94418af3f",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/e13fccee96be6e7fa914532ec8f7710a7812b6edb04683c44e1c51a94418af3f.json",
+      "extensao": ".json",
+      "tamanho": 22351,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.249Z"
+    },
+    {
+      "hash": "4e44c564eabe3af70d05a7c1a30fdd5f5e592c6277f49951a0c7520689c253fe",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/4e44c564eabe3af70d05a7c1a30fdd5f5e592c6277f49951a0c7520689c253fe.json",
+      "extensao": ".json",
+      "tamanho": 9233,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.278Z"
+    },
+    {
+      "hash": "97efca2259e996ef9cd83762cc9b975b7f27a6e5de22eb6f57dbc68d6c6b9177",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/97efca2259e996ef9cd83762cc9b975b7f27a6e5de22eb6f57dbc68d6c6b9177.json",
+      "extensao": ".json",
+      "tamanho": 25962,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.308Z"
+    },
+    {
+      "hash": "529fef73b91ba1562ede1a1c338017183fb015237fb9b5fd1c4b3ff4c8d02555",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/529fef73b91ba1562ede1a1c338017183fb015237fb9b5fd1c4b3ff4c8d02555.json",
+      "extensao": ".json",
+      "tamanho": 6471,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.339Z"
+    },
+    {
+      "hash": "734d69f1c4e123d6fa37df6074c361cc5379c57e6f570627b0804ecf63314b9d",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/734d69f1c4e123d6fa37df6074c361cc5379c57e6f570627b0804ecf63314b9d.json",
+      "extensao": ".json",
+      "tamanho": 59973,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.371Z"
+    },
+    {
+      "hash": "7ef9ce84249c6d70845276f7f2fc8ff8131e1ea24245c6703ef6863959e2e39c",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/7ef9ce84249c6d70845276f7f2fc8ff8131e1ea24245c6703ef6863959e2e39c.json",
+      "extensao": ".json",
+      "tamanho": 6762,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.398Z"
+    },
+    {
+      "hash": "8fb779e1469f7c278e046f0b39c90491ec0840fdbbfe017871d2c2288b68cb14",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/8fb779e1469f7c278e046f0b39c90491ec0840fdbbfe017871d2c2288b68cb14.json",
+      "extensao": ".json",
+      "tamanho": 60945,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.429Z"
+    },
+    {
+      "hash": "a563ef683ded9a8aa9e898e1c2e153888d3ff914564019a1ccd1c1420739ed53",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/a563ef683ded9a8aa9e898e1c2e153888d3ff914564019a1ccd1c1420739ed53.json",
+      "extensao": ".json",
+      "tamanho": 97316,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.472Z"
+    },
+    {
+      "hash": "f485605d2fd236462fb59f1c61dceed09aa105dc6b0c9224a60745277a3db8bb",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/f485605d2fd236462fb59f1c61dceed09aa105dc6b0c9224a60745277a3db8bb.json",
+      "extensao": ".json",
+      "tamanho": 99743,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.506Z"
+    },
+    {
+      "hash": "a7863c875329fc7ad47a4379310a6564a47da0114f100667046a1ff981ea213f",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/a7863c875329fc7ad47a4379310a6564a47da0114f100667046a1ff981ea213f.json",
+      "extensao": ".json",
+      "tamanho": 79632,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.535Z"
+    },
+    {
+      "hash": "8744e81fe79c5931ae444f5f0c84b2dcdbc5066047c47679e51b8487f5ce85f4",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/8744e81fe79c5931ae444f5f0c84b2dcdbc5066047c47679e51b8487f5ce85f4.json",
+      "extensao": ".json",
+      "tamanho": 76383,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.565Z"
+    },
+    {
+      "hash": "c87b860e7e08fb934e225e578a4f5fd5ec68e1050ab0f11c9c59e5e0bf61a51c",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/c87b860e7e08fb934e225e578a4f5fd5ec68e1050ab0f11c9c59e5e0bf61a51c.json",
+      "extensao": ".json",
+      "tamanho": 97728,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.600Z"
+    },
+    {
+      "hash": "61bcc46787c910cc212be75f5e91bfd5f1880f9f8869d20051802c54d0926cb5",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/61bcc46787c910cc212be75f5e91bfd5f1880f9f8869d20051802c54d0926cb5.json",
+      "extensao": ".json",
+      "tamanho": 82359,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.631Z"
+    },
+    {
+      "hash": "4c4094f73f09798411a739b7f60320c0f2ac587c8b113ed4f345c1928b1c0248",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/4c4094f73f09798411a739b7f60320c0f2ac587c8b113ed4f345c1928b1c0248.json",
+      "extensao": ".json",
+      "tamanho": 45259,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.662Z"
+    },
+    {
+      "hash": "2678c3b209f60db7337e410458f8ce43ea76abae4f0f45a960de33117f5801c5",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/2678c3b209f60db7337e410458f8ce43ea76abae4f0f45a960de33117f5801c5.json",
+      "extensao": ".json",
+      "tamanho": 32649,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.692Z"
+    },
+    {
+      "hash": "ee2524f732a80d234f129b2e26a90f9bc080a52844a01e5359e789c613d7ee4f",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/ee2524f732a80d234f129b2e26a90f9bc080a52844a01e5359e789c613d7ee4f.json",
+      "extensao": ".json",
+      "tamanho": 182735,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.724Z"
+    },
+    {
+      "hash": "2547984d1767a3687fcf31b21f60422af8cc1bb9dc5e18748916519976b4721d",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/2547984d1767a3687fcf31b21f60422af8cc1bb9dc5e18748916519976b4721d.json",
+      "extensao": ".json",
+      "tamanho": 381982,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.759Z"
+    },
+    {
+      "hash": "1d410301e1c206850408842db20be3b112b96da551971b5f38dd862e63581a00",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/1d410301e1c206850408842db20be3b112b96da551971b5f38dd862e63581a00.json",
+      "extensao": ".json",
+      "tamanho": 36719,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.788Z"
+    },
+    {
+      "hash": "9259126c654f7825fe7228a8070bb1775b4a5f6f283ea2b33738c588c6991c12",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/9259126c654f7825fe7228a8070bb1775b4a5f6f283ea2b33738c588c6991c12.json",
+      "extensao": ".json",
+      "tamanho": 43116,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.817Z"
+    },
+    {
+      "hash": "c06b7327c3bf7475d0c63c90c5f8c9122464fd0ed84bc98709a2a7f82649d14b",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/c06b7327c3bf7475d0c63c90c5f8c9122464fd0ed84bc98709a2a7f82649d14b.json",
+      "extensao": ".json",
+      "tamanho": 284370,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.853Z"
+    },
+    {
+      "hash": "aa5f984155444aece8f3647bd480b11fcb41a409c669b2c58bd4410db7ae7c23",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/aa5f984155444aece8f3647bd480b11fcb41a409c669b2c58bd4410db7ae7c23.json",
+      "extensao": ".json",
+      "tamanho": 170538,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.891Z"
+    },
+    {
+      "hash": "7b3217951569720255938a93677747616a80605612354d5fa69f4614d3beb8f9",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/7b3217951569720255938a93677747616a80605612354d5fa69f4614d3beb8f9.json",
+      "extensao": ".json",
+      "tamanho": 127644,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.928Z"
+    },
+    {
+      "hash": "0bb9694c5b2eaf295fb53df186d3573bf7a82e8e9d196d383518d240dde90e86",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/0bb9694c5b2eaf295fb53df186d3573bf7a82e8e9d196d383518d240dde90e86.json",
+      "extensao": ".json",
+      "tamanho": 226419,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.964Z"
+    },
+    {
+      "hash": "1aead922ddf0eac00ded02c8af67fb76406994c4ef38d8afc63fe5986e8a8fd2",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/1aead922ddf0eac00ded02c8af67fb76406994c4ef38d8afc63fe5986e8a8fd2.json",
+      "extensao": ".json",
+      "tamanho": 37797,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.994Z"
+    },
+    {
+      "hash": "6a5506b41f96b2aa1dbab29a85c235d8550dfef95a484d37605db23a9645a9e4",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/6a5506b41f96b2aa1dbab29a85c235d8550dfef95a484d37605db23a9645a9e4.json",
+      "extensao": ".json",
+      "tamanho": 64818,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:29.025Z"
+    },
+    {
+      "hash": "17c352909a6238a25d5ec15fd5b9eec0a2584d1e819c0407c53424e2327ff528",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/17c352909a6238a25d5ec15fd5b9eec0a2584d1e819c0407c53424e2327ff528.json",
+      "extensao": ".json",
+      "tamanho": 110691,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:29.054Z"
+    },
+    {
+      "hash": "2fe679ffa023400bbcfabdb4c2611cc736a23a3bc8a99ca7671ad13af91153e8",
+      "arquivo": "ibge-localidades/municipios-por-uf/objetos/2fe679ffa023400bbcfabdb4c2611cc736a23a3bc8a99ca7671ad13af91153e8.json",
+      "extensao": ".json",
+      "tamanho": 467,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:29.675Z"
+    }
+  ],
+  "ultimoHash": "2fe679ffa023400bbcfabdb4c2611cc736a23a3bc8a99ca7671ad13af91153e8"
+}

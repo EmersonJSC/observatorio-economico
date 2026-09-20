@@ -1,0 +1,254 @@
+{
+  "versaoCalculos": "1.0.0",
+  "calculadoEm": "2026-09-20T08:24:07.298Z",
+  "anosInsumos": {
+    "populacao": 2021,
+    "pib": 2021,
+    "area": 0,
+    "siconfi": 2023
+  },
+  "metricas": [
+    {
+      "id": "populacao",
+      "nome": "População residente estimada",
+      "tipo": "direto",
+      "insumos": [
+        "populacao"
+      ],
+      "unidade": "habitantes",
+      "exigirMesmoAno": false,
+      "descricao": "População estimada pelo IBGE para o município."
+    },
+    {
+      "id": "pib_mil_reais",
+      "nome": "PIB a preços correntes (mil R$)",
+      "tipo": "direto",
+      "insumos": [
+        "pibMilReais"
+      ],
+      "unidade": "mil R$",
+      "exigirMesmoAno": false,
+      "descricao": "Valor bruto como publicado pelo IBGE, em milhares de reais."
+    },
+    {
+      "id": "pib_reais",
+      "nome": "PIB a preços correntes (R$)",
+      "tipo": "direto",
+      "insumos": [
+        "pibMilReais"
+      ],
+      "unidade": "R$",
+      "exigirMesmoAno": false,
+      "fatorNumerador": 1000,
+      "descricao": "PIB convertido de milhares para reais."
+    },
+    {
+      "id": "receita_total",
+      "nome": "Receita orçamentária realizada",
+      "tipo": "direto",
+      "insumos": [
+        "receitaTotal"
+      ],
+      "unidade": "R$",
+      "exigirMesmoAno": false,
+      "descricao": "Arrecadação total do exercício, conforme a DCA do Siconfi."
+    },
+    {
+      "id": "despesa_total",
+      "nome": "Despesa orçamentária liquidada",
+      "tipo": "direto",
+      "insumos": [
+        "despesaTotal"
+      ],
+      "unidade": "R$",
+      "exigirMesmoAno": false,
+      "descricao": "Total executado e liquidado no exercício."
+    },
+    {
+      "id": "pib_per_capita",
+      "nome": "PIB por habitante",
+      "tipo": "razao",
+      "insumos": [
+        "pibMilReais",
+        "populacao"
+      ],
+      "unidade": "R$/habitante",
+      "exigirMesmoAno": true,
+      "fatorNumerador": 1000,
+      "descricao": "PIB (mil R$) × 1000 ÷ população. Exige o MESMO ano nos dois insumos: hoje PIB 2021 e população 2021."
+    },
+    {
+      "id": "densidade",
+      "nome": "Densidade demográfica",
+      "tipo": "razao",
+      "insumos": [
+        "populacao",
+        "areaKm2"
+      ],
+      "unidade": "hab/km²",
+      "exigirMesmoAno": false,
+      "descricao": "População ÷ área territorial (km²)."
+    },
+    {
+      "id": "receita_per_capita",
+      "nome": "Receita por habitante",
+      "tipo": "razao",
+      "insumos": [
+        "receitaTotal",
+        "populacao"
+      ],
+      "unidade": "R$/habitante",
+      "exigirMesmoAno": true,
+      "descricao": "Receita realizada ÷ população. Exige o MESMO ano: hoje a receita é do exercício 2023 e a população disponível é de 2024, então o cálculo fica bloqueado com motivo \"ano-divergente\"."
+    },
+    {
+      "id": "despesa_per_capita",
+      "nome": "Despesa por habitante",
+      "tipo": "razao",
+      "insumos": [
+        "despesaTotal",
+        "populacao"
+      ],
+      "unidade": "R$/habitante",
+      "exigirMesmoAno": true,
+      "descricao": "Despesa liquidada ÷ população. Mesmo bloqueio temporal da receita."
+    },
+    {
+      "id": "saude_per_capita",
+      "nome": "Gasto em saúde por habitante",
+      "tipo": "razao",
+      "insumos": [
+        "gastoSaude",
+        "populacao"
+      ],
+      "unidade": "R$/habitante",
+      "exigirMesmoAno": true,
+      "descricao": "Gasto na função Saúde (10) ÷ população. Mesmo bloqueio temporal."
+    },
+    {
+      "id": "educacao_per_capita",
+      "nome": "Gasto em educação por habitante",
+      "tipo": "razao",
+      "insumos": [
+        "gastoEducacao",
+        "populacao"
+      ],
+      "unidade": "R$/habitante",
+      "exigirMesmoAno": true,
+      "descricao": "Gasto na função Educação (12) ÷ população. Mesmo bloqueio temporal."
+    }
+  ],
+  "contagens": {
+    "municipios": 5599
+  },
+  "cobertura": [
+    {
+      "metricaId": "populacao",
+      "nome": "População residente estimada",
+      "unidade": "habitantes",
+      "comValor": 5598,
+      "porMotivo": {}
+    },
+    {
+      "metricaId": "pib_mil_reais",
+      "nome": "PIB a preços correntes (mil R$)",
+      "unidade": "mil R$",
+      "comValor": 5598,
+      "porMotivo": {}
+    },
+    {
+      "metricaId": "pib_reais",
+      "nome": "PIB a preços correntes (R$)",
+      "unidade": "R$",
+      "comValor": 5598,
+      "porMotivo": {}
+    },
+    {
+      "metricaId": "receita_total",
+      "nome": "Receita orçamentária realizada",
+      "unidade": "R$",
+      "comValor": 851,
+      "porMotivo": {}
+    },
+    {
+      "metricaId": "despesa_total",
+      "nome": "Despesa orçamentária liquidada",
+      "unidade": "R$",
+      "comValor": 853,
+      "porMotivo": {}
+    },
+    {
+      "metricaId": "pib_per_capita",
+      "nome": "PIB por habitante",
+      "unidade": "R$/habitante",
+      "comValor": 5598,
+      "porMotivo": {
+        "insumo-ausente": 1
+      }
+    },
+    {
+      "metricaId": "densidade",
+      "nome": "Densidade demográfica",
+      "unidade": "hab/km²",
+      "comValor": 5570,
+      "porMotivo": {
+        "insumo-ausente": 29
+      }
+    },
+    {
+      "metricaId": "receita_per_capita",
+      "nome": "Receita por habitante",
+      "unidade": "R$/habitante",
+      "comValor": 0,
+      "porMotivo": {
+        "insumo-ausente": 4748,
+        "ano-divergente": 851
+      }
+    },
+    {
+      "metricaId": "despesa_per_capita",
+      "nome": "Despesa por habitante",
+      "unidade": "R$/habitante",
+      "comValor": 0,
+      "porMotivo": {
+        "insumo-ausente": 4746,
+        "ano-divergente": 853
+      }
+    },
+    {
+      "metricaId": "saude_per_capita",
+      "nome": "Gasto em saúde por habitante",
+      "unidade": "R$/habitante",
+      "comValor": 0,
+      "porMotivo": {
+        "insumo-ausente": 4747,
+        "ano-divergente": 852
+      }
+    },
+    {
+      "metricaId": "educacao_per_capita",
+      "nome": "Gasto em educação por habitante",
+      "unidade": "R$/habitante",
+      "comValor": 0,
+      "porMotivo": {
+        "insumo-ausente": 4746,
+        "ano-divergente": 853
+      }
+    }
+  ],
+  "bloqueios": [
+    "receita_per_capita: BLOQUEADO em 851 município(s) por ano divergente (população 2021, PIB 2021, Siconfi 2023)",
+    "despesa_per_capita: BLOQUEADO em 853 município(s) por ano divergente (população 2021, PIB 2021, Siconfi 2023)",
+    "saude_per_capita: BLOQUEADO em 852 município(s) por ano divergente (população 2021, PIB 2021, Siconfi 2023)",
+    "educacao_per_capita: BLOQUEADO em 853 município(s) por ano divergente (população 2021, PIB 2021, Siconfi 2023)"
+  ],
+  "avisos": [],
+  "agregacoes": {
+    "tseCandidatos": {
+      "municipios": 5569,
+      "candidatos": 463859,
+      "naoVinculados": 0,
+      "saida": "data/calculated/candidatos-por-municipio.jsonl"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fonteId": "ibge-localidades",
+  "recursoId": "estados",
+  "versao": 1,
+  "criadoEm": "2026-09-20T05:59:28.149Z",
+  "atualizadoEm": "2026-09-20T05:59:28.149Z",
+  "objetos": [
+    {
+      "hash": "7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596",
+      "arquivo": "ibge-localidades/estados/objetos/7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596.json",
+      "extensao": ".json",
+      "tamanho": 2446,
+      "formato": "json",
+      "contentType": "application/json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:59:28.149Z"
+    }
+  ],
+  "ultimoHash": "7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596"
+}

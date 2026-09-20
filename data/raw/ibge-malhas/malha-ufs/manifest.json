@@ -1,0 +1,20 @@
+{
+  "fonteId": "ibge-malhas",
+  "recursoId": "malha-ufs",
+  "versao": 1,
+  "criadoEm": "2026-09-20T07:45:26.487Z",
+  "atualizadoEm": "2026-09-20T07:45:26.487Z",
+  "objetos": [
+    {
+      "hash": "4435b2e0e62de6d68f5c5387e01efc31655242948ae9434b78a3b5b05582e497",
+      "arquivo": "ibge-malhas/malha-ufs/objetos/4435b2e0e62de6d68f5c5387e01efc31655242948ae9434b78a3b5b05582e497.geojson",
+      "extensao": ".geojson",
+      "tamanho": 1001279,
+      "formato": "geojson",
+      "contentType": "application/vnd.geo+json; charset=utf-8",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T07:45:26.487Z"
+    }
+  ],
+  "ultimoHash": "4435b2e0e62de6d68f5c5387e01efc31655242948ae9434b78a3b5b05582e497"
+}

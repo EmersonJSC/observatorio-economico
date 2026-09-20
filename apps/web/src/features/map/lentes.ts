@@ -14,6 +14,7 @@
 
 import { getIndicator } from '../explorer/explorerApi'
 import type { IndicadorExplorer, PontoExplorer } from '../explorer/explorerApi'
+import { formatarInteiro, formatarMoedaCompacta } from '../../lib/format'
 
 export type CategoriaLente = 'economia' | 'pessoas' | 'politica' | 'gestao'
 
@@ -212,8 +213,12 @@ export function valorDoPonto(p: PontoExplorer, campo: CampoNumerico): number | n
     case 'receita_per_capita': case 'despesa_per_capita': case 'saude': case 'educacao':
       return getIndicator(p, campo).valor
     case 'densidade':
-      return !nulo(getIndicator(p, 'populacao').valor) && !nulo(p.area) && p.area !== 0
-        ? (getIndicator(p, 'populacao').valor as number) / (p.area as number) : null
+      // A densidade JÁ VEM CALCULADA pela Caixa 6 e é publicada diretamente.
+      // Antes o frontend a recalculava como `populacao / p.area`, mas `area`
+      // não é publicada no payload de municípios (só a densidade resultante),
+      // então o valor saía sempre nulo. Recalcular aqui também duplicaria a
+      // fórmula, que pertence à Caixa 6.
+      return getIndicator(p, 'densidade').valor
     case 'disponibilidade': return disponibilidade(p)
   }
 }
@@ -237,8 +242,16 @@ export function valorDoEstado(pontos: PontoExplorer[], campo: CampoNumerico): nu
     // Não recalcula taxas estaduais com componentes de anos diferentes.
     case 'pib_per_capita': case 'receita_per_capita': case 'despesa_per_capita': return null
     case 'densidade': {
+      // Densidade do estado = população total ÷ área total. Como a área não é
+      // publicada por município, derivamos a área de cada um a partir da
+      // densidade já calculada (pop ÷ densidade), preservando a fórmula única
+      // da Caixa 6.
       const pop = somar((p) => valorDoPonto(p, 'populacao'))
-      const area = somar((p) => p.area)
+      const area = somar((p) => {
+        const dens = valorDoPonto(p, 'densidade')
+        const populacao = valorDoPonto(p, 'populacao')
+        return dens !== null && dens > 0 && populacao !== null ? populacao / dens : null
+      })
       return !nulo(pop) && !nulo(area) && area !== 0 ? (pop as number) / (area as number) : null
     }
     case 'disponibilidade': {
@@ -270,4 +283,118 @@ export function dominioPercentil(
 export function normalizar(valor: number, dominio: [number, number] | null): number {
   if (!dominio || dominio[1] <= dominio[0]) return 0
   return Math.max(0, Math.min(1, (valor - dominio[0]) / (dominio[1] - dominio[0])))
+}
+
+// ---------------------------------------------------------------------------
+// Linhas de indicador para o tooltip do mapa
+// ---------------------------------------------------------------------------
+
+/** Rótulo curto e unidade de cada campo numérico. */
+const APRESENTACAO: Record<CampoNumerico, { rotulo: string; formato: FormatoValor }> = {
+  pib: { rotulo: 'PIB', formato: 'moeda' },
+  pib_per_capita: { rotulo: 'PIB per capita', formato: 'moeda' },
+  populacao: { rotulo: 'População', formato: 'inteiro' },
+  densidade: { rotulo: 'Densidade', formato: 'decimal' },
+  receita: { rotulo: 'Receita', formato: 'moeda' },
+  despesa: { rotulo: 'Despesa', formato: 'moeda' },
+  receita_per_capita: { rotulo: 'Receita/habitante', formato: 'moeda' },
+  despesa_per_capita: { rotulo: 'Despesa/habitante', formato: 'moeda' },
+  saude: { rotulo: 'Saúde', formato: 'moeda' },
+  educacao: { rotulo: 'Educação', formato: 'moeda' },
+  disponibilidade: { rotulo: 'Indicadores presentes', formato: 'inteiro' },
+}
+
+type FormatoValor = 'moeda' | 'inteiro' | 'decimal'
+
+/** Formata um valor conforme a unidade do campo. */
+function formatarValor(valor: number, formato: FormatoValor): string {
+  switch (formato) {
+    case 'moeda':
+      return formatarMoedaCompacta(valor)
+    case 'inteiro':
+      return formatarInteiro(valor)
+    case 'decimal':
+      return `${valor.toLocaleString('pt-BR', { maximumFractionDigits: 2 })} hab/km²`
+  }
+}
+
+/** Uma linha de indicador exibida no tooltip. */
+export interface LinhaIndicador {
+  rotulo: string
+  valor: string | null
+  ano?: number | null
+}
+
+/** Campo total que contextualiza uma taxa derivada. */
+const TOTAL_DA_TAXA: Partial<Record<CampoNumerico, CampoNumerico>> = {
+  pib_per_capita: 'pib',
+  receita_per_capita: 'receita',
+  despesa_per_capita: 'despesa',
+}
+
+/**
+ * Linhas de indicador para o tooltip de UM município.
+ *
+ * Devolve a métrica da lente ativa e, quando ela é uma taxa per capita, também
+ * o total que a origina: "PIB per capita" sozinho não diz o tamanho da
+ * economia. O ano acompanha cada valor porque as métricas têm anos diferentes
+ * (população 2021, orçamento 2023) e esconder isso sugeriria comparação válida.
+ *
+ * Valor ausente vira `null` — exibido como "sem dado", nunca como `0`.
+ */
+export function indicadoresDoPonto(ponto: PontoExplorer, campo: CampoNumerico): LinhaIndicador[] {
+  const apresentacao = APRESENTACAO[campo]
+  const principal = getIndicator(ponto, campo as IndicadorExplorer)
+  const linhas: LinhaIndicador[] = [
+    {
+      rotulo: apresentacao.rotulo,
+      valor: nulo(principal.valor) ? null : formatarValor(principal.valor, apresentacao.formato),
+      ano: principal.ano,
+    },
+  ]
+
+  // "Dados disponíveis" já é um resumo de presença — acompanhá-lo do total
+  // seria ruído.
+  if (campo === 'disponibilidade') return linhas
+
+  const campoTotal = TOTAL_DA_TAXA[campo]
+  if (!campoTotal) return linhas
+
+  const total = getIndicator(ponto, campoTotal as IndicadorExplorer)
+  return [
+    ...linhas,
+    {
+      rotulo: APRESENTACAO[campoTotal].rotulo,
+      valor: nulo(total.valor) ? null : formatarValor(total.valor, APRESENTACAO[campoTotal].formato),
+      ano: total.ano,
+    },
+  ]
+}
+
+/**
+ * Linhas de indicador para o tooltip de um ESTADO.
+ *
+ * O valor estadual vem agregado dos municípios (`valorDoEstado`), porque o
+ * total da UF não está no payload municipal — só o valor de cada município.
+ */
+export function indicadoresDoEstado(
+  pontos: PontoExplorer[],
+  campo: CampoNumerico,
+): LinhaIndicador[] {
+  const apresentacao = APRESENTACAO[campo]
+  const valor = valorDoEstado(pontos, campo)
+
+  // Ano de referência: o do primeiro município que realmente tem o dado. O
+  // total estadual é uma soma, então não existe "o ano" do agregado — mas
+  // omitir o ano sugeriria que todos os componentes são do mesmo exercício.
+  const comValor = pontos.find((p) => !nulo(getIndicator(p, campo as IndicadorExplorer).valor))
+  const ano = comValor ? getIndicator(comValor, campo as IndicadorExplorer).ano : null
+
+  return [
+    {
+      rotulo: apresentacao.rotulo,
+      valor: nulo(valor) ? null : formatarValor(valor as number, apresentacao.formato),
+      ano,
+    },
+  ]
 }

@@ -22,6 +22,7 @@ import type { PontoExplorer } from '../../explorer/explorerApi'
 import {
   CATEGORIAS, LENTES, corSequencial, dominioPercentil, lentePorId,
   normalizar, valorDoEstado, valorDoPonto,
+  indicadoresDoPonto, indicadoresDoEstado,
 } from '../lentes'
 import type { CategoriaLente, Lente } from '../lentes'
 import './map-explorer.css'
@@ -113,13 +114,13 @@ export default function MapExplorer() {
 
   // Malhas territoriais lidas direto dos arquivos estáticos
   useEffect(() => {
-    lerDados<{ features?: FeatureTerritorial[] }>('maps/brasil.geojson')
+    lerDados<{ features?: FeatureTerritorial[] }>('territorios/brasil.geojson')
       .then((d) => setStates(d?.features ?? []))
   }, [])
   useEffect(() => {
     if (!state) { setCities([]); return }
     let ativo = true
-    lerDados<{ features?: FeatureTerritorial[] }>(`maps/ufs/${state.codigo}.geojson`)
+    lerDados<{ features?: FeatureTerritorial[] }>(`territorios/${state.codigo}.geojson`)
       .then((d) => { if (ativo) setCities(d?.features ?? []) })
     return () => { ativo = false }
   }, [state])
@@ -256,6 +257,30 @@ export default function MapExplorer() {
     )
   }, [pontosComValor, lente, percentilInferior, percentilSuperior])
   const pontosPorCodigo = useMemo(() => new Map(pontosInformacao.map((ponto) => [ponto.codarea, ponto])), [pontosInformacao])
+
+  /**
+   * Indicadores exibidos no tooltip, conforme a lente ativa.
+   *
+   * Só há números em modo informação: nas demais camadas o popup identifica o
+   * território, e inventar linhas vazias poluiria o hover. Quando os pontos
+   * ainda estão carregando, o tooltip aparece sem indicadores em vez de
+   * piscar "sem dado" — que seria uma afirmação falsa sobre o dado.
+   */
+  const indicadoresHover = useMemo(() => {
+    if (!modoInformacao || !lente.campo || !hover || pontosInformacao.length === 0) return []
+    const campo = lente.campo
+
+    if (hover.data.nivel === 'municipio') {
+      const ponto = pontosPorCodigo.get(hover.data.codigo)
+      return ponto ? indicadoresDoPonto(ponto, campo) : []
+    }
+
+    const sigla = String(
+      states.find((f) => extrairCodigo(f) === hover.data.codigo)?.properties?.sigla ?? '',
+    )
+    if (!sigla) return []
+    return indicadoresDoEstado(pontosInformacao.filter((ponto) => ponto.uf === sigla), campo)
+  }, [modoInformacao, lente, hover, pontosPorCodigo, pontosInformacao, states])
 
   const layers = useMemo<Layer[]>(() => {
     // Lentes numéricas: totais viram hexágonos; taxas viram cor nos territórios.
@@ -474,7 +499,7 @@ export default function MapExplorer() {
     {breadcrumb.length > 1 && <nav className="breadcrumbs" aria-label="Caminho de navegação">{breadcrumb.map((item,index) => <span key={item}>{index > 0 && <i>/</i>}<button onClick={index === 0 ? goHome : undefined}>{item}</button></span>)}</nav>}
     {!modoInformacao && <div className="map-legend"><span><i className="dot capital"/>Capital</span><span><i className="dot selected"/>Território selecionado</span></div>}
     {territory && <TerritoryPanel territory={territory} onClose={() => setTerritory(null)} onCompare={(q) => { setSearch(q); setSearchOpen(true) }} partidoSelecionado={partidoSelecionado} onSelecionarPartido={(sigla) => { setPartidoSelecionado(sigla); if (sigla) setCamada('forca') }} />}
-    {hover && <MapTooltip x={hover.x} y={hover.y} nome={hover.data.nome} codigo={hover.data.codigo} nivel={hover.data.nivel} uf={hover.data.uf} capital={hover.capital} />}
+    {hover && <MapTooltip x={hover.x} y={hover.y} nome={hover.data.nome} codigo={hover.data.codigo} nivel={hover.data.nivel} uf={hover.data.uf} capital={hover.capital} indicadores={indicadoresHover} />}
     {politicopediaAberta && <Politicopedia onFechar={() => setPoliticopediaAberta(false)} />}
     {rankingAberto && <Ranking onFechar={() => setRankingAberto(false)} onSelecionar={selecionarDoRanking} />}
   </div>

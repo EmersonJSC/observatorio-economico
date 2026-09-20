@@ -1,0 +1,17 @@
+{
+  "fonteId": "ibge-localidades",
+  "recursoId": "estados",
+  "versaoOrganizacao": "1.0.0",
+  "versaoEsquema": 1,
+  "organizadoEm": "2026-09-20T08:23:03.524Z",
+  "origensRaw": [
+    "7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596"
+  ],
+  "objetosRaw": 1,
+  "contagens": {
+    "lidas": 27,
+    "gravadas": 27,
+    "quarentenadas": 0
+  },
+  "avisos": []
+}

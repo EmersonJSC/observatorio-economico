@@ -17,7 +17,7 @@
 import { execFileSync } from 'node:child_process'
 import { cp, readdir, stat, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { dirname, join, sep } from 'node:path'
+import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -27,8 +27,15 @@ const DIST_DIR = join(ROOT, 'apps', 'web', 'dist')
 const DESTINO_DADOS = join(DIST_DIR, 'dados')
 const TSX = join(ROOT, 'node_modules', '.bin', 'tsx')
 
-/** Pastas de `data/` publicadas no site. `elections/raw` (ZIPs) fica de fora. */
-const PASTAS = ['maps', 'indicators', 'budget', 'elections', 'explorer']
+/**
+ * Pasta publicada no site.
+ *
+ * Desde a Caixa 7 existe UMA origem: `data/published/`, gerada por
+ * `scripts/publicacao/` com nomes em português, sem aliases e com `.gz` ao
+ * lado de cada artefato. As pastas legadas (`maps`, `indicators`, `budget`,
+ * `elections`, `explorer`) não são mais copiadas.
+ */
+const PASTA_PUBLICADA = 'published'
 
 /** Soma recursiva do tamanho em bytes. */
 async function tamanhoBytes(caminho: string): Promise<number> {
@@ -55,9 +62,9 @@ async function main() {
   const base = process.env.VITE_BASE ?? '/'
   console.log(`\n  base do site: ${base}`)
 
-  // 1. Derivados
-  etapa('1. Gerando arquivos derivados')
-  execFileSync(TSX, [join('scripts', 'gerar-derivados.ts')], { stdio: 'inherit', cwd: ROOT })
+  // 1. Publicação (Caixa 7) — monta data/published/ a partir das Caixas 4-6.
+  etapa('1. Publicando os dados (Caixa 7)')
+  execFileSync(TSX, [join('scripts', 'publicacao', 'index.ts')], { stdio: 'inherit', cwd: ROOT })
 
   // 2. Frontend
   etapa('2. Compilando o frontend')
@@ -67,22 +74,25 @@ async function main() {
     env: { ...process.env, VITE_BASE: base },
   })
 
-  // 3. Dados
-  etapa('3. Copiando os datasets')
-  for (const pasta of PASTAS) {
-    const origem = join(DATA_DIR, pasta)
-    if (!existsSync(origem)) {
-      console.warn(`  ⚠ data/${pasta} não encontrada — pulando`)
-      continue
-    }
-    const destino = join(DESTINO_DADOS, pasta)
-    await cp(origem, destino, {
-      recursive: true,
-      // ZIPs brutos do TSE (raw/) não vão para o site
-      filter: (src) => !src.includes(`${sep}raw${sep}`) && !src.endsWith(`${sep}raw`),
-    })
-    console.log(`  ✓ dados/${pasta} (${emMB(await tamanhoBytes(destino))} MB)`)
+  // 3. Dados publicados
+  etapa('3. Copiando os dados publicados')
+  const origem = join(DATA_DIR, PASTA_PUBLICADA)
+  if (!existsSync(origem)) {
+    console.error(
+      '  ✗ data/published/ não existe — a etapa 1 falhou.\n' +
+        '    Rode: npm run publicar',
+    )
+    process.exit(1)
   }
+  await cp(origem, DESTINO_DADOS, { recursive: true })
+  console.log(`  ✓ dados/ (${emMB(await tamanhoBytes(DESTINO_DADOS))} MB, com .gz)`)
+
+  // Portão de qualidade: falha o build se o frontend pedir rota inexistente.
+  etapa('4. Validando o contrato de publicação')
+  execFileSync(TSX, [join('scripts', 'publicacao', 'validar-cli.ts')], {
+    stdio: 'inherit',
+    cwd: ROOT,
+  })
 
   // 4. Detalhes de hospedagem
   // `.nojekyll` evita que o GitHub Pages passe os arquivos por Jekyll e

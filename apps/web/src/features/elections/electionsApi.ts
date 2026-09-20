@@ -123,7 +123,7 @@ function comFoto(m: MandatoRepresentante, sgUe: string): MandatoRepresentante {
 // ---------------------------------------------------------------------------
 
 export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMunicipio | null> {
-  const arquivo = await lerDados<ArquivoUfs>(`elections/ufs/${ufDoCodarea(codarea)}.json`)
+  const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codarea)}.json`)
   const m = arquivo?.municipios.find((x) => x.codareaIbge === codarea)
   if (!m) return null
   return {
@@ -135,13 +135,13 @@ export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMu
 }
 
 export async function buscarMandatoEstado(codigoUf: string): Promise<MandatoEstado | null> {
-  const e = await lerDados<MandatoEstado>(`elections/estados/${codigoUf}.json`)
+  const e = await lerDados<MandatoEstado>(`eleicoes/estados/${(codigoUf)}.json`)
   if (!e) return null
   return comFotosEstado(e)
 }
 
 export async function buscarMandatoBrasil(): Promise<MandatoBrasil | null> {
-  const b = await lerDados<MandatoBrasil>('elections/brasil.json')
+  const b = await lerDados<MandatoBrasil>('eleicoes/brasil.json')
   if (!b) return null
   return {
     ...b,
@@ -196,11 +196,11 @@ export async function buscarComposicao(
   codigo: string,
 ): Promise<Composicao | null> {
   if (nivel === 'brasil') {
-    return lerDados<Composicao>('elections/composicao-brasil.json')
+    return lerDados<Composicao>('eleicoes/brasil.json')
   }
 
   if (nivel === 'municipio') {
-    const arquivo = await lerDados<ArquivoUfs>(`elections/ufs/${ufDoCodarea(codigo)}.json`)
+    const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codigo)}.json`)
     const m = arquivo?.municipios.find((x) => x.codareaIbge === codigo)
     if (!m) return null
     const vereadores = m.vereadores ?? []
@@ -219,8 +219,8 @@ export async function buscarComposicao(
   }
 
   const [estado, arquivoUf] = await Promise.all([
-    lerDados<MandatoEstado>(`elections/estados/${codigo}.json`),
-    lerDados<ArquivoUfs>(`elections/ufs/${codigo}.json`),
+    lerDados<MandatoEstado>(`eleicoes/estados/${(codigo)}.json`),
+    lerDados<ArquivoUfs>(`eleicoes/ufs/${(codigo)}.json`),
   ])
   if (!estado) return null
 

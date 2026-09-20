@@ -8,8 +8,18 @@ e depois leia o documento relacionado à tarefa.
 | [FUNCIONALIDADES.md](FUNCIONALIDADES.md) | O que o produto faz hoje, como navegar e o que ainda não existe. |
 | [architecture/overview.md](architecture/overview.md) | Organização do código, dados e build. |
 | [data-sources/README.md](data-sources/README.md) | Fontes oficiais, responsabilidade e critérios para novas integrações. |
-| [apis_mapping.md](apis_mapping.md) | Mapeamento técnico das APIs públicas usadas. |
+| [APIS.md](APIS.md) | Documentação completa das APIs: endpoints, arquivos de uso, retornos, relações, `.env` e onde os dados são salvos. |
+| [apis_mapping.md](apis_mapping.md) | Mapeamento técnico detalhado das APIs públicas externas usadas na ingestão. |
 | [adr/](adr/) | Decisões técnicas que não devem ser revertidas sem nova decisão. |
+
+## Configuração local
+
+```bash
+cp .env.example .env   # preencha PORTAL_API_KEY e, se usar, os fallbacks
+```
+
+O `.env` é lido por `scripts/lib/env.ts` (sem dependência externa). O arquivo
+`.env` não é versionado; `.env.example` documenta cada variável.
 
 ## Regra de manutenção
 

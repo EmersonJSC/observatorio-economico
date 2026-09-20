@@ -1,7 +1,7 @@
 /**
  * Ranking nacional — leitura do dataset derivado.
  *
- * `indicators/ranking.json` é gerado no build (`scripts/gerar-derivados.ts`) e
+ * `indicadores/ranking.json` é gerado pela Caixa 7 (`scripts/publicacao/`) e
  * junta os três blocos em uma lista só: indicadores + orçamento + centroide.
  * É o único arquivo que permite ordenar o Brasil inteiro sem baixar 54 arquivos.
  */
@@ -38,5 +38,5 @@ export interface RankingNacional {
 export type NivelRanking = 'ufs' | 'municipios'
 
 export async function buscarRanking(): Promise<RankingNacional | null> {
-  return lerDados<RankingNacional>('indicators/ranking.json')
+  return lerDados<RankingNacional>('indicadores/ranking.json')
 }

@@ -1,0 +1,17 @@
+{
+  "fonteId": "tse",
+  "recursoId": "cdn-dados-abertos",
+  "versaoOrganizacao": "1.0.0",
+  "versaoEsquema": 1,
+  "organizadoEm": "2026-09-20T08:23:06.537Z",
+  "origensRaw": [
+    "352f45eb85a1dbfa178795b3f8c55d6da44443c044eea961b7a7fb9ca56cbd6d"
+  ],
+  "objetosRaw": 1,
+  "contagens": {
+    "lidas": 463859,
+    "gravadas": 463859,
+    "quarentenadas": 0
+  },
+  "avisos": []
+}

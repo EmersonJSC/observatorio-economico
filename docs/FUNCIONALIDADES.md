@@ -53,38 +53,56 @@ mindmap
 
 ## 2. Como o dado chega até a tela
 
+O dado atravessa sete caixas independentes. Cada uma só conversa com a vizinha:
+nenhuma caixa lê a fonte diretamente nem calcula o que pertence a outra.
+
 ```mermaid
 flowchart LR
-  subgraph FONTES["Fontes oficiais"]
-    IBGE["IBGE<br/>Malhas e SIDRA"]
+  subgraph F1["Fontes oficiais"]
+    IBGE["IBGE<br/>Malhas, localidades e SIDRA"]
     STN["Tesouro Nacional<br/>Siconfi DCA"]
     TSE["TSE<br/>Dados Abertos"]
   end
 
-  subgraph INGESTAO["scripts de ingestão"]
-    S1["territorial + centroides"]
-    S2["indicators"]
-    S3["budget"]
-    S4["elections + mandatos"]
-  end
+  C1["1 · Fontes<br/>catálogo"]
+  C2["2 · Coletor<br/>HTTP e paginação"]
+  C3["3 · RAW<br/>objetos por hash"]
+  C4["4 · Organização<br/>JSONL tipado"]
+  C5["5 · Relacionamentos<br/>ponte IBGE × TSE"]
+  C6["6 · Cálculos<br/>motores puros"]
+  C7["7 · Publicação<br/>contrato do frontend"]
+  DIST["apps/web/dist<br/>site estático"]
 
-  DATA[("data/<br/>JSON versionado")]
-  DERIV["gerar-derivados"]
-  BUILD["build-site"]
-  DIST["apps/web/dist"]
-  PAGES["Cloudflare Pages"]
-
-  IBGE --> S1 --> DATA
-  IBGE --> S2 --> DATA
-  STN --> S3 --> DATA
-  TSE --> S4 --> DATA
-  DATA --> DERIV --> BUILD
-  DATA --> BUILD
-  BUILD --> DIST --> PAGES
+  IBGE --> C1
+  STN --> C1
+  TSE --> C1
+  C1 -->|"o que coletar"| C2
+  C2 -->|"bytes"| C3
+  C3 -->|"objetos"| C4
+  C4 -->|"entidades"| C5
+  C5 -->|"chaves ligadas"| C6
+  C6 -->|"métricas"| C7
+  C7 -->|"data/published/"| DIST
 ```
 
-O `apps/api` existe apenas para desenvolvimento local e **não participa deste fluxo**.
-Em produção o frontend lê os JSON diretamente.
+O navegador **nunca** chama IBGE, TSE, Siconfi ou Banco Central: lê apenas os
+arquivos de `data/published/` por meio de `apps/web/src/lib/fontes.ts`.
+
+### Nomes de arquivo por UF: sigla e código
+
+A publicação usa as duas formas, e confundi-las faz o navegador pedir um arquivo
+que não existe (404 silencioso — a tela fica sem dado e não dá erro):
+
+| Shard | Nomeado por | Exemplo |
+|---|---|---|
+| `indicadores/{SIGLA}.json` | sigla | `MG.json` |
+| `orcamento/{SIGLA}.json` | sigla | `MG.json` |
+| `territorios/{CODIGO}.geojson` | código de 2 dígitos | `31.geojson` |
+| `eleicoes/ufs/{CODIGO}.json` | código de 2 dígitos | `31.json` |
+
+A conversão código → sigla mora em um único lugar, `siglaDaUf()` em
+`apps/web/src/lib/fontes.ts`. Antes havia uma cópia da tabela por feature, e a
+divergência entre elas é o que fazia o painel pedir `indicadores/31.json`.
 
 ---
 
@@ -152,18 +170,77 @@ Interações transversais: busca com autocomplete, navegação hierárquica com
 breadcrumbs, retorno ao Brasil inteiro, câmera voando para o território escolhido,
 tooltip no hover e seleção por clique no estado e depois no município.
 
+### Tooltip do mapa
+
+Em **Informação**, o popup do hover mostra o valor real da lente ativa — não um
+texto fixo. Ele traz o nome do território, o código IBGE, o valor formatado
+(ex.: `R$ 44,2 mi`) e o **ano de referência** de cada indicador.
+
+O ano aparece porque as métricas têm anos diferentes — população e PIB de 2021,
+orçamento de 2023. Omiti-lo sugeriria uma comparação válida entre valores de
+exercícios distintos.
+
+Quando a lente é uma taxa per capita, o tooltip mostra também o total que a
+origina: "PIB per capita" sozinho não diz o tamanho da economia.
+
+Valor ausente aparece como **"sem dado"**, em itálico — e não como linha
+escondida. Esconder faria um município sem dado parecer igual a um com valor
+zero.
+
 ---
 
 ## 6. Cobertura dos dados
 
+Medido sobre `data/published/municipios/bloco-*.json` (5.571 municípios), não
+estimado. A cobertura **varia por indicador** e a interface mostra "sem dado"
+onde não há valor — nunca zero, que afirmaria algo falso.
+
 | Bloco | Cobertura | Período |
 |---|---|---|
 | Malhas territoriais e centroides | 27 UFs, 5.570 municípios | — |
-| População | 27 UFs, 5.571 registros | 2024 |
-| PIB total e per capita | 27 UFs, 5.571 registros | 2021 |
-| Orçamento | 27 UFs, 5.558 municípios | 2023 |
-| Eleições municipais | 26 UFs, 5.546 municípios | 2024 |
-| Eleições gerais | 27 UFs + Brasil | 2022 |
+| População | 5.570 de 5.571 municípios (100,0%) | 2021 |
+| PIB total e per capita | 5.570 de 5.571 municípios (100,0%) | 2021 |
+| Receita e despesa (Siconfi DCA) | 851 e 853 municípios (15,3%) | 2023 |
+| Gastos em saúde e educação | 852 e 853 municípios (15,3%) | 2023 |
+| Eleições municipais | 5.569 municípios | 2024 |
+
+### Por que o orçamento cobre só 15%
+
+O recurso `siconfi/dca` tem fan-out por `id_ente`: é **uma chamada HTTP por
+ente** (5.570 municípios + 27 estados). O rate limit é classificado como
+`critico` — bloqueio de IP com HTTP 429 sob concorrência alta.
+
+A coleta nacional completa é uma varredura longa. O estado de **Minas Gerais
+(853 municípios + o governo estadual) foi coletado como prova de conceito** e
+serve de amostra ponta a ponta: dentro de MG a cobertura é de **99,8% a 100%**
+por indicador orçamentário.
+
+Os demais 4.718 municípios ainda não têm orçamento. O caminho para fechar a
+lacuna é rodar a mesma coleta para as outras 26 UFs — nenhuma mudança de código
+é necessária, apenas o cache `data/raw/_parametros/ente.json` com a lista de
+entes desejada.
+
+### Indicadores bloqueados de propósito
+
+`receita_per_capita`, `despesa_per_capita`, `saude_per_capita` e
+`educacao_per_capita` estão **bloqueados por ano divergente** e não são
+publicados com valor. O orçamento é de **2023** e a população disponível é de
+**2021**; dividir um pelo outro produziria um número sem significado. A Caixa 6
+devolve `null` com o motivo `ano-divergente` registrado — rigor metodológico, não
+falta de dado.
+
+Os totais de saúde e educação publicados são **absolutos** (R$), não per capita.
+
+### Duas ressalvas conhecidas na fonte
+
+1. **Itaguara (3132206) e São João Nepomuceno (3162906)** vêm do Tesouro com
+   conteúdo contábil idêntico ao centavo, apesar de populações diferentes
+   (13.510 e 26.530) e objetos distintos no RAW. O defeito é da fonte: os dois
+   anexos de receita não vieram, e ambos ficam sem `receitaTotal`.
+2. A varredura inicial perdeu 9 objetos porque o `manifest.json` do RAW não era
+   atualizado quando o arquivo já existia no disco sem constar do manifesto. A
+   Caixa 3 passou a **recuperar** esses órfãos para o manifesto (ver
+   `scripts/raw/persistir.ts`, regra R5).
 
 ---
 
@@ -173,12 +250,16 @@ Lista honesta, para não confundir o que está pronto com o que está planejado:
 
 | Ausente | Observação |
 |---|---|
+| Orçamento fora de Minas Gerais | 4.718 municípios das outras 26 UFs ainda sem Siconfi; dentro de MG a cobertura é de 99,8–100% |
+| Rotas de eleições no frontend | A Caixa 7 publica só `eleicoes/brasil.json`; o frontend pede `eleicoes/ufs/` e `eleicoes/estados/`, que ainda não existem |
+| Mandatos eleitos | 5.564 prefeitos, 5.564 vices e 58.163 vereadores existem no TSE mas não são publicados |
 | Série histórica | Cada indicador tem um único ano; não há gráfico de evolução |
 | Compartilhar link do território | O território selecionado não vai para a URL |
 | Exportar dados | Não há download em CSV ou similar |
 | Comparar mais de dois territórios | A aba Comparar aceita exatamente dois |
 | Outras funções orçamentárias | Só saúde e educação |
 | Dados de contratos, licitações e servidores | Fora do escopo até agora |
+| Scripts de ingestão legados | Nove arquivos em `scripts/` ainda referenciam pastas já removidas; são código morto |
 | Atualização automática | A ingestão é manual; o site só muda quando o build roda |
 
 ---

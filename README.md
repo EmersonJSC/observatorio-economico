@@ -28,7 +28,9 @@ Além do painel:
   responder "onde este partido é forte", não "quem manda aqui".
 - **Camada "Informação"** — lentes para PIB, PIB por habitante, receita,
   despesa, população, densidade, saúde e educação. Totais usam áreas hexagonais
-  3D; taxas e valores por habitante usam a cor de cada território.
+  3D; taxas e valores por habitante usam a cor de cada território. O tooltip do
+  hover mostra o valor real da lente ativa e o ano de referência, ou "sem dado"
+  quando não há valor. As lentes de orçamento hoje só têm dado em Minas Gerais.
 - **Ranking** — todos os 27 estados e 5.571 municípios ordenados por PIB, PIB per
   capita, população, receita ou despesa, agrupados em faixas de escala. Clicar em uma
   linha leva o mapa até o território.
@@ -45,57 +47,75 @@ Um mapa visual de tudo isso, com o que já existe e o que ainda falta, está em
 
 ## Dados já obtidos
 
+Os números abaixo foram **medidos** sobre os artefatos publicados, não estimados.
+
 ### Resumo
 
-| Bloco | Fonte | Recorte territorial | Período | Registros |
-|---|---|---|---|---|
-| Malhas territoriais | IBGE | 27 UFs + 5.570 municípios | — | 5.597 |
-| Centroides | derivado IBGE | 27 UFs + 5.570 municípios | — | 5.597 |
-| População | IBGE SIDRA 6579 | 27 UFs + 5.571 | **2024** | 5.598 |
-| PIB (total e per capita) | IBGE SIDRA 5938 | 27 UFs + 5.571 | **2021** | 5.598 |
-| Receitas e despesas | Tesouro / Siconfi DCA | 27 UFs + 5.558 municípios | **2023** | 5.585 |
-| Eleições municipais | TSE | 26 UFs + 5.546 municípios | **2024** | 5.546 prefeitos, 5.546 vices, 57.933 vereadores |
-| Eleições gerais | TSE | 27 UFs + Brasil | **2022** | 27 governadores, 27 senadores, 513 dep. federais, 1.059 dep. estaduais |
+| Bloco | Fonte | Cobertura | Período |
+|---|---|---|---|
+| Malhas territoriais | IBGE | 27 UFs + 5.570 municípios | — |
+| Localidades | IBGE | 27 UFs + 5.571 municípios | — |
+| População | IBGE SIDRA 6579 | 5.570 de 5.571 municípios | **2021** |
+| PIB (total e per capita) | IBGE SIDRA 5938 | 5.570 de 5.571 municípios | **2021** |
+| Receita, despesa, saúde e educação | Tesouro / Siconfi DCA | **851 a 853 municípios** | **2023** |
+| Candidaturas municipais | TSE | 5.569 municípios | **2024** |
 
-Total: ~83 MB de JSON, sem os arquivos brutos de origem (~112 MB de ZIPs do TSE, que
-ficam fora do versionamento e são baixados por `npm run scrape:tse`).
+### Cobertura do orçamento: por que só 15%
+
+O recurso `siconfi/dca` faz fan-out por `id_ente` — **uma chamada HTTP por ente**
+(5.570 municípios + 27 estados), com rate limit `critico` (bloqueio de IP).
+
+O estado de **Minas Gerais foi coletado como prova de conceito**, com 853
+municípios mais o governo estadual. Dentro de MG a cobertura é de **99,8% a 100%**
+por indicador:
+
+| Indicador | MG | Brasil |
+|---|---|---|
+| Receita total | 851 de 853 (99,8%) | 851 de 5.571 (15,3%) |
+| Despesa total | 853 de 853 (100,0%) | 853 de 5.571 (15,3%) |
+| Gasto em saúde | 852 de 853 (99,9%) | 852 de 5.571 (15,3%) |
+| Gasto em educação | 853 de 853 (100,0%) | 853 de 5.571 (15,3%) |
+
+Para estender às outras 26 UFs não é necessário alterar código: basta preencher
+`data/raw/_parametros/ente.json` com a lista de entes e repetir a coleta.
+
+A lista de entes de MG foi derivada do próprio cadastro do IBGE já publicado
+(`data/published/municipios/bloco-*.json`), não de uma lista digitada à mão.
+
+### Indicadores deliberadamente bloqueados
+
+`receita_per_capita`, `despesa_per_capita`, `saude_per_capita` e
+`educacao_per_capita` **não são publicados com valor**. O orçamento é de 2023 e a
+população disponível é de 2021 — dividir um pelo outro produziria um número sem
+significado. A Caixa 6 registra o motivo `ano-divergente` e devolve `null`.
+
+Os valores de saúde e educação publicados são **absolutos** (R$).
 
 ### Detalhe por bloco
 
-**Território** (`data/maps/`)
-Malhas geográficas do IBGE em GeoJSON, uma por UF, mais os centroides de cada
-município para posicionar os pontos no mapa e centralizar a câmera na busca.
-O maior arquivo isolado é `ufs/31.geojson` (Minas Gerais), com 7,7 MB.
+**Território** (`data/published/territorios/`)
+Malhas do IBGE em GeoJSON, uma por UF, mais a malha nacional. As propriedades são
+enriquecidas na publicação: o IBGE devolve apenas `codarea`, e sem `nome` e
+`sigla` o mapa desenha polígonos sem identificação.
 
-**Indicadores socioeconômicos** (`data/indicators/`)
+**Municípios** (`data/published/municipios/`)
+`indice.json` traz as 5.571 entradas leves (código, nome, UF, coordenadas) e
+`bloco-N.json` as métricas. Separar o índice dos blocos permite listar e buscar
+municípios sem carregar as métricas — o índice é ~5% do peso do bloco completo.
 
-- População estimada, ano-base 2024.
-- PIB a preços correntes e PIB per capita, ano-base 2021 (último disponível).
-- O PIB per capita é calculado, não vem pronto: a variável 593 do SIDRA não existe,
-  então dividimos o PIB pela população.
-- `pontos.json` é um arquivo derivado com os 5.570 municípios já com PIB, usado para
-  desenhar os hexágonos.
+**Orçamento** (`data/published/orcamento/`)
+`brasil.json` traz os entes; `{SIGLA}.json` é o shard por UF. O nome do arquivo é
+a **sigla**, não o código IBGE.
 
-**Orçamento público** (`data/budget/`)
+**Eleições** (`data/published/eleicoes/`)
+Hoje só `brasil.json`, com o total de candidaturas por município. As rotas por UF
+e os mandatos eleitos ainda não são publicados — ver
+`docs/FUNCIONALIDADES.md` §7.
 
-- Exercício 2023, Declaração de Contas Anuais (DCA) do Siconfi.
-- Por ente: receita total, despesa total e gastos por área de governo — hoje
-  **saúde** e **educação**, as duas funções obrigatórias constitucionalmente.
-- Cobertura: **27 UFs e 5.558 municípios**.
-
-**Eleições** (`data/elections/`)
-
-- **Municipais 2024** — prefeito, vice-prefeito e a lista completa de vereadores
-  eleitos, com nome de urna, nome completo, partido, número e período de mandato.
-  Cobertura em 26 UFs; o Distrito Federal não tem eleição municipal e por isso não
-  aparece (correto, não é lacuna).
-- **Gerais 2022** — presidente, vice, governadores, vices, senadores, deputados
-  federais e deputados estaduais/distritais eleitos, por UF.
-- **Composição partidária** (`composicao-brasil.json`) — quantas cadeiras cada partido
-  ocupa em cada casa legislativa, derivada do resultado eleitoral.
-- **DE-PARA TSE ↔ IBGE** (`de-para-tse-ibge.json`) — 5.561 entradas ligando o código
-  de município do TSE ao `codarea` do IBGE. Sem isso não haveria como cruzar eleição
-  com população e PIB. **100% casado.**
+**Ponte TSE ↔ IBGE** (`data/related/municipio.jsonl`)
+5.569 unidades eleitorais do TSE ligadas ao `codarea` do IBGE — 5.562 por nome
+normalizado e 7 por exceção auditada, com 2 órfãos legítimos. Sem essa ponte não
+haveria como cruzar eleição com população e PIB.
 
 ### A chave de junção
 
@@ -107,30 +127,55 @@ lado dos vereadores dele, que vêm de uma base com código completamente diferen
 
 ## Como os dados são construídos
 
-Nada é digitado à mão. Cada bloco tem um script de ingestão que baixa da fonte
-oficial, normaliza e grava em `data/`:
+Nada é digitado à mão. O dado atravessa sete caixas, cada uma com seu comando:
 
 ```bash
-npm run ingest              # tudo, em ordem, com fallback entre fontes
-npm run ingest:indicators   # só IBGE/SIDRA
-npm run ingest:budget       # só Siconfi
-npm run ingest:elections    # só TSE municipal
-npm run ingest:mandatos     # só TSE eleições gerais
-npm run ingest:centroides   # recalcula centroides
+npm run coletar -- --tudo      # 1+2+3 · catálogo, coleta e RAW (objetos por hash)
+npm run organizar -- --tudo    # 4 · traduz o RAW para JSONL tipado
+npm run relacionar -- --tudo   # 5 · constrói a ponte IBGE × TSE
+npm run calcular -- --tudo     # 6 · aplica os motores de cálculo
+npm run publicar               # 7 · formata para o contrato do frontend
+npm run validar:publicacao     # confere se o contrato foi atendido
 ```
 
-O orquestrador (`scripts/ingest-all.ts`) tenta a fonte primária, cai para uma
-alternativa se ela falhar, e em último caso preserva o último dado bom em vez de
-gravar um arquivo vazio.
+Cada caixa lê apenas a saída da anterior. Nenhuma delas chama a fonte oficial
+diretamente nem recalcula o que pertence a outra.
 
-O TSE fica atrás de um WAF que bloqueia requisições automatizadas simples, por isso
-`npm run scrape:tse` usa Playwright para baixar os ZIPs.
+**Ordem importa.** Publicar sem recalcular reaproveita métricas antigas; por isso o
+build completo (`npm run build:site`) roda a publicação antes de empilhar o
+frontend.
 
-Os arquivos derivados do site (`pontos.json`, `composicao-brasil.json`) são gerados
-no build, não versionados como fonte:
+### Comandos úteis de coleta
 
 ```bash
-npm run gerar:derivados
+# Uma fonte específica
+npm run coletar -- --fonte siconfi --recurso dca
+
+# Simular sem gravar (mostra as chamadas que seriam feitas)
+npm run coletar -- --fonte siconfi --simular
+
+# Definir o fan-out explicitamente
+npm run coletar -- --recurso dca --param ente=3136702,3100104
+```
+
+O fan-out de uma dimensão é resolvido nesta ordem: `--param` do operador, cache em
+`data/raw/_parametros/`, tabela estática, e por fim o `exemplo` declarado no
+catálogo. **Não há lista de anos padrão** — o default vem do catálogo, por recurso,
+para o orquestrador nunca inventar um parâmetro que a fonte não publica.
+
+### Ferramentas de build
+
+```bash
+npm run build:site    # caixa 7 + build do Vite + cópia dos dados + validação
+npm run dev:web       # servidor de desenvolvimento do frontend
+npm run preview:site  # serve o dist já construído
+```
+
+Os testes são separados por caixa (não há um `npm test` que rode todos):
+
+```bash
+npm run test:coletor   npm run test:raw          npm run test:organizacao
+npm run test:relacionamentos  npm run test:calculos   npm run test:publicacao
 ```
 
 ---
@@ -166,14 +211,33 @@ Instruções completas de hospedagem gratuita em [DEPLOY.md](DEPLOY.md).
 ```
 apps/web/          interface React + deck.gl; contém o site publicado
 apps/api/          API Express, apenas para desenvolvimento local
-scripts/           ingestão, transformação e build
-data/              datasets versionados — são o conteúdo do site
-  maps/            malhas e centroides
-  indicators/      população e PIB
-  budget/          orçamento (Siconfi)
-  elections/       eleições e representação
-  elections/raw/   ZIPs originais do TSE (não versionados)
+scripts/           as sete caixas do pipeline
+  fontes/          1 · catálogo das fontes oficiais
+  coletor/         2 · HTTP, paginação e transporte
+  raw/             3 · objetos endereçados por hash + manifesto
+  organizacao/     4 · tradutores para JSONL tipado
+  relacionamentos/ 5 · ponte IBGE × TSE
+  calculos/        6 · motores puros de métrica
+  publicacao/      7 · contrato do frontend
+  orquestrador/    resolver de fan-out e execução da coleta
+data/              os dados, em camadas
+  raw/             objetos coletados (não versionados)
+  organized/       JSONL tipado por recurso
+  related/         ponte territorial e órfãos
+  calculated/      métricas por entidade
+  published/       artefatos finais que o navegador lê
 docs/              arquitetura, fontes de dados e decisões
+  FUNCIONALIDADES.md  comportamento entregue, cobertura e limites
+  README.md           índice da documentação
+```
+
+### Configuração
+
+O Siconfi e o IBGE não exigem chave. O Portal da Transparência, usado por scripts
+legados de congresso, exige:
+
+```bash
+cp .env.example .env   # preencha PORTAL_API_KEY
 ```
 
 ---
@@ -184,18 +248,29 @@ Vale saber antes de tirar conclusões dos números:
 
 - **Os anos de referência não coincidem.** População é 2024, PIB é 2021, orçamento é
   2023. Comparar PIB com orçamento do mesmo território é comparar anos diferentes.
+- **Os anos de referência não coincidem.** População e PIB são de 2021; o orçamento é
+  de 2023. Comparar PIB com orçamento do mesmo território é comparar anos diferentes —
+  e é por isso que os indicadores *per capita* de orçamento ficam **bloqueados** em vez
+  de serem calculados.
 - **O PIB é de 2021** porque é o último ano divulgado pelo IBGE. Não há como atualizar.
-- **A contagem de municípios varia entre fontes** (5.546 a 5.571). Isso é esperado:
+- **O orçamento só cobre Minas Gerais** (851 a 853 dos 853 municípios). As outras 26
+  UFs ainda não foram coletadas; ver a seção de cobertura acima.
+- **A contagem de municípios varia entre fontes** (5.569 a 5.571). Isso é esperado:
   cada base tem sua própria data de corte, e Fernando de Noronha aparece em algumas
   como município e em outras como distrito estadual.
 - **O orçamento cobre saúde e educação**, não todas as funções de governo. São as duas
   com piso constitucional, o que as torna comparáveis entre entes.
-- **Cargos são os eleitos em 2022 e 2024**, não necessariamente quem está no cargo
-  hoje: o site não acompanha sucessão, cassação ou renúncia.
+- **Dois municípios de MG têm defeito na fonte.** Itaguara (3132206) e São João
+  Nepomuceno (3162906) chegam do Tesouro com valores contábeis idênticos ao centavo,
+  apesar de populações diferentes, e sem o anexo de receita. O site não corrige isso:
+  reporta sem dado onde não há dado.
 - **As cores de partido são escolha visual**, não identidade oficial. Não existe
   padronização oficial de cores por partido.
 - **Municípios pequenos podem ter dados ausentes** em uma ou outra fonte, quando a
-  base de origem não publica o valor.
+  base de origem não publica o valor. A interface mostra "sem dado", nunca zero.
+- **Câmara e Portal da Transparência são fontes novas, ainda sem uso na interface.**
+  Os scripts de ingestão existem, mas são legados: não participam do pipeline das
+  sete caixas e nenhuma tela os exibe.
 
 ---
 

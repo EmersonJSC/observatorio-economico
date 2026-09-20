@@ -1,0 +1,290 @@
+{
+  "fonteId": "ibge-sidra",
+  "recursoId": "pib",
+  "versao": 1,
+  "criadoEm": "2026-09-20T06:51:45.259Z",
+  "atualizadoEm": "2026-09-20T07:46:11.918Z",
+  "objetos": [
+    {
+      "hash": "cca4c38dd6ce07e42f07d32dec6151954d00c15d1d589b4101cb38b4db8d698b",
+      "arquivo": "ibge-sidra/pib/objetos/cca4c38dd6ce07e42f07d32dec6151954d00c15d1d589b4101cb38b4db8d698b.json",
+      "extensao": ".json",
+      "tamanho": 107000,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:51:45.259Z"
+    },
+    {
+      "hash": "ffe4f8cddffa64feb9fd36047fdbedc71a7805483cdef125827e8a1d89d56249",
+      "arquivo": "ibge-sidra/pib/objetos/ffe4f8cddffa64feb9fd36047fdbedc71a7805483cdef125827e8a1d89d56249.json",
+      "extensao": ".json",
+      "tamanho": 6774,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.185Z"
+    },
+    {
+      "hash": "943b468df9e82db7a8e463917fd29ff582e635a74c445aaac712951591f215fa",
+      "arquivo": "ibge-sidra/pib/objetos/943b468df9e82db7a8e463917fd29ff582e635a74c445aaac712951591f215fa.json",
+      "extensao": ".json",
+      "tamanho": 2891,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.276Z"
+    },
+    {
+      "hash": "6d9da5093dc1aca039c4f88a31d4889946eae14507378fd71a90d13f08206db2",
+      "arquivo": "ibge-sidra/pib/objetos/6d9da5093dc1aca039c4f88a31d4889946eae14507378fd71a90d13f08206db2.json",
+      "extensao": ".json",
+      "tamanho": 7796,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.458Z"
+    },
+    {
+      "hash": "447a8a4fc923b9ce0ccae6e7cc2c0378fd872ab104e913622915dd1cac7d4200",
+      "arquivo": "ibge-sidra/pib/objetos/447a8a4fc923b9ce0ccae6e7cc2c0378fd872ab104e913622915dd1cac7d4200.json",
+      "extensao": ".json",
+      "tamanho": 1985,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.530Z"
+    },
+    {
+      "hash": "4159978d1c92ad62b2a36c972cfa4c7500b404a3c06a32cbf46d8a77c3fd6a1f",
+      "arquivo": "ibge-sidra/pib/objetos/4159978d1c92ad62b2a36c972cfa4c7500b404a3c06a32cbf46d8a77c3fd6a1f.json",
+      "extensao": ".json",
+      "tamanho": 18220,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.813Z"
+    },
+    {
+      "hash": "b6caeb0ccb3a348d6c3381284c6f85ec3d4b8bf76edd11f1fde9f81209dfc9af",
+      "arquivo": "ibge-sidra/pib/objetos/b6caeb0ccb3a348d6c3381284c6f85ec3d4b8bf76edd11f1fde9f81209dfc9af.json",
+      "extensao": ".json",
+      "tamanho": 2123,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:08.887Z"
+    },
+    {
+      "hash": "f3424844dcbbfdb136e3ae0022d72a960d153de8fdf8c98041f162810f1df0ff",
+      "arquivo": "ibge-sidra/pib/objetos/f3424844dcbbfdb136e3ae0022d72a960d153de8fdf8c98041f162810f1df0ff.json",
+      "extensao": ".json",
+      "tamanho": 17773,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:09.136Z"
+    },
+    {
+      "hash": "cc3e26a4c9bd29fa0bdc9ed4de9eb705d039b64599803b93df0690dd30cd08e8",
+      "arquivo": "ibge-sidra/pib/objetos/cc3e26a4c9bd29fa0bdc9ed4de9eb705d039b64599803b93df0690dd30cd08e8.json",
+      "extensao": ".json",
+      "tamanho": 27762,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:09.504Z"
+    },
+    {
+      "hash": "85609171ff478656af2cfb13f18f5a32d8793274c9ad7889f0cea798963fa67f",
+      "arquivo": "ibge-sidra/pib/objetos/85609171ff478656af2cfb13f18f5a32d8793274c9ad7889f0cea798963fa67f.json",
+      "extensao": ".json",
+      "tamanho": 28742,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:09.856Z"
+    },
+    {
+      "hash": "0523a22dc38e227e237c2b4cdc6b9e5e995038023fa9f2f66013e91153c987cb",
+      "arquivo": "ibge-sidra/pib/objetos/0523a22dc38e227e237c2b4cdc6b9e5e995038023fa9f2f66013e91153c987cb.json",
+      "extensao": ".json",
+      "tamanho": 22660,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:10.275Z"
+    },
+    {
+      "hash": "2343bfc45a16e4140e9902037e79dea8ec55136c85699067f49394c50657f874",
+      "arquivo": "ibge-sidra/pib/objetos/2343bfc45a16e4140e9902037e79dea8ec55136c85699067f49394c50657f874.json",
+      "extensao": ".json",
+      "tamanho": 20983,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:10.525Z"
+    },
+    {
+      "hash": "4e1b065fb8be4cec0599d235c36cca30db3dc146feb04b4d86f3dc85e3bf9912",
+      "arquivo": "ibge-sidra/pib/objetos/4e1b065fb8be4cec0599d235c36cca30db3dc146feb04b4d86f3dc85e3bf9912.json",
+      "extensao": ".json",
+      "tamanho": 27761,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:10.924Z"
+    },
+    {
+      "hash": "0ccc1b3ea9278be6c9af4b41e7a79ba5c751a2273073914d54c33da31b6ae592",
+      "arquivo": "ibge-sidra/pib/objetos/0ccc1b3ea9278be6c9af4b41e7a79ba5c751a2273073914d54c33da31b6ae592.json",
+      "extensao": ".json",
+      "tamanho": 23006,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:11.309Z"
+    },
+    {
+      "hash": "eba4bc7ebc8642dea502cdeb6c10293c350725d6bfaf7d03bbe5dd997977688e",
+      "arquivo": "ibge-sidra/pib/objetos/eba4bc7ebc8642dea502cdeb6c10293c350725d6bfaf7d03bbe5dd997977688e.json",
+      "extensao": ".json",
+      "tamanho": 12937,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:11.491Z"
+    },
+    {
+      "hash": "a24c4fd5c8e6f1b9697b9e1ce23d1167663a434269485da03ddcb3a20e521861",
+      "arquivo": "ibge-sidra/pib/objetos/a24c4fd5c8e6f1b9697b9e1ce23d1167663a434269485da03ddcb3a20e521861.json",
+      "extensao": ".json",
+      "tamanho": 9559,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:11.640Z"
+    },
+    {
+      "hash": "3ea762777ee5353c5e7597e8920548b87f0f819b3b668b6a321f9d34a38a6a2b",
+      "arquivo": "ibge-sidra/pib/objetos/3ea762777ee5353c5e7597e8920548b87f0f819b3b668b6a321f9d34a38a6a2b.json",
+      "extensao": ".json",
+      "tamanho": 51792,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:12.319Z"
+    },
+    {
+      "hash": "7048d80bbd572902d9ab3994d068a0379dfe49c97f60badcd729b47011d08721",
+      "arquivo": "ibge-sidra/pib/objetos/7048d80bbd572902d9ab3994d068a0379dfe49c97f60badcd729b47011d08721.json",
+      "extensao": ".json",
+      "tamanho": 9938,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:12.606Z"
+    },
+    {
+      "hash": "f6b571336229ff006ccefe244eb41f2078f0f1f97b7b3737daf3bfdd68c6f5e9",
+      "arquivo": "ibge-sidra/pib/objetos/f6b571336229ff006ccefe244eb41f2078f0f1f97b7b3737daf3bfdd68c6f5e9.json",
+      "extensao": ".json",
+      "tamanho": 11729,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:13.418Z"
+    },
+    {
+      "hash": "838be9496c1169ce7fb9e0f0e2be161b1082771412a464181ec4bf6784ee2141",
+      "arquivo": "ibge-sidra/pib/objetos/838be9496c1169ce7fb9e0f0e2be161b1082771412a464181ec4bf6784ee2141.json",
+      "extensao": ".json",
+      "tamanho": 80348,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:14.762Z"
+    },
+    {
+      "hash": "e4db4ff0f12f66928194769aabf69a27a376cc970f21eaba1d72a766975ce648",
+      "arquivo": "ibge-sidra/pib/objetos/e4db4ff0f12f66928194769aabf69a27a376cc970f21eaba1d72a766975ce648.json",
+      "extensao": ".json",
+      "tamanho": 50263,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:15.528Z"
+    },
+    {
+      "hash": "316097a3af1f33d6de947f5ed0e58510ac58a28c8cd7c6682700e5d4b86ab08e",
+      "arquivo": "ibge-sidra/pib/objetos/316097a3af1f33d6de947f5ed0e58510ac58a28c8cd7c6682700e5d4b86ab08e.json",
+      "extensao": ".json",
+      "tamanho": 36857,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:16.184Z"
+    },
+    {
+      "hash": "8cd190fc80b50ea3b29a34db39f0a83ef10034e6e34caf2d5cea552939f24262",
+      "arquivo": "ibge-sidra/pib/objetos/8cd190fc80b50ea3b29a34db39f0a83ef10034e6e34caf2d5cea552939f24262.json",
+      "extensao": ".json",
+      "tamanho": 62509,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:17.025Z"
+    },
+    {
+      "hash": "309d960aa99c203f84c25b0fe7ce336a50c6bbca03a3a1f47f650498f3c45c1d",
+      "arquivo": "ibge-sidra/pib/objetos/309d960aa99c203f84c25b0fe7ce336a50c6bbca03a3a1f47f650498f3c45c1d.json",
+      "extensao": ".json",
+      "tamanho": 9978,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:17.209Z"
+    },
+    {
+      "hash": "6c923d92f69c37d1568324caf7cb0ccd06115a0b6024332122f7a6bdb77ea57a",
+      "arquivo": "ibge-sidra/pib/objetos/6c923d92f69c37d1568324caf7cb0ccd06115a0b6024332122f7a6bdb77ea57a.json",
+      "extensao": ".json",
+      "tamanho": 18003,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:17.839Z"
+    },
+    {
+      "hash": "89dcff7f9eeaee67b016f150585bd79d75a1fdf526b04b68ecd6c2442336cae7",
+      "arquivo": "ibge-sidra/pib/objetos/89dcff7f9eeaee67b016f150585bd79d75a1fdf526b04b68ecd6c2442336cae7.json",
+      "extensao": ".json",
+      "tamanho": 31003,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:18.278Z"
+    },
+    {
+      "hash": "6be7f84ac2a6772a6299ae53e2dcb4f58905f981b42970fa7234762d21bfdcb1",
+      "arquivo": "ibge-sidra/pib/objetos/6be7f84ac2a6772a6299ae53e2dcb4f58905f981b42970fa7234762d21bfdcb1.json",
+      "extensao": ".json",
+      "tamanho": 263,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T06:55:18.356Z"
+    },
+    {
+      "hash": "14fd791130f6c378bc2e7c3e2f9610c994c16e6a3c72abaadaa5cd07dcc9be61",
+      "arquivo": "ibge-sidra/pib/objetos/14fd791130f6c378bc2e7c3e2f9610c994c16e6a3c72abaadaa5cd07dcc9be61.json",
+      "extensao": ".json",
+      "tamanho": 3688,
+      "formato": "json",
+      "contentType": "application/json",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T07:46:11.918Z"
+    }
+  ],
+  "ultimoHash": "14fd791130f6c378bc2e7c3e2f9610c994c16e6a3c72abaadaa5cd07dcc9be61"
+}

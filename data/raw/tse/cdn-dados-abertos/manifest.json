@@ -1,0 +1,19 @@
+{
+  "fonteId": "tse",
+  "recursoId": "cdn-dados-abertos",
+  "versao": 1,
+  "criadoEm": "2026-09-20T05:37:10.710Z",
+  "atualizadoEm": "2026-09-20T05:37:10.710Z",
+  "objetos": [
+    {
+      "hash": "352f45eb85a1dbfa178795b3f8c55d6da44443c044eea961b7a7fb9ca56cbd6d",
+      "arquivo": "tse/cdn-dados-abertos/objetos/352f45eb85a1dbfa178795b3f8c55d6da44443c044eea961b7a7fb9ca56cbd6d.zip",
+      "extensao": ".zip",
+      "tamanho": 63993797,
+      "formato": "zip-csv",
+      "pagina": 1,
+      "gravadoEm": "2026-09-20T05:37:10.710Z"
+    }
+  ],
+  "ultimoHash": "352f45eb85a1dbfa178795b3f8c55d6da44443c044eea961b7a7fb9ca56cbd6d"
+}

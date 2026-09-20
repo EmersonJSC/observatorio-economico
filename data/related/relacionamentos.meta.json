@@ -1,0 +1,19 @@
+{
+  "versaoRelacionamentos": "1.0.0",
+  "construidoEm": "2026-09-20T08:24:03.904Z",
+  "origens": {
+    "ibge": "1519804b@2026-09-20T08:23:03.996Z",
+    "tse": "273108882b@2026-09-20T08:23:56.433Z"
+  },
+  "contagens": {
+    "municipiosIbge": 5571,
+    "unidadesTse": 5569,
+    "casados": 5569,
+    "porExcecao": 7,
+    "orfaos": 2,
+    "orfaosACorrigir": 0
+  },
+  "taxaOrfaos": 0,
+  "limiarOrfaos": 0.01,
+  "avisos": []
+}

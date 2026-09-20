@@ -24,6 +24,8 @@ import { spawn } from 'node:child_process'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { carregarEnv } from './lib/env.js'
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const TSX = join(ROOT, 'node_modules', '.bin', 'tsx')
@@ -95,6 +97,9 @@ async function runAlternativa(dominio: string): Promise<{ ok: boolean; detalhe?:
 }
 
 async function main() {
+  // Carrega .env antes de tudo: os scripts filhos herdam este process.env,
+  // então uma chave declarada aqui vale para toda a cadeia de ingestão.
+  carregarEnv()
   const { only, skip, resumo } = parseArgs()
 
   const etapas = [
@@ -104,6 +109,11 @@ async function main() {
     { dominio: 'orcamento', nome: 'Orçamento (Siconfi)', script: 'update-budget-data.ts' },
     { dominio: 'eleicoes', nome: 'Eleições municipais (TSE)', script: 'update-elections-data.ts' },
     { dominio: 'mandatos', nome: 'Mandatos estaduais/nacionais (TSE)', script: 'update-mandatos-gerais.ts' },
+    // Fontes adicionadas depois — exigem configuração própria:
+    //   congresso     → não exige chave
+    //   transparencia → exige PORTAL_API_KEY no .env
+    { dominio: 'congresso', nome: 'Câmara dos Deputados (Dados Abertos v2)', script: 'update-congresso-data.ts' },
+    { dominio: 'transparencia', nome: 'Portal da Transparência (API de Dados)', script: 'update-transparencia-data.ts' },
   ].filter((e) => {
     if (only && only.length > 0) return only.includes(e.dominio)
     if (skip && skip.length > 0) return !skip.includes(e.dominio)

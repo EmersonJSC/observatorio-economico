@@ -24,6 +24,24 @@ export interface MapTooltipProps {
   uf?: string;
   /** Indica se a feature é uma capital. */
   capital?: boolean;
+  /**
+   * Linhas de indicadores a exibir, já formatadas por quem chama.
+   *
+   * O tooltip é apresentacional: ele NÃO consulta dataset nem calcula métrica.
+   * A resolução do valor pertence a `lentes.ts`, que é quem conhece o campo da
+   * lente ativa. Aqui só desenhamos.
+   */
+  indicadores?: LinhaIndicador[];
+}
+
+/** Uma linha de indicador no popup. */
+export interface LinhaIndicador {
+  /** Rótulo curto (ex.: "PIB"). */
+  rotulo: string;
+  /** Valor já formatado (ex.: "R$ 734,5 mil"). `null` = sem dado. */
+  valor: string | null;
+  /** Ano de referência do dado, quando houver. */
+  ano?: number | null;
 }
 
 /**
@@ -41,6 +59,7 @@ export default function MapTooltip({
   nivel,
   uf,
   capital = false,
+  indicadores = [],
 }: MapTooltipProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ left: x + OFFSET_X, top: y + OFFSET_Y });
@@ -71,7 +90,7 @@ export default function MapTooltip({
     top = Math.max(MARGEM_VIEWPORT, Math.min(top, alturaViewport - height - MARGEM_VIEWPORT));
 
     setPos({ left, top });
-  }, [x, y, nome, codigo, nivel, uf, capital]);
+  }, [x, y, nome, codigo, nivel, uf, capital, indicadores]);
 
   const rotuloNivel = nivel === 'estado' ? 'Estado' : 'Município';
 
@@ -87,10 +106,28 @@ export default function MapTooltip({
         {nivel === 'municipio' && uf && <span style={estiloUf}>{uf}</span>}
       </div>
 
-      <div style={estiloLinha}>
-        <span style={estiloRotulo}>Indicadores</span>
-        <span style={estiloCodigo}>Explorar dados</span>
-      </div>
+      <div style={estiloCodigo}>{codigo}</div>
+
+      {/*
+        Indicadores da lente ativa. Quando o dado não existe, dizemos "sem dado"
+        em vez de esconder a linha: ausência de dado é informação, e o município
+        sem valor não deve parecer igual ao que tem valor zero.
+      */}
+      {indicadores.length > 0 && (
+        <div style={estiloLista}>
+          {indicadores.map((item) => (
+            <div key={item.rotulo} style={estiloLinha}>
+              <span style={estiloRotulo}>{item.rotulo}</span>
+              <span style={item.valor === null ? estiloSemDado : estiloValor}>
+                {item.valor ?? 'sem dado'}
+                {item.valor !== null && item.ano ? (
+                  <small style={estiloAno}>{item.ano}</small>
+                ) : null}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -163,4 +200,35 @@ const estiloCodigo: CSSProperties = {
   color: '#cbd5e1',
   fontSize: 11,
   fontVariantNumeric: 'tabular-nums',
+};
+
+/** Bloco dos indicadores, separado do cabeçalho por um fio. */
+const estiloLista: CSSProperties = {
+  marginTop: 6,
+  paddingTop: 6,
+  borderTop: '1px solid rgba(148, 163, 184, 0.22)',
+};
+
+/** Valor numérico — tabular para os dígitos alinharem entre linhas. */
+const estiloValor: CSSProperties = {
+  color: '#f1f5f9',
+  fontSize: 12,
+  fontWeight: 600,
+  fontVariantNumeric: 'tabular-nums',
+  display: 'inline-flex',
+  alignItems: 'baseline',
+  gap: 4,
+};
+
+/** Ausência de dado: legível, mas visivelmente vazia. */
+const estiloSemDado: CSSProperties = {
+  color: '#64748b',
+  fontSize: 11,
+  fontStyle: 'italic',
+};
+
+const estiloAno: CSSProperties = {
+  color: '#7c8fa6',
+  fontSize: 10,
+  fontWeight: 400,
 };

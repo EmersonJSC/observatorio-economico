@@ -14,13 +14,20 @@
  *   - ibge-sidra        → API de Agregados/SIDRA v3 do IBGE
  *   - siconfi           → API do Siconfi (Tesouro Nacional)
  *   - tse               → API DivulgaCandContas do TSE
+ *   - camara            → API de Dados Abertos v2 da Câmara dos Deputados
+ *   - portal            → API de Dados do Portal da Transparência (exige chave)
+ *
+ * Carrega `.env` automaticamente (ver scripts/lib/env.ts).
  */
 
+import { carregarEnv } from './lib/env.js'
 import { IbgeMalhasAdapter } from './adapters/ibge/ibge-malhas.adapter.js'
 import { IbgeLocalidadesAdapter } from './adapters/ibge/ibge-localidades.adapter.js'
 import { IbgeSidraAdapter } from './adapters/ibge/ibge-sidra.adapter.js'
 import { SiconfiAdapter } from './adapters/siconfi/siconfi.adapter.js'
 import { TseAdapter } from './adapters/tse/tse.adapter.js'
+import { CamaraAdapter } from './adapters/camara/camara.adapter.js'
+import { PortalTransparenciaAdapter } from './adapters/portal-transparencia/portal-transparencia.adapter.js'
 
 // ---------------------------------------------------------------------------
 // Registro de todos os adaptadores
@@ -32,6 +39,8 @@ const ADAPTADORES = {
   'ibge-sidra': () => new IbgeSidraAdapter().testarConectividade(),
   'siconfi': () => new SiconfiAdapter().testarConectividade(),
   'tse': () => new TseAdapter().testarConectividade(),
+  'camara': () => new CamaraAdapter().testarConectividade(),
+  'portal': () => new PortalTransparenciaAdapter().testarConectividade(),
 } as const
 
 type AdaptadorKey = keyof typeof ADAPTADORES
@@ -60,6 +69,7 @@ function parseArgs(): { only: AdaptadorKey[] | null } {
 // ---------------------------------------------------------------------------
 
 async function main() {
+  carregarEnv()
   const { only } = parseArgs()
 
   const alvos: AdaptadorKey[] =

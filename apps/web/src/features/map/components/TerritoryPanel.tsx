@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { DadosTerritoriais } from '../mapFeatures'
 import { useTerritoryData } from '../useTerritoryData'
 import type { MandatoRepresentante } from '../../elections/electionsApi'
@@ -18,6 +18,7 @@ import './territory-data.css'
 type Tab = 'retrato' | 'gestao' | 'pessoas' | 'cadeiras' | 'comparar'
 interface Props {
   territory: DadosTerritoriais
+  selectedYear: number | null
   onClose: () => void
   onCompare: (query: string) => void
   /** Partido destacado no mapa — sincroniza o gráfico com o filtro territorial */
@@ -54,7 +55,7 @@ function Source({ referencia, children }: { referencia: string; children: string
   return <p className="panel-source">Referência: {referencia} · Fonte oficial: {children}</p>
 }
 
-function EstadoVazio({ children }: { children: string }) {
+function EstadoVazio({ children }: { children: ReactNode }) {
   return <p className="data-empty">{children}</p>
 }
 
@@ -105,10 +106,10 @@ function ListaMandatos({ titulo, mandatos }: { titulo: string; mandatos: Mandato
   )
 }
 
-export default function TerritoryPanel({ territory, onClose, onCompare, partidoSelecionado, onSelecionarPartido }: Props) {
+export default function TerritoryPanel({ territory, selectedYear, onClose, onCompare, partidoSelecionado, onSelecionarPartido }: Props) {
   const [tab, setTab] = useState<Tab>('retrato')
   const [query, setQuery] = useState('')
-  const dados = useTerritoryData(territory)
+  const dados = useTerritoryData(territory, selectedYear)
   const { indicadores, orcamento, carregando } = dados
 
   const municipal = territory.nivel === 'municipio'
@@ -131,7 +132,7 @@ export default function TerritoryPanel({ territory, onClose, onCompare, partidoS
     <div className="panel-content">
 
       {tab === 'retrato' && <>
-        <div className="panel-intro"><span>EM 30 SEGUNDOS</span><p>Conheça o território, quem toma decisões públicas e onde acompanhar a gestão.</p></div>
+        <div className="panel-intro"><span>EM 30 SEGUNDOS · {selectedYear ?? 'SEM ANO'}</span><p>Conheça o território, quem toma decisões públicas e onde acompanhar a gestão.</p></div>
         <section>
           <h2>O retrato do lugar</h2>
           {carregando
@@ -142,7 +143,7 @@ export default function TerritoryPanel({ territory, onClose, onCompare, partidoS
                   <article><span>PIB<InfoExplicacao chave="pib" pequeno /></span><strong>{formatarMoedaCompacta(milReaisParaReais(indicadores.pib?.valorTotalMilReais))}</strong><small>IBGE{anoPib ? ` · ${anoPib}` : ''}</small></article>
                   <article><span>PIB per capita<InfoExplicacao chave="pibPerCapita" pequeno /></span><strong>{formatarMoeda(indicadores.pib?.valorPerCapitaReais)}</strong><small>IBGE{anoPib ? ` · ${anoPib}` : ''}</small></article>
                 </div>
-              : <EstadoVazio>Sem indicadores disponíveis para este território.</EstadoVazio>}
+              : <EstadoVazio>Sem indicadores disponíveis para {selectedYear ?? 'o ano selecionado'} neste território.</EstadoVazio>}
           {indicadores && <Source referencia={`${anoPop ?? '—'} (população) · ${anoPib ?? '—'} (PIB)`}>IBGE (SIDRA)</Source>}
         </section>
         <section>
@@ -170,7 +171,7 @@ export default function TerritoryPanel({ territory, onClose, onCompare, partidoS
                 </>
               : <EstadoVazio>{federal
                   ? 'Orçamento nacional (União) ainda não faz parte do dataset — a base cobre estados e municípios.'
-                  : 'Dados de orçamento ainda não disponíveis para este território. A base cobre, por enquanto, os entes já ingeridos.'}</EstadoVazio>}
+                  : `Sem dados de orçamento para ${selectedYear ?? 'o ano selecionado'} neste território. A base cobre, por enquanto, os exercícios publicados.`}</EstadoVazio>}
         </section>
         <button className="link-action" onClick={() => setTab('pessoas')}>Ver quem fiscaliza estes gastos <span>→</span></button>
       </>}
@@ -181,7 +182,7 @@ export default function TerritoryPanel({ territory, onClose, onCompare, partidoS
           <h2>Representação atual</h2>
           {carregando
             ? <p className="data-loading">Carregando mandatos…</p>
-            : <PessoasConteudo dados={dados} nivel={territory.nivel} />}
+            : <PessoasConteudo dados={dados} nivel={territory.nivel} anoSelecionado={selectedYear} />}
         </section>
         <button className="link-action" onClick={() => setTab('gestao')}>Ver como estes mandatos aplicam o orçamento <span>→</span></button>
       </>}
@@ -219,11 +220,11 @@ export default function TerritoryPanel({ territory, onClose, onCompare, partidoS
 }
 
 /** Bloco de representação conforme o nível territorial. */
-function PessoasConteudo({ dados, nivel }: { dados: ReturnType<typeof useTerritoryData>; nivel: DadosTerritoriais['nivel'] }) {
+function PessoasConteudo({ dados, nivel, anoSelecionado }: { dados: ReturnType<typeof useTerritoryData>; nivel: DadosTerritoriais['nivel']; anoSelecionado: number | null }) {
   if (nivel === 'brasil') {
     const { presidente, vicePresidente, congresso } = dados.mandatoBrasil ?? {}
     if (!presidente && !vicePresidente) {
-      return <EstadoVazio>Mandatos nacionais ainda não ingeridos. Rode: npx tsx scripts/update-mandatos-gerais.ts</EstadoVazio>
+      return <EstadoVazio>Sem mandatos nacionais publicados para {anoSelecionado ?? 'o ano selecionado'}.</EstadoVazio>
     }
     return <>
       {presidente && <div className="people-list"><PessoaCard papel="Presidente" mandato={presidente} />
@@ -239,7 +240,7 @@ function PessoasConteudo({ dados, nivel }: { dados: ReturnType<typeof useTerrito
   if (nivel === 'estado') {
     const estado = dados.mandatoEstado
     if (!estado) {
-      return <EstadoVazio>Mandatos estaduais ainda não ingeridos. Rode: npx tsx scripts/update-mandatos-gerais.ts</EstadoVazio>
+      return <EstadoVazio>Sem mandatos estaduais publicados para {anoSelecionado ?? 'o ano selecionado'}.</EstadoVazio>
     }
     return <>
       <div className="people-list">
@@ -254,7 +255,7 @@ function PessoasConteudo({ dados, nivel }: { dados: ReturnType<typeof useTerrito
 
   const municipio = dados.mandatoMunicipio
   if (!municipio || (!municipio.prefeito && !municipio.vicePrefeito)) {
-    return <EstadoVazio>Sem dados de mandato para este município.</EstadoVazio>
+    return <EstadoVazio>Sem dados de mandato para {anoSelecionado ?? 'o ano selecionado'} neste município.</EstadoVazio>
   }
   return <>
     <div className="people-list">

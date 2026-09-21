@@ -48,15 +48,21 @@ interface ArquivoUf {
 export async function buscarOrcamento(
   nivel: 'brasil' | 'estado' | 'municipio',
   codigo: string,
+  anoSelecionado?: number | null,
 ): Promise<OrcamentoEnte | null> {
   if (nivel === 'municipio') {
     const sigla = siglaDaUf(codigo)
     if (!sigla) return null
 
     const arquivo = await lerDados<ArquivoUf>(`orcamento/${sigla}.json`)
-    return arquivo?.municipios.find((m) => m.codarea === codigo) ?? null
+    return filtrarPorExercicio(arquivo?.municipios.find((m) => m.codarea === codigo) ?? null, anoSelecionado)
   }
 
   const dados = await lerDados<ArquivoBrasil>('orcamento/brasil.json')
-  return dados?.entes.find((e) => e.codarea === codigo) ?? null
+  return filtrarPorExercicio(dados?.entes.find((e) => e.codarea === codigo) ?? null, anoSelecionado)
+}
+
+function filtrarPorExercicio(orcamento: OrcamentoEnte | null, anoSelecionado?: number | null): OrcamentoEnte | null {
+  if (!orcamento || anoSelecionado === null || anoSelecionado === undefined) return orcamento
+  return orcamento.exercicio === anoSelecionado ? orcamento : null
 }

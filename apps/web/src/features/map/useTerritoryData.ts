@@ -47,7 +47,7 @@ const ESTADO_INICIAL: DadosTerritorio = {
   carregando: true,
 }
 
-export function useTerritoryData(territory: DadosTerritoriais): DadosTerritorio {
+export function useTerritoryData(territory: DadosTerritoriais, anoSelecionado?: number | null): DadosTerritorio {
   const [dados, setDados] = useState<DadosTerritorio>(ESTADO_INICIAL)
 
   useEffect(() => {
@@ -56,9 +56,9 @@ export function useTerritoryData(territory: DadosTerritoriais): DadosTerritorio 
 
     const carregar = async () => {
       const [indicadores, orcamento, composicao] = await Promise.all([
-        buscarIndicadores(territory.nivel, territory.codigo),
-        buscarOrcamento(territory.nivel, territory.codigo),
-        buscarComposicao(territory.nivel, territory.codigo),
+        buscarIndicadores(territory.nivel, territory.codigo, anoSelecionado),
+        buscarOrcamento(territory.nivel, territory.codigo, anoSelecionado),
+        buscarComposicao(territory.nivel, territory.codigo, anoSelecionado),
       ])
 
       let mandatoMunicipio: MandatoMunicipio | null = null
@@ -66,11 +66,11 @@ export function useTerritoryData(territory: DadosTerritoriais): DadosTerritorio 
       let mandatoBrasil: MandatoBrasil | null = null
 
       if (territory.nivel === 'municipio') {
-        mandatoMunicipio = await buscarMandatoMunicipio(territory.codigo)
+        mandatoMunicipio = await buscarMandatoMunicipio(territory.codigo, anoSelecionado)
       } else if (territory.nivel === 'estado') {
-        mandatoEstado = await buscarMandatoEstado(territory.codigo)
+        mandatoEstado = await buscarMandatoEstado(territory.codigo, anoSelecionado)
       } else {
-        mandatoBrasil = await buscarMandatoBrasil()
+        mandatoBrasil = await buscarMandatoBrasil(anoSelecionado)
       }
 
       if (!ativo) return
@@ -90,7 +90,7 @@ export function useTerritoryData(territory: DadosTerritoriais): DadosTerritorio 
     return () => {
       ativo = false
     }
-  }, [territory.nivel, territory.codigo])
+  }, [territory.nivel, territory.codigo, anoSelecionado])
 
   return dados
 }

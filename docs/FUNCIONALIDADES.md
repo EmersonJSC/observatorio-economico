@@ -27,6 +27,10 @@ mindmap
       Pessoas
       Cadeiras
       Comparar
+    Timeline global
+      Seleção de ano
+      Eixo temporal no rodapé
+      Contexto temporal compartilhado
     Ranking e listas
       Estados e municípios
       Cinco métricas
@@ -253,7 +257,7 @@ Lista honesta, para não confundir o que está pronto com o que está planejado:
 | Orçamento fora de Minas Gerais | 4.718 municípios das outras 26 UFs ainda sem Siconfi; dentro de MG a cobertura é de 99,8–100% |
 | Rotas de eleições no frontend | A Caixa 7 publica só `eleicoes/brasil.json`; o frontend pede `eleicoes/ufs/` e `eleicoes/estados/`, que ainda não existem |
 | Mandatos eleitos | 5.564 prefeitos, 5.564 vices e 58.163 vereadores existem no TSE mas não são publicados |
-| Série histórica | Cada indicador tem um único ano; não há gráfico de evolução |
+| Timeline global | A barra de tempo usa os anos publicados (2021, 2023 e 2024) e filtra indicadores por `anoReferencia`, orçamento por `exercicio`, eleições por `anoEleicao` e métricas municipais por `anos.*`; ausência no ano selecionado não usa fallback silencioso |
 | Compartilhar link do território | O território selecionado não vai para a URL |
 | Exportar dados | Não há download em CSV ou similar |
 | Comparar mais de dois territórios | A aba Comparar aceita exatamente dois |

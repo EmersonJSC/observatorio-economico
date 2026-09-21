@@ -23,6 +23,15 @@ Ao selecionar um território no mapa, um painel lateral se abre com cinco abas:
 
 Além do painel:
 
+- **Timeline global** — barra temporal fixa no rodapé da aplicação. Ela descobre os
+  anos de referência realmente publicados, permite selecionar um ano e expõe esse
+  contexto global ao frontend. O painel territorial e a camada de informação
+  filtram cada fonte pelo seu próprio campo temporal: indicadores por
+  `anoReferencia`, orçamento por `exercicio`, mandatos por `anoEleicao` e
+  métricas municipais pelos campos publicados em `anos.*`. Quando não há
+  observação no ano escolhido, a interface mostra ausência em vez de reutilizar
+  o último valor.
+
 - **Camada "força política"** — escolha um partido na legenda e o mapa colore cada
   território conforme a fatia de cadeiras que aquele partido ocupa ali. Serve para
   responder "onde este partido é forte", não "quem manda aqui".
@@ -48,6 +57,16 @@ Um mapa visual de tudo isso, com o que já existe e o que ainda falta, está em
 ## Dados já obtidos
 
 Os números abaixo foram **medidos** sobre os artefatos publicados, não estimados.
+
+### Timeline global
+
+A Timeline global é um controle temporal do frontend, não um pacote anual de
+dados. Ela descobre os anos de referência presentes nos datasets publicados e
+mantém um `selectedYear` compartilhado pela aplicação. A publicação do site é
+um snapshot e não altera o ano das observações. Hoje os anos publicados são 2021 (indicadores IBGE), 2023 (orçamento Siconfi)
+e 2024 (eleição municipal TSE). Como cada fonte tem cobertura própria, escolher
+2021 não exibe orçamento de 2023, e escolher 2024 não transforma indicadores de
+2021 em dados de 2024.
 
 ### Resumo
 

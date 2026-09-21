@@ -74,6 +74,7 @@ export interface PontoMapa {
 export async function buscarIndicadores(
   nivel: 'brasil' | 'estado' | 'municipio',
   codigo: string,
+  anoSelecionado?: number | null,
 ): Promise<IndicadorLocalidade | null> {
   if (nivel === 'municipio') {
     // A rota é por SIGLA; o código de 2 dígitos não é nome de arquivo válido.
@@ -81,13 +82,20 @@ export async function buscarIndicadores(
     if (!sigla) return null
 
     const arquivo = await lerDados<ArquivoUf>(`indicadores/${sigla}.json`)
-    return arquivo?.municipios.find((m) => m.codarea === codigo) ?? null
+    return filtrarPorAno(arquivo?.municipios.find((m) => m.codarea === codigo) ?? null, anoSelecionado)
   }
 
   const dados = await lerDados<ArquivoBrasil>('indicadores/brasil.json')
   if (!dados) return null
-  if (nivel === 'brasil') return dados.brasil
-  return dados.estados.find((e) => e.codarea === codigo) ?? null
+  if (nivel === 'brasil') return filtrarPorAno(dados.brasil, anoSelecionado)
+  return filtrarPorAno(dados.estados.find((e) => e.codarea === codigo) ?? null, anoSelecionado)
+}
+
+function filtrarPorAno(indicadores: IndicadorLocalidade | null, anoSelecionado?: number | null): IndicadorLocalidade | null {
+  if (!indicadores || anoSelecionado === null || anoSelecionado === undefined) return indicadores
+  const populacao = indicadores.populacao?.anoReferencia === anoSelecionado ? indicadores.populacao : null
+  const pib = indicadores.pib?.anoReferencia === anoSelecionado ? indicadores.pib : null
+  return populacao || pib ? { ...indicadores, populacao, pib } : null
 }
 
 /**

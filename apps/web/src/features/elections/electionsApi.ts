@@ -122,10 +122,10 @@ function comFoto(m: MandatoRepresentante, sgUe: string): MandatoRepresentante {
 // Mandatos
 // ---------------------------------------------------------------------------
 
-export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMunicipio | null> {
+export async function buscarMandatoMunicipio(codarea: string, anoSelecionado?: number | null): Promise<MandatoMunicipio | null> {
   const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codarea)}.json`)
   const m = arquivo?.municipios.find((x) => x.codareaIbge === codarea)
-  if (!m) return null
+  if (!m || (anoSelecionado !== null && anoSelecionado !== undefined && arquivo?.anoEleicao !== anoSelecionado)) return null
   return {
     ...m,
     ...(m.prefeito ? { prefeito: comFoto(m.prefeito, m.codigoTse) } : {}),
@@ -134,15 +134,15 @@ export async function buscarMandatoMunicipio(codarea: string): Promise<MandatoMu
   }
 }
 
-export async function buscarMandatoEstado(codigoUf: string): Promise<MandatoEstado | null> {
+export async function buscarMandatoEstado(codigoUf: string, anoSelecionado?: number | null): Promise<MandatoEstado | null> {
   const e = await lerDados<MandatoEstado>(`eleicoes/estados/${(codigoUf)}.json`)
-  if (!e) return null
+  if (!e || (anoSelecionado !== null && anoSelecionado !== undefined && e.anoEleicao !== anoSelecionado)) return null
   return comFotosEstado(e)
 }
 
-export async function buscarMandatoBrasil(): Promise<MandatoBrasil | null> {
+export async function buscarMandatoBrasil(anoSelecionado?: number | null): Promise<MandatoBrasil | null> {
   const b = await lerDados<MandatoBrasil>('eleicoes/brasil.json')
-  if (!b) return null
+  if (!b || (anoSelecionado !== null && anoSelecionado !== undefined && b.anoEleicao !== anoSelecionado)) return null
   return {
     ...b,
     ...(b.presidente ? { presidente: comFoto(b.presidente, 'BR') } : {}),
@@ -194,15 +194,17 @@ function territorioDe(
 export async function buscarComposicao(
   nivel: 'brasil' | 'estado' | 'municipio',
   codigo: string,
+  anoSelecionado?: number | null,
 ): Promise<Composicao | null> {
   if (nivel === 'brasil') {
-    return lerDados<Composicao>('eleicoes/brasil.json')
+    const composicao = await lerDados<Composicao>('eleicoes/brasil.json')
+    return composicao && (anoSelecionado === null || anoSelecionado === undefined || (composicao as Composicao & { anoEleicao?: number }).anoEleicao === anoSelecionado) ? composicao : null
   }
 
   if (nivel === 'municipio') {
     const arquivo = await lerDados<ArquivoUfs>(`eleicoes/ufs/${ufDoCodarea(codigo)}.json`)
     const m = arquivo?.municipios.find((x) => x.codareaIbge === codigo)
-    if (!m) return null
+    if (!m || (anoSelecionado !== null && anoSelecionado !== undefined && arquivo?.anoEleicao !== anoSelecionado)) return null
     const vereadores = m.vereadores ?? []
     return {
       nivel: 'municipio',
@@ -222,7 +224,7 @@ export async function buscarComposicao(
     lerDados<MandatoEstado>(`eleicoes/estados/${(codigo)}.json`),
     lerDados<ArquivoUfs>(`eleicoes/ufs/${(codigo)}.json`),
   ])
-  if (!estado) return null
+  if (!estado || (anoSelecionado !== null && anoSelecionado !== undefined && estado.anoEleicao !== anoSelecionado)) return null
 
   const deputadosEstaduais = estado.deputadosEstaduais ?? []
   const deputadosFederais = estado.deputadosFederais ?? []

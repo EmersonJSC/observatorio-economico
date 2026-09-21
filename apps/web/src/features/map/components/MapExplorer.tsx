@@ -26,6 +26,8 @@ import {
 } from '../lentes'
 import type { CategoriaLente, Lente } from '../lentes'
 import './map-explorer.css'
+import { useTemporal } from '../../timeline/TemporalContext'
+import '../../timeline/temporal-map-context.css'
 
 const CAMERA: MapViewState = { longitude: -55, latitude: -15, zoom: 4, pitch: 0, bearing: 0 }
 const COLOR = {
@@ -83,6 +85,7 @@ function centroDaFeature(feature: unknown): [number, number] | null {
 const comAlpha = (cor: [number, number, number], alpha = 225): Rgba => [...cor, alpha]
 
 export default function MapExplorer() {
+  const { selectedYear } = useTemporal()
   const [states, setStates] = useState<FeatureTerritorial[]>([])
   const [cities, setCities] = useState<FeatureTerritorial[]>([])
   const [state, setState] = useState<DadosTerritoriais | null>(null)
@@ -131,20 +134,20 @@ export default function MapExplorer() {
     let ativo = true
     const nivel = state ? 'estado' : 'brasil'
     const codigo = state ? state.codigo : 'BR'
-    buscarComposicao(nivel, codigo).then((c) => { if (ativo) setComposicao(c) })
+    buscarComposicao(nivel, codigo, selectedYear).then((c) => { if (ativo) setComposicao(c) })
     return () => { ativo = false }
-  }, [modoForca, state])
+  }, [modoForca, state, selectedYear])
 
   // Pontos com todos os indicadores — carregados uma única vez para as lentes.
   useEffect(() => {
-    if (!modoInformacao || pontosInformacao.length > 0) return
+    if (!modoInformacao) return
     let ativo = true
     setCarregandoInformacao(true)
-    getPontosExplorer()
+    getPontosExplorer(selectedYear)
       .then((pontos) => { if (ativo) setPontosInformacao(pontos) })
       .finally(() => { if (ativo) setCarregandoInformacao(false) })
     return () => { ativo = false }
-  }, [modoInformacao, pontosInformacao.length])
+  }, [modoInformacao, pontosInformacao.length, selectedYear])
 
   // Inclina a câmera para ver os hexágonos em 3D
   useEffect(() => {
@@ -498,7 +501,8 @@ export default function MapExplorer() {
 
     {breadcrumb.length > 1 && <nav className="breadcrumbs" aria-label="Caminho de navegação">{breadcrumb.map((item,index) => <span key={item}>{index > 0 && <i>/</i>}<button onClick={index === 0 ? goHome : undefined}>{item}</button></span>)}</nav>}
     {!modoInformacao && <div className="map-legend"><span><i className="dot capital"/>Capital</span><span><i className="dot selected"/>Território selecionado</span></div>}
-    {territory && <TerritoryPanel territory={territory} onClose={() => setTerritory(null)} onCompare={(q) => { setSearch(q); setSearchOpen(true) }} partidoSelecionado={partidoSelecionado} onSelecionarPartido={(sigla) => { setPartidoSelecionado(sigla); if (sigla) setCamada('forca') }} />}
+    <div className="map-temporal-context">Contexto global: <b>{selectedYear ?? 'sem ano'}</b></div>
+    {territory && <TerritoryPanel territory={territory} selectedYear={selectedYear} onClose={() => setTerritory(null)} onCompare={(q) => { setSearch(q); setSearchOpen(true) }} partidoSelecionado={partidoSelecionado} onSelecionarPartido={(sigla) => { setPartidoSelecionado(sigla); if (sigla) setCamada('forca') }} />}
     {hover && <MapTooltip x={hover.x} y={hover.y} nome={hover.data.nome} codigo={hover.data.codigo} nivel={hover.data.nivel} uf={hover.data.uf} capital={hover.capital} indicadores={indicadoresHover} />}
     {politicopediaAberta && <Politicopedia onFechar={() => setPoliticopediaAberta(false)} />}
     {rankingAberto && <Ranking onFechar={() => setRankingAberto(false)} onSelecionar={selecionarDoRanking} />}

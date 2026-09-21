@@ -198,11 +198,13 @@ export function getIndicator(municipio: MunicipioExplorer, indicador: IndicadorE
 }
 
 /** Adaptador para o mapa: conserva coordenadas fora dos indicadores. */
-export async function getPontosExplorer(): Promise<PontoExplorer[]> {
+export async function getPontosExplorer(anoSelecionado?: number | null): Promise<PontoExplorer[]> {
   return (await getMunicipios())
     .filter((m) => m.territorio.longitude !== null && m.territorio.latitude !== null)
     .map((m) => ({
       ...m,
+      fonte: filtrarValoresPorAno(m.fonte, m.derivado, anoSelecionado).fonte,
+      derivado: filtrarValoresPorAno(m.fonte, m.derivado, anoSelecionado).derivado,
       codarea: m.territorio.codigoIbge,
       nome: m.territorio.nome,
       uf: m.territorio.uf,
@@ -210,4 +212,19 @@ export async function getPontosExplorer(): Promise<PontoExplorer[]> {
       lat: m.territorio.latitude as number,
       area: m.territorio.areaKm2,
     }))
+}
+
+function filtrarValoresPorAno(
+    fonte: MunicipioExplorer['fonte'],
+    derivado: MunicipioExplorer['derivado'],
+    anoSelecionado?: number | null,
+) {
+    if (anoSelecionado === null || anoSelecionado === undefined) return { fonte, derivado }
+    const filtrar = <T extends Record<string, ValorTemporal>>(valores: T): T => Object.fromEntries(
+      Object.entries(valores).map(([chave, temporal]) => [
+        chave,
+        temporal.ano === anoSelecionado ? temporal : { ...temporal, valor: null },
+      ]),
+    ) as T
+    return { fonte: filtrar(fonte), derivado: filtrar(derivado) }
 }

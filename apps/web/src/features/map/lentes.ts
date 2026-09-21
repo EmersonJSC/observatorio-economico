@@ -336,7 +336,7 @@ export interface LinhaIndicador {
 }
 
 /** Campo total que contextualiza uma taxa derivada. */
-const TOTAL_DA_TAXA: Partial<Record<CampoNumerico, CampoNumerico>> = {
+const TOTAL_DA_TAXA: Partial<Record<CampoNumerico, CampoNumerico | null>> = {
   pib_per_capita: 'pib',
   receita_per_capita: 'receita',
   despesa_per_capita: 'despesa',
